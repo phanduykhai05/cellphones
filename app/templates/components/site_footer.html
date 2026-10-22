@@ -1,0 +1,67 @@
+{# Footer 4 cột + dải link phụ. Thông tin công ty/hotline đọc từ config (.env). Spec: site-footer.spec.md #}
+<footer class="site-footer">
+  <div class="ft-top">
+    <div class="container ft-grid">
+      <section>
+        <h4 class="ft-title">Tổng đài hỗ trợ miễn phí</h4>
+        <ul class="ft-list">
+          <li>Mua hàng - bảo hành <b>{{ site.HOTLINE_SALES }}</b> (7h30 - 22h00)</li>
+          <li>Khiếu nại <b>{{ site.HOTLINE_COMPLAINT }}</b> (8h00 - 21h30)</li>
+        </ul>
+        <h4 class="ft-title">Phương thức thanh toán</h4>
+        <div class="ft-pay">{% for m in ["Apple Pay", "VNPAY", "MoMo", "OnePay", "Kredivo", "ZaloPay", "Fundiin"] %}<span>{{ m }}</span>{% endfor %}</div>
+        <h4 class="ft-title ft-title--upper">Đăng ký nhận tin khuyến mãi</h4>
+        <div class="ft-voucher">
+          <p class="ft-voucher__title">Nhận ngay voucher 10%</p>
+          <p>Voucher sẽ được gửi sau 24h, chỉ áp dụng cho khách hàng mới</p>
+        </div>
+        <form class="ft-form" onsubmit="return false">
+          <label>Email<input type="email" placeholder="Nhập email của bạn"></label>
+          <label>Số điện thoại<input type="tel" placeholder="Nhập số điện thoại của bạn"></label>
+          <button class="btn btn--primary btn--block" type="submit">ĐĂNG KÝ NGAY</button>
+        </form>
+      </section>
+      <section>
+        <h4 class="ft-title">Thông tin và chính sách</h4>
+        <ul class="ft-list">
+          {% for t in ["Mua hàng và thanh toán Online", "Mua hàng trả góp", "Mua hàng trả góp bằng thẻ tín dụng",
+                       "Chính sách giao hàng", "Chính sách đổi trả", "Tra điểm thành viên", "Xem ưu đãi thành viên",
+                       "Tra thông tin bảo hành", "Tra cứu hoá đơn điện tử", "Thông tin hoá đơn mua hàng",
+                       "Trung tâm bảo hành chính hãng", "Quy định về việc sao lưu dữ liệu", "VAT Refund"] %}
+            <li><a href="#">{{ t }}</a></li>
+          {% endfor %}
+        </ul>
+      </section>
+      <section>
+        <h4 class="ft-title">Dịch vụ và thông tin khác</h4>
+        <ul class="ft-list">
+          {% for t in ["Khách hàng doanh nghiệp (B2B)", "Ưu đãi thanh toán", "Quy chế hoạt động",
+                       "Chính sách bảo mật thông tin cá nhân", "Chính sách Bảo hành", "Liên hệ hợp tác kinh doanh",
+                       "Tuyển dụng", "Dịch vụ bảo hành mở rộng"] %}
+            <li><a href="#">{{ t }}</a></li>
+          {% endfor %}
+        </ul>
+      </section>
+      <section>
+        <h4 class="ft-title">Kết nối với chúng tôi</h4>
+        <div class="ft-social">{% for s in ["YouTube", "Facebook", "Instagram", "TikTok", "Zalo"] %}<a href="#">{{ s }}</a>{% endfor %}</div>
+        <h4 class="ft-title">Danh mục</h4>
+        <ul class="ft-list">
+          {% for c in nav_categories if c.product_count %}
+            <li><a href="{{ url_for('catalog.category', slug=c.slug) }}">{{ c.name }}</a></li>
+          {% endfor %}
+        </ul>
+      </section>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    <div class="container">
+      <div class="ft-links">
+        {% for c in nav_categories if c.product_count %}
+          <p>{% for b in mega_menus[c.slug].brands[:4] %}<a href="{{ url_for('catalog.category', slug=c.slug, hang=b.name) }}">{{ c.short_name }} {{ b.name }}</a>{% endfor %}</p>
+        {% endfor %}
+      </div>
+      <p class="ft-company">{{ site.COMPANY_INFO }}</p>
+    </div>
+  </div>
+</footer>

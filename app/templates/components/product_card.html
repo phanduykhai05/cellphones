@@ -1,0 +1,30 @@
+{# Card sản phẩm. Biến: product; tuỳ chọn show_tags. Spec: docs/research/components/product-card.spec.md #}
+{% from "components/icons.html" import icon %}
+<div class="pc-slot">
+  <article class="pc {% if product.stock == 0 %}is-out{% endif %}">
+    <a class="pc__link" href="{{ url_for('catalog.product', slug=product.slug) }}">
+      <div class="pc__media">
+        {% if product.image_url %}
+          <img src="{{ url_for('static', filename=product.image_url) }}" alt="{{ product.name }}" loading="lazy" width="188" height="188">
+        {% else %}{{ icon("device", 96) }}{% endif %}
+      </div>
+      <h3 class="pc__name">{{ product.name }}</h3>
+      {% if show_tags and product.tags %}
+        <div class="pc__tags">{% for t in product.tags %}<span>{{ t }}</span>{% endfor %}</div>
+      {% endif %}
+      <div class="pc__price">
+        <strong>{{ product.price | vnd }}</strong>
+        {% if product.old_price %}<del>{{ product.old_price | vnd }}</del>{% endif %}
+      </div>
+      <p class="pc__member">Member giảm đến <span>{{ product.member_discount | vnd }}</span></p>
+      {% if product.promo %}<p class="pc__promo">{{ product.promo }}</p>{% endif %}
+    </a>
+    {% if product.discount %}<span class="pc__discount">Giảm <b>{{ product.discount }}%</b></span>{% endif %}
+    <span class="pc__installment">Trả góp <b>0%</b></span>
+    <div class="pc__foot">
+      <span class="pc__ship">{{ icon("truck", 14) }}<span>2 Giờ</span></span>
+      {% if product.rating %}<span class="pc__rating">{{ icon("star", 16) }}{{ "%g" % product.rating }}</span>{% endif %}
+      <button class="pc__fav" type="button" aria-label="Yêu thích" aria-pressed="false" data-fav>{{ icon("heart", 22) }}</button>
+    </div>
+  </article>
+</div>

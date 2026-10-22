@@ -1,0 +1,10 @@
+{# Carousel sản phẩm cuộn ngang (scroll-snap + nút mũi tên).
+   Dùng: {% with products=..., rows=2 %}{% include "components/carousel.html" %}{% endwith %} #}
+{% from "components/icons.html" import icon %}
+<div class="carousel" data-carousel style="--rows: {{ rows | default(1) }}">
+  <button class="carousel__nav carousel__nav--prev" type="button" aria-label="Trước" data-prev>{{ icon("chevron-left", 24) }}</button>
+  <div class="carousel__track" data-track>
+    {% for product in products %}{% include "components/product_card.html" %}{% endfor %}
+  </div>
+  <button class="carousel__nav carousel__nav--next" type="button" aria-label="Sau" data-next>{{ icon("chevron-right", 24) }}</button>
+</div>

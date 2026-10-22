@@ -1,0 +1,9 @@
+{# Breadcrumb. Biến: crumbs = [(label, url hoặc None)] #}
+{% from "components/icons.html" import icon %}
+<nav class="breadcrumb container" aria-label="Breadcrumb">
+  <a href="{{ url_for('main.home') }}">{{ icon("home", 16) }}Trang chủ</a>
+  {% for label, url in crumbs %}
+    <span class="breadcrumb__sep">/</span>
+    {% if url %}<a href="{{ url }}">{{ label }}</a>{% else %}<span aria-current="page">{{ label }}</span>{% endif %}
+  {% endfor %}
+</nav>
