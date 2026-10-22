@@ -1,0 +1,10 @@
+{% from "components/icons.html" import icon %}
+{% if product.details.faqs %}
+  <section class="pdp-block" id="hoi-dap">
+    <h2 class="pdp-title">Câu hỏi thường gặp</h2>
+    {% for q in product.details.faqs %}
+      <details class="faq"><summary>{{ q }}{{ icon("chevron-down", 18) }}</summary>
+        <p>Vui lòng liên hệ {{ site.HOTLINE_SALES }} để được tư vấn chi tiết.</p></details>
+    {% endfor %}
+  </section>
+{% endif %}

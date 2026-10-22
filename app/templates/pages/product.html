@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% from "components/icons.html" import icon %}
+{% block title %}{{ product.name }} | {{ site.SITE_NAME }}{% endblock %}
+{% block styles %}<link rel="stylesheet" href="{{ url_for('static', filename='css/pages/product.css') }}">{% endblock %}
+{% block content %}
+  {% with crumbs=[(product.category_name, url_for('catalog.category', slug=product.category_slug)),
+                  (product.brand, url_for('catalog.category', slug=product.category_slug, hang=product.brand)),
+                  (product.name, None)] %}{% include "components/breadcrumb.html" %}{% endwith %}
+
+  <div class="container pdp">
+    <div class="pdp__left">
+      <h1 class="pdp__name">{{ product.name }}</h1>
+      {% if product.rating %}<p class="pdp__rating">{{ icon("star", 18) }}<b>{{ "%g" % product.rating }}</b></p>{% endif %}
+      <div class="pdp__actions">
+        <button type="button" data-fav aria-pressed="false">{{ icon("heart", 22) }}Yêu thích</button>
+        <a href="#hoi-dap">{{ icon("chat", 22) }}Hỏi đáp</a>
+        <a href="#thong-so">{{ icon("specs", 22) }}Thông số</a>
+        <a href="#">{{ icon("plus-circle", 22) }}So sánh</a>
+      </div>
+      {% include "components/product/gallery.html" %}
+      {% include "components/product/commitments.html" %}
+      {% include "components/product/specs.html" %}
+      {% include "components/product/faq.html" %}
+    </div>
+    <div class="pdp__right">
+      {% include "components/product/price_box.html" %}
+      {% include "components/product/options.html" %}
+      {% include "components/product/promotions.html" %}
+      {% include "components/product/buy_actions.html" %}
+    </div>
+  </div>
+
+  {% if related %}
+    <section class="container pdp-related">
+      <h2 class="pdp-title">Sản phẩm tương tự</h2>
+      {% with products=related, rows=1 %}{% include "components/carousel.html" %}{% endwith %}
+    </section>
+  {% endif %}
+  {% include "components/product/sticky_bar.html" %}
+{% endblock %}

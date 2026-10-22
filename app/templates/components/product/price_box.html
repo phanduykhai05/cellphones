@@ -1,0 +1,14 @@
+<div class="price-box">
+  <div class="price-box__row">
+    <div class="price-box__col">
+      <strong class="price-box__price">{{ product.price | vnd }}</strong>
+      {% if product.old_price %}<del>{{ product.old_price | vnd }}</del>{% endif %}
+    </div>
+    <span class="price-box__or">Hoặc</span>
+    <div class="price-box__col">
+      <strong class="price-box__month">{{ product.installment | vnd }} <small>/tháng</small></strong>
+      <span class="price-box__note">10 tháng, lãi suất 0%</span>
+    </div>
+  </div>
+  <p class="price-box__member"><b>Thành viên</b> · Giảm thêm đến <span>{{ product.member_discount | vnd }}</span></p>
+</div>

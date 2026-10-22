@@ -1,0 +1,19 @@
+{% from "components/icons.html" import icon %}
+<div class="gallery" data-gallery>
+  <div class="gallery__main">
+    <img src="{{ url_for('static', filename=product.details.gallery[0]) }}" alt="{{ product.name }}" data-gallery-main>
+    {% if product.details.gallery | length > 1 %}
+      <button class="gallery__arrow gallery__arrow--prev" type="button" aria-label="Ảnh trước" data-gallery-prev>{{ icon("chevron-left", 22) }}</button>
+      <button class="gallery__arrow gallery__arrow--next" type="button" aria-label="Ảnh sau" data-gallery-next>{{ icon("chevron-right", 22) }}</button>
+    {% endif %}
+  </div>
+  {% if product.details.gallery | length > 1 %}
+    <div class="gallery__thumbs">
+      {% for img in product.details.gallery %}
+        <button class="gallery__thumb {% if loop.first %}is-active{% endif %}" type="button" data-thumb="{{ url_for('static', filename=img) }}">
+          <img src="{{ url_for('static', filename=img) }}" alt="" loading="lazy">
+        </button>
+      {% endfor %}
+    </div>
+  {% endif %}
+</div>

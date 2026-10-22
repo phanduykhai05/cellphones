@@ -1,0 +1,11 @@
+{% from "components/icons.html" import icon %}
+<div class="sticky-buy">
+  {% if product.image_url %}<img src="{{ url_for('static', filename=product.image_url) }}" alt="" width="48" height="48">{% endif %}
+  <p class="sticky-buy__name">{{ product.name }}</p>
+  <div class="sticky-buy__price"><strong>{{ product.price | vnd }}</strong>{% if product.old_price %}<del>{{ product.old_price | vnd }}</del>{% endif %}</div>
+  <a class="sticky-buy__installment" href="#"><b>Trả góp 0%</b><small>{{ product.installment | vnd }}/tháng</small></a>
+  {% if product.stock > 0 %}
+    <button class="sticky-buy__buy" type="submit" form="buy-form" name="buy_now" value="1">Mua Ngay</button>
+    <button class="sticky-buy__cart" type="submit" form="buy-form" aria-label="Thêm vào giỏ">{{ icon("cart", 22) }}</button>
+  {% endif %}
+</div>
