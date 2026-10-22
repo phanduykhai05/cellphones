@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Đơn hàng của tôi | {{ site.SITE_NAME }}{% endblock %}
+{% block styles %}<link rel="stylesheet" href="{{ url_for('static', filename='css/pages/shop.css') }}">{% endblock %}
+{% block content %}
+  <section class="shop container">
+    <h1 class="shop__title">Đơn hàng của tôi</h1>
+    {% if orders %}
+      <div class="box">
+        <table class="order-table">
+          <thead><tr><th>Mã đơn</th><th>Ngày đặt</th><th>Số SP</th><th>Tổng tiền</th><th>Trạng thái</th></tr></thead>
+          <tbody>
+            {% for o in orders %}
+              <tr>
+                <td><a href="{{ url_for('shop.order', order_id=o.id) }}">#{{ o.id }}</a></td>
+                <td>{{ o.created_at }}</td><td>{{ o.item_count }}</td><td><b>{{ o.total | vnd }}</b></td>
+                <td><span class="status status--{{ o.status }}">{{ statuses[o.status] }}</span></td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    {% else %}
+      <p class="empty">Bạn chưa có đơn hàng nào. <a class="link" href="{{ url_for('main.home') }}">Mua sắm ngay</a></p>
+    {% endif %}
+  </section>
+{% endblock %}

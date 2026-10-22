@@ -1,0 +1,12 @@
+{# Bộ chọn số lượng: 2 nút −/+ là 2 form POST riêng, không cần JS. Biến: line #}
+<div class="qty">
+  {% for delta, label in [(-1, "−"), (1, "+")] %}
+    <form method="post" action="{{ url_for('shop.cart_update') }}" class="qty__{{ 'minus' if delta < 0 else 'plus' }}">
+      <input type="hidden" name="_csrf" value="{{ csrf_token() }}">
+      <input type="hidden" name="key" value="{{ line.key }}">
+      <input type="hidden" name="qty" value="{{ line.qty + delta }}">
+      <button type="submit" aria-label="{{ 'Giảm' if delta < 0 else 'Tăng' }} số lượng" {% if delta < 0 and line.qty <= 1 %}disabled{% endif %}>{{ label }}</button>
+    </form>
+  {% endfor %}
+  <span class="qty__value">{{ line.qty }}</span>
+</div>

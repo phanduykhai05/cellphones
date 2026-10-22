@@ -1,0 +1,3896 @@
+{
+ "categories": [
+  {
+   "slug": "dien-thoai",
+   "name": "Điện thoại, Tablet",
+   "short_name": "Điện thoại",
+   "sort": 0,
+   "home_group": 1,
+   "icon": "img/icons/mobile.svg",
+   "banner": "img/banners/cat-dien-thoai.png"
+  },
+  {
+   "slug": "laptop",
+   "name": "Laptop",
+   "short_name": "Laptop",
+   "sort": 1,
+   "home_group": 2,
+   "icon": "img/icons/laptop.svg",
+   "banner": "img/banners/cat-laptop.png"
+  },
+  {
+   "slug": "am-thanh",
+   "name": "Âm thanh, Mic thu âm",
+   "short_name": "Âm thanh",
+   "sort": 2,
+   "home_group": 0,
+   "icon": "img/icons/audio-2.svg",
+   "banner": null
+  },
+  {
+   "slug": "dong-ho",
+   "name": "Đồng hồ, Camera",
+   "short_name": "Đồng hồ",
+   "sort": 3,
+   "home_group": 3,
+   "icon": "img/icons/watch.svg",
+   "banner": "img/banners/cat-dong-ho.png"
+  },
+  {
+   "slug": "gia-dung",
+   "name": "Đồ gia dụng, Làm đẹp",
+   "short_name": "Gia dụng",
+   "sort": 4,
+   "home_group": 0,
+   "icon": "img/icons/home-appliances.svg",
+   "banner": null
+  },
+  {
+   "slug": "phu-kien",
+   "name": "Phụ kiện",
+   "short_name": "Phụ kiện",
+   "sort": 5,
+   "home_group": 0,
+   "icon": "img/icons/accessories.svg",
+   "banner": null
+  },
+  {
+   "slug": "man-hinh",
+   "name": "PC, Màn hình, Máy in",
+   "short_name": "Màn hình máy tính",
+   "sort": 6,
+   "home_group": 2,
+   "icon": "img/icons/pc.svg",
+   "banner": null
+  },
+  {
+   "slug": "tivi",
+   "name": "Tivi, Điện máy",
+   "short_name": "Tivi",
+   "sort": 7,
+   "home_group": 4,
+   "icon": "img/icons/tv.svg",
+   "banner": "img/banners/cat-tivi.png"
+  },
+  {
+   "slug": "thu-cu",
+   "name": "Thu cũ đổi mới",
+   "short_name": "Thu cũ",
+   "sort": 8,
+   "home_group": 0,
+   "icon": "img/icons/trade-in.svg",
+   "banner": null
+  },
+  {
+   "slug": "hang-cu",
+   "name": "Hàng cũ",
+   "short_name": "Hàng cũ",
+   "sort": 9,
+   "home_group": 0,
+   "icon": "img/icons/used-goods.svg",
+   "banner": null
+  },
+  {
+   "slug": "khuyen-mai",
+   "name": "Khuyến mãi",
+   "short_name": "Khuyến mãi",
+   "sort": 10,
+   "home_group": 0,
+   "icon": "img/icons/promotions.svg",
+   "banner": null
+  },
+  {
+   "slug": "tin-cong-nghe",
+   "name": "Tin công nghệ",
+   "short_name": "Tin công nghệ",
+   "sort": 11,
+   "home_group": 0,
+   "icon": "img/icons/tech-news.svg",
+   "banner": null
+  }
+ ],
+ "brands": [
+  {
+   "name": "Apple",
+   "logo": "img/brands/apple.png"
+  },
+  {
+   "name": "Samsung",
+   "logo": "img/brands/samsung.png"
+  },
+  {
+   "name": "OPPO",
+   "logo": "img/brands/oppo.png"
+  },
+  {
+   "name": "Xiaomi",
+   "logo": "img/brands/xiaomi.png"
+  },
+  {
+   "name": "TECNO",
+   "logo": "img/brands/tecno.png"
+  },
+  {
+   "name": "HONOR",
+   "logo": "img/brands/honor.png"
+  },
+  {
+   "name": "Nubia",
+   "logo": "img/brands/nubia.png"
+  },
+  {
+   "name": "Sony",
+   "logo": "img/brands/sony.png"
+  },
+  {
+   "name": "Nokia",
+   "logo": "img/brands/nokia.png"
+  },
+  {
+   "name": "Nothing",
+   "logo": "img/brands/nothing.png"
+  },
+  {
+   "name": "Masstel",
+   "logo": "img/brands/masstel.png"
+  },
+  {
+   "name": "Huawei",
+   "logo": "img/brands/huawei.png"
+  },
+  {
+   "name": "Meizu",
+   "logo": "img/brands/meizu.png"
+  },
+  {
+   "name": "Realme",
+   "logo": "img/brands/realme.png"
+  },
+  {
+   "name": "Itel",
+   "logo": "img/brands/itel.png"
+  },
+  {
+   "name": "Infinix",
+   "logo": "img/brands/infinix.png"
+  },
+  {
+   "name": "iPad",
+   "logo": "img/brands/ipad.png"
+  },
+  {
+   "name": "Lenovo",
+   "logo": "img/brands/lenovo.png"
+  },
+  {
+   "name": "Teclast",
+   "logo": "img/brands/teclast.png"
+  },
+  {
+   "name": "boox",
+   "logo": "img/brands/boox.png"
+  }
+ ],
+ "products": [
+  {
+   "slug": "iphone-18-pro-max",
+   "name": "iPhone 18 Pro Max 256GB",
+   "brand": "Apple",
+   "category": "dien-thoai",
+   "price": 41990000,
+   "old_price": null,
+   "stock": 10,
+   "rating": 5.0,
+   "promo": "Ưu đãi 500K cho Apple Watch Series 12, Ultra 4 khi mua kèm Iphone 18 Pro/Pro Max và 1 km khác",
+   "image": "img/products/iphone-18-pro-max.jpg",
+   "details": {
+    "gallery": [
+     "img/products/iphone-18-pro-max-g0.jpg",
+     "img/products/iphone-18-pro-max-g1.jpg",
+     "img/products/iphone-18-pro-max-g2.jpg",
+     "img/products/iphone-18-pro-max-g3.jpg",
+     "img/products/iphone-18-pro-max-g4.jpg",
+     "img/products/iphone-18-pro-max-g5.jpg",
+     "img/products/iphone-18-pro-max-g6.jpg",
+     "img/products/iphone-18-pro-max-g7.jpg",
+     "img/products/iphone-18-pro-max-g8.jpg",
+     "img/products/iphone-18-pro-max-g9.jpg"
+    ],
+    "specs": [
+     [
+      "Hệ điều hành khi ra mắt",
+      "iOS 27"
+     ],
+     [
+      "Chipset",
+      "Apple A20 Pro"
+     ],
+     [
+      "Bộ nhớ trong",
+      "256 GB"
+     ],
+     [
+      "Loại CPU",
+      "CPU 6 lõi với 2 siêu lõi và 4 lõi hiệu suất"
+     ],
+     [
+      "GPU",
+      "GPU 7 lõi"
+     ],
+     [
+      "Kích thước màn hình",
+      "6.9 inches"
+     ],
+     [
+      "Công nghệ màn hình",
+      "Super Retina XDR"
+     ],
+     [
+      "Độ phân giải màn hình",
+      "2868 x 1320 pixels"
+     ],
+     [
+      "Tính năng màn hình",
+      "Tần số quét 120 Hz Độ sáng tối đa 3000 nits ngoài trời Độ sáng 1000 nit tiêu chuẩn Độ sáng đỉnh 1600 nit HDR Độ sáng tối thiểu 1 nit Dynamic Island Màn hình Luôn Bật ProMotion HDR True Tone Dải màu rộng P3 Haptic Touch"
+     ],
+     [
+      "Camera sau",
+      "48 MP Fusion Main, f/1,48 / f/1,8 / f/2,8 / f/4,0 48 MP Fusion Ultra Wide, f/2,2 48 MP Fusion Telephoto, f/2,8 Telephoto 2x chất lượng quang học 12 MP Telephoto 8x chất lượng quang học 12 MP, f/2,8"
+     ],
+     [
+      "Camera trước",
+      "18 MP Center Stage, f/1,9 Tự động lấy nét theo pha Focus Pixels"
+     ],
+     [
+      "Pin",
+      "Pin lithium-ion tích hợp"
+     ],
+     [
+      "Hỗ trợ mạng",
+      "5G"
+     ],
+     [
+      "Thẻ SIM",
+      "Nano-SIM + eSIM"
+     ]
+    ],
+    "versions": [
+     "256GB",
+     "512GB",
+     "1TB",
+     "2TB"
+    ],
+    "colors": [
+     {
+      "name": "Đỏ Burgundy",
+      "price": 41990000,
+      "image": "img/products/iphone-18-pro-max-c0.jpg"
+     },
+     {
+      "name": "Băng Thanh",
+      "price": 41990000,
+      "image": "img/products/iphone-18-pro-max-c1.jpg"
+     },
+     {
+      "name": "Đen",
+      "price": 41990000,
+      "image": "img/products/iphone-18-pro-max-c2.jpg"
+     },
+     {
+      "name": "Bạc",
+      "price": 41990000,
+      "image": "img/products/iphone-18-pro-max-c3.jpg"
+     }
+    ],
+    "promotions": [
+     "Ưu đãi 500K cho Apple Watch Series 12, Ultra 4 khi mua kèm Iphone 18 Pro/Pro Max",
+     "Ưu đãi thanh toán giảm đến 2 triệu",
+     "Chi thêm 30K - nhận Sim/Esim 5G VNSKY, có ngay 3GB data/ngày+500 phút gọi Mobifone & VNSKY, miễn phí 30 ngày đầu - chỉ áp dụng tại cửa hàng",
+     "Định giá nhanh theo tình trạng máy"
+    ],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "iphone-duo-256gb",
+   "name": "iPhone Duo 256GB",
+   "brand": "Apple",
+   "category": "dien-thoai",
+   "price": 64990000,
+   "old_price": null,
+   "stock": 10,
+   "rating": null,
+   "promo": "Ưu đãi 1TR cho Apple Watch Series 12, Ultra 4 khi mua kèm Iphone Duo",
+   "image": "img/products/iphone-duo-256gb.jpg",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "iphone-18-pro",
+   "name": "iPhone 18 Pro 256GB",
+   "brand": "Apple",
+   "category": "dien-thoai",
+   "price": 38690000,
+   "old_price": 38990000,
+   "stock": 10,
+   "rating": 5.0,
+   "promo": "Ưu đãi 500K cho Apple Watch Series 12, Ultra 4 khi mua kèm Iphone 18 Pro/Pro Max và 1 km khác",
+   "image": "img/products/iphone-18-pro.jpg",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "iphone-17-pro",
+   "name": "iPhone 17 Pro 256GB | Chính hãng",
+   "brand": "Apple",
+   "category": "dien-thoai",
+   "price": 31990000,
+   "old_price": 34990000,
+   "stock": 10,
+   "rating": 5.0,
+   "promo": "Chi thêm 30K - nhận Sim/Esim 5G VNSKY, có ngay 3GB data/ngày+500 phút gọi Mobifone & VNSKY, miễn phí 30 ngày đầu - chỉ á",
+   "image": "img/products/iphone-17-pro.png",
+   "details": {
+    "gallery": [
+     "img/products/iphone-17-pro-g0.png",
+     "img/products/iphone-17-pro-g1.jpg",
+     "img/products/iphone-17-pro-g2.jpg",
+     "img/products/iphone-17-pro-g3.jpg",
+     "img/products/iphone-17-pro-g4.jpg",
+     "img/products/iphone-17-pro-g5.jpg",
+     "img/products/iphone-17-pro-g6.jpg",
+     "img/products/iphone-17-pro-g7.jpg",
+     "img/products/iphone-17-pro-g8.jpg",
+     "img/products/iphone-17-pro-g9.jpg"
+    ],
+    "specs": [
+     [
+      "Hệ điều hành khi ra mắt",
+      "iOS 26"
+     ],
+     [
+      "Chipset",
+      "Chip A19 Pro"
+     ],
+     [
+      "Bộ nhớ trong",
+      "256 GB"
+     ],
+     [
+      "Loại CPU",
+      "CPU 6 lõi với 2 lõi hiệu năng và 4 lõi tiết kiệm điện"
+     ],
+     [
+      "GPU",
+      "GPU 6 lõi với Neural Accelerator"
+     ],
+     [
+      "Kích thước màn hình",
+      "6.3 inches"
+     ],
+     [
+      "Công nghệ màn hình",
+      "Super Retina XDR"
+     ],
+     [
+      "Độ phân giải màn hình",
+      "2622 x 1206 pixels"
+     ],
+     [
+      "Tính năng màn hình",
+      "Màn hình Luôn Bật, ProMotion 120Hz, HDR, True Tone, Dải màu rộng (P3), Haptic Touch, Tỷ lệ tương phản 2.000.000:1, Độ sáng 1000 nit (tiêu chuẩn), 1600 nit (HDR), 3000 nit (ngoài trời) / tối thiểu 1 nit, Lớp phủ kháng dầu, Chống phản chiếu, Hỗ trợ đa ngôn"
+     ],
+     [
+      "Camera sau",
+      "Chính: 48MP khẩu độ ƒ/1.6 OIS hỗ trợ chụp 24MP hoặc 48MP Góc Siêu Rộng: 48MP khẩu độ ƒ/2.2 góc nhìn 120° Telephoto: 48MP khẩu độ ƒ/2.8 OIS zoom quang học lên đến 8x"
+     ],
+     [
+      "Camera trước",
+      "Camera 18MP Center Stage Khẩu độ ƒ/1.9"
+     ],
+     [
+      "Thẻ SIM",
+      "Sim kép (nano-Sim và e-Sim) - Hỗ trợ 2 e-Sim"
+     ],
+     [
+      "Công nghệ NFC",
+      "Có"
+     ],
+     [
+      "Thời điểm ra mắt",
+      "09/2025"
+     ]
+    ],
+    "versions": [
+     "256GB",
+     "512GB",
+     "1TB"
+    ],
+    "colors": [
+     {
+      "name": "Cam Vũ Trụ",
+      "price": 31990000,
+      "image": "img/products/iphone-17-pro-c0.jpg"
+     },
+     {
+      "name": "Xanh Đậm",
+      "price": 31990000,
+      "image": "img/products/iphone-17-pro-c1.jpg"
+     },
+     {
+      "name": "Bạc",
+      "price": 31990000,
+      "image": "img/products/iphone-17-pro-c2.jpg"
+     }
+    ],
+    "promotions": [
+     "trả góp 0% lãi suất, tối đa 12 tháng, trả trước từ 10% qua CTTC hoặc 0đ qua thẻ tín dụng",
+     "Chi thêm 30K - nhận Sim/Esim 5G VNSKY, có ngay 3GB data/ngày+500 phút gọi Mobifone & VNSKY, miễn phí 30 ngày đầu - chỉ áp dụng tại cửa hàng",
+     "Định giá nhanh theo tình trạng máy"
+    ],
+    "faqs": [
+     "iPhone 17 Pro pin bao nhiêu?",
+     "iPhone 17 Pro màn hình bao nhiêu inch?",
+     "iPhone 17 Pro có mấy màu?",
+     "iPhone 17 Pro khi nào ra mắt?"
+    ]
+   }
+  },
+  {
+   "slug": "iphone-17-pro-max",
+   "name": "iPhone 17 Pro Max 256GB | Chính hãng",
+   "brand": "Apple",
+   "category": "dien-thoai",
+   "price": 34990000,
+   "old_price": 37990000,
+   "stock": 10,
+   "rating": 5.0,
+   "promo": "Ưu đãi mua kèm Gói cam kết giá thu S-Buy Back vơi giá chỉ từ 1TR (giá gốc chỉ từ 1.4TR) và 2 km khác",
+   "image": "img/products/iphone-17-pro-max.jpg",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "iphone-18-pro-max-512gb",
+   "name": "iPhone 18 Pro Max 512GB",
+   "brand": "Apple",
+   "category": "dien-thoai",
+   "price": 48490000,
+   "old_price": null,
+   "stock": 10,
+   "rating": null,
+   "promo": "Chi thêm 30K - nhận Sim/Esim 5G VNSKY, có ngay 3GB data/ngày+500 phút gọi Mobifone & VNSKY, miễn phí 30 ngày đầu - chỉ á",
+   "image": "img/products/iphone-18-pro-max-512gb.jpg",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "iphone-17-256gb",
+   "name": "iPhone 17 256GB | Chính hãng",
+   "brand": "Apple",
+   "category": "dien-thoai",
+   "price": 26990000,
+   "old_price": 28990000,
+   "stock": 10,
+   "rating": 5.0,
+   "promo": "trả góp 0% lãi suất, tối đa 12 tháng, trả trước từ 10% qua CTTC hoặc 0đ qua thẻ tín dụng và 1 km khác",
+   "image": "img/products/iphone-17-256gb.jpg",
+   "details": {
+    "gallery": [
+     "img/products/iphone-17-256gb-g0.jpg",
+     "img/products/iphone-17-256gb-g1.jpg",
+     "img/products/iphone-17-256gb-g2.jpg",
+     "img/products/iphone-17-256gb-g3.jpg",
+     "img/products/iphone-17-256gb-g4.jpg",
+     "img/products/iphone-17-256gb-g5.jpg",
+     "img/products/iphone-17-256gb-g6.jpg",
+     "img/products/iphone-17-256gb-g7.jpg",
+     "img/products/iphone-17-256gb-g8.jpg",
+     "img/products/iphone-17-256gb-g9.jpg"
+    ],
+    "specs": [
+     [
+      "Hệ điều hành khi ra mắt",
+      "iOS 26"
+     ],
+     [
+      "Chipset",
+      "Apple A19"
+     ],
+     [
+      "Bộ nhớ trong",
+      "256 GB"
+     ],
+     [
+      "Loại CPU",
+      "6 lõi (2 hiệu năng + 4 tiết kiệm điện)"
+     ],
+     [
+      "GPU",
+      "GPU 5 lõi với Neural Accelerator"
+     ],
+     [
+      "Kích thước màn hình",
+      "6.3 inches"
+     ],
+     [
+      "Công nghệ màn hình",
+      "Super Retina XDR OLED"
+     ],
+     [
+      "Độ phân giải màn hình",
+      "2622 x 1206 pixels"
+     ],
+     [
+      "Tính năng màn hình",
+      "Dynamic Island Màn hình luôn bật HDR 460 ppi True Tone Dải màu rộng (P3) Haptic Touch Tỷ lệ tương phản 2.000.000:1 Độ sáng 1000 nit (typ) Đỉnh 1600 nit (HDR) Đỉnh 3000 nit (ngoài trời) Lớp phủ chống vân tay, chống phản chi"
+     ],
+     [
+      "Camera sau",
+      "48MP Fusion Main f/1.6 OIS 12MP Tele 2x f/1.6 OIS 48MP Ultra Wide f/2.2 120°"
+     ],
+     [
+      "Camera trước",
+      "18MP Center Stage, f/1.9, PDAF"
+     ],
+     [
+      "Pin",
+      "Xem video: 30 giờ Xem video trực tuyến: 27 giờ"
+     ],
+     [
+      "Hỗ trợ mạng",
+      "5G"
+     ],
+     [
+      "Thẻ SIM",
+      "Sim kép (nano-Sim và e-Sim) - Hỗ trợ 2 e-Sim"
+     ]
+    ],
+    "versions": [
+     "256GB 512GB",
+     "256GB"
+    ],
+    "colors": [
+     {
+      "name": "Đen",
+      "price": 26990000,
+      "image": "img/products/iphone-17-256gb-c0.jpg"
+     },
+     {
+      "name": "Xanh Lá Xô Thơm",
+      "price": 26990000,
+      "image": "img/products/iphone-17-256gb-c1.jpg"
+     },
+     {
+      "name": "Tím Oải Hương",
+      "price": 26990000,
+      "image": "img/products/iphone-17-256gb-c2.jpg"
+     },
+     {
+      "name": "Xanh Lam Khói",
+      "price": 26990000,
+      "image": "img/products/iphone-17-256gb-c3.jpg"
+     }
+    ],
+    "promotions": [
+     "trả góp 0% lãi suất, tối đa 12 tháng, trả trước từ 10% qua CTTC hoặc 0đ qua thẻ tín dụng",
+     "Chi thêm 30K - nhận Sim/Esim 5G VNSKY, có ngay 3GB data/ngày+500 phút gọi Mobifone & VNSKY, miễn phí 30 ngày đầu - chỉ áp dụng tại cửa hàng",
+     "Định giá nhanh theo tình trạng máy"
+    ],
+    "faqs": [
+     "iPhone 17 thường giá bao nhiêu tiền tháng 10/2026?",
+     "iPhone 17 thường có mấy màu? Màu nào đẹp nhất?",
+     "có thể vừa áp dụng thu cũ đổi mới vừa trả góp không?"
+    ]
+   }
+  },
+  {
+   "slug": "dien-thoai-samsung-galaxy-s26-ultra",
+   "name": "Samsung Galaxy S26 Ultra 5G 12GB 256GB",
+   "brand": "Samsung",
+   "category": "dien-thoai",
+   "price": 31990000,
+   "old_price": 40990000,
+   "stock": 10,
+   "rating": 5.0,
+   "promo": "PMH700,000 ₫",
+   "image": "img/products/dien-thoai-samsung-galaxy-s26-ultra.jpg",
+   "details": {
+    "gallery": [
+     "img/products/dien-thoai-samsung-galaxy-s26-ultra-g0.jpg",
+     "img/products/dien-thoai-samsung-galaxy-s26-ultra-g1.jpg",
+     "img/products/dien-thoai-samsung-galaxy-s26-ultra-g2.jpg",
+     "img/products/dien-thoai-samsung-galaxy-s26-ultra-g3.jpg",
+     "img/products/dien-thoai-samsung-galaxy-s26-ultra-g4.jpg",
+     "img/products/dien-thoai-samsung-galaxy-s26-ultra-g5.jpg",
+     "img/products/dien-thoai-samsung-galaxy-s26-ultra-g6.jpg",
+     "img/products/dien-thoai-samsung-galaxy-s26-ultra-g7.jpg",
+     "img/products/dien-thoai-samsung-galaxy-s26-ultra-g8.jpg",
+     "img/products/dien-thoai-samsung-galaxy-s26-ultra-g9.jpg"
+    ],
+    "specs": [
+     [
+      "Hệ điều hành khi ra mắt",
+      "Android 16"
+     ],
+     [
+      "Chipset",
+      "Snapdragon 8 Elite Gen 5"
+     ],
+     [
+      "Dung lượng RAM",
+      "12 GB"
+     ],
+     [
+      "Bộ nhớ trong",
+      "256 GB"
+     ],
+     [
+      "Loại CPU",
+      "8 nhân"
+     ],
+     [
+      "GPU",
+      "Adreno 840"
+     ],
+     [
+      "Kích thước màn hình",
+      "6.9 inches"
+     ],
+     [
+      "Công nghệ màn hình",
+      "Dynamic AMOLED 2X"
+     ],
+     [
+      "Độ phân giải màn hình",
+      "3120 x 1440 pixels (Quad HD+)"
+     ],
+     [
+      "Tính năng màn hình",
+      "Độ sáng tối đa 2600 nits"
+     ],
+     [
+      "Camera sau",
+      "Góc rộng 200 MP, f/1.4 Góc siêu rộng 50 MP, f/1.9 Tele 50 MP, f/2.9 Tele 10 MP, f/2.4"
+     ],
+     [
+      "Camera trước",
+      "12 MP, f/2.2"
+     ],
+     [
+      "Pin",
+      "5000 mAh"
+     ],
+     [
+      "Hỗ trợ mạng",
+      "5G"
+     ]
+    ],
+    "versions": [
+     "S26 12GB 256GB",
+     "S26 12GB 512GB"
+    ],
+    "colors": [
+     {
+      "name": "Đen Classic",
+      "price": 31990000,
+      "image": "img/products/dien-thoai-samsung-galaxy-s26-ultra-c0.jpg"
+     },
+     {
+      "name": "Tím Cobalt",
+      "price": 31990000,
+      "image": "img/products/dien-thoai-samsung-galaxy-s26-ultra-c1.jpg"
+     },
+     {
+      "name": "Xanh Sky Blue",
+      "price": 31990000,
+      "image": "img/products/dien-thoai-samsung-galaxy-s26-ultra-c2.jpg"
+     },
+     {
+      "name": "Trắng Classic",
+      "price": 31990000,
+      "image": "img/products/dien-thoai-samsung-galaxy-s26-ultra-c3.jpg"
+     }
+    ],
+    "promotions": [],
+    "faqs": [
+     "Tính năng chống nhìn trộm trên Samsung Galaxy S26 Ultra là gì?",
+     "Hệ thống tản nhiệt Galaxy S26 Ultra có tốt hơn S25 Ultra?",
+     "Samsung Galaxy S26 Ultra có tích hợp S Pen không?"
+    ]
+   }
+  },
+  {
+   "slug": "dien-thoai-samsung-galaxy-z-fold-8-ultra",
+   "name": "Samsung Galaxy Z Fold8 Ultra 5G 12GB 256GB",
+   "brand": "Samsung",
+   "category": "dien-thoai",
+   "price": 48990000,
+   "old_price": 52990000,
+   "stock": 10,
+   "rating": null,
+   "promo": "Ưu đãi dịch vụ hậu mãi độc quyền Galaxy Z Care và 2 km khác",
+   "image": "img/products/dien-thoai-samsung-galaxy-z-fold-8-ultra.jpg",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "dien-thoai-samsung-galaxy-a37",
+   "name": "Samsung Galaxy A37 5G 8GB 128GB",
+   "brand": "Samsung",
+   "category": "dien-thoai",
+   "price": 10490000,
+   "old_price": 11790000,
+   "stock": 10,
+   "rating": null,
+   "promo": "PMH200,000 ₫Mua kèm sạc chính hãng 45W giảm giá lên đến 50%",
+   "image": "img/products/dien-thoai-samsung-galaxy-a37.jpg",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "dien-thoai-samsung-galaxy-a57",
+   "name": "Samsung Galaxy A57 5G 8GB 128GB",
+   "brand": "Samsung",
+   "category": "dien-thoai",
+   "price": 11890000,
+   "old_price": 13490000,
+   "stock": 10,
+   "rating": null,
+   "promo": "PMH300,000 ₫Mua kèm sạc chính hãng 45W giảm giá lên đến 50%",
+   "image": "img/products/dien-thoai-samsung-galaxy-a57.jpg",
+   "details": {
+    "gallery": [
+     "img/products/dien-thoai-samsung-galaxy-a57-g0.jpg",
+     "img/products/dien-thoai-samsung-galaxy-a57-g1.jpg",
+     "img/products/dien-thoai-samsung-galaxy-a57-g2.jpg",
+     "img/products/dien-thoai-samsung-galaxy-a57-g3.jpg",
+     "img/products/dien-thoai-samsung-galaxy-a57-g4.jpg",
+     "img/products/dien-thoai-samsung-galaxy-a57-g5.jpg",
+     "img/products/dien-thoai-samsung-galaxy-a57-g6.jpg",
+     "img/products/dien-thoai-samsung-galaxy-a57-g7.jpg",
+     "img/products/dien-thoai-samsung-galaxy-a57-g8.jpg",
+     "img/products/dien-thoai-samsung-galaxy-a57-g9.jpg"
+    ],
+    "specs": [
+     [
+      "Hệ điều hành khi ra mắt",
+      "Android 16"
+     ],
+     [
+      "Chipset",
+      "Exynos 1680"
+     ],
+     [
+      "Dung lượng RAM",
+      "8 GB"
+     ],
+     [
+      "Bộ nhớ trong",
+      "128 GB"
+     ],
+     [
+      "Loại CPU",
+      "1 nhân 2.9 GHz, 3 nhân 2.6 GHz & 4 nhân 1.95 GHz"
+     ],
+     [
+      "GPU",
+      "Xclipse 550"
+     ],
+     [
+      "Kích thước màn hình",
+      "6.7 inches"
+     ],
+     [
+      "Công nghệ màn hình",
+      "Super AMOLED Plus"
+     ],
+     [
+      "Độ phân giải màn hình",
+      "1080 x 2340 pixels (FullHD+)"
+     ],
+     [
+      "Tính năng màn hình",
+      "Tần số quét: 120Hz 16 triệu màu 1900 nits"
+     ],
+     [
+      "Camera sau",
+      "Camera chính: 50MP Góc siêu rộng 12MP Macro 5MP"
+     ],
+     [
+      "Camera trước",
+      "12MP"
+     ],
+     [
+      "Pin",
+      "5000 mAh"
+     ],
+     [
+      "Hỗ trợ mạng",
+      "5G"
+     ]
+    ],
+    "versions": [
+     "Xác thực",
+     "Phiên bản A37 A57",
+     "A37 A57"
+    ],
+    "colors": [
+     {
+      "name": "Đen",
+      "price": 11890000,
+      "image": "img/products/dien-thoai-samsung-galaxy-a57-c0.jpg"
+     },
+     {
+      "name": "Xám",
+      "price": 11890000,
+      "image": "img/products/dien-thoai-samsung-galaxy-a57-c1.jpg"
+     },
+     {
+      "name": "Xanh dương",
+      "price": 11890000,
+      "image": "img/products/dien-thoai-samsung-galaxy-a57-c2.jpg"
+     },
+     {
+      "name": "Tím",
+      "price": 11890000,
+      "image": "img/products/dien-thoai-samsung-galaxy-a57-c3.jpg"
+     }
+    ],
+    "promotions": [
+     "Nhận thêm 1 trong các khuyến mãi sau:",
+     "Mua kèm sạc chính hãng 45W giảm giá lên đến 50%",
+     "Mua kèm sạc chính hãng 45W giảm giá lên đến 50% (xem chi tiết)",
+     "Định giá nhanh theo tình trạng máy"
+    ],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "iphone-18-pro-512gb",
+   "name": "iPhone 18 Pro 512GB",
+   "brand": "Apple",
+   "category": "dien-thoai",
+   "price": 45490000,
+   "old_price": null,
+   "stock": 10,
+   "rating": null,
+   "promo": "Chi thêm 30K - nhận Sim/Esim 5G VNSKY, có ngay 3GB data/ngày+500 phút gọi Mobifone & VNSKY, miễn phí 30 ngày đầu - chỉ á",
+   "image": "img/products/iphone-18-pro-512gb.jpg",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "iphone-17-pro-max-512gb",
+   "name": "iPhone 17 Pro Max 512GB | Chính hãng",
+   "brand": "Apple",
+   "category": "dien-thoai",
+   "price": 41390000,
+   "old_price": 44490000,
+   "stock": 10,
+   "rating": 5.0,
+   "promo": "Ưu đãi mua kèm Gói cam kết giá thu S-Buy Back vơi giá chỉ từ 1TR (giá gốc chỉ từ 1.4TR) và 2 km khác",
+   "image": "img/products/iphone-17-pro-max-512gb.jpg",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "iphone-18-pro-max-2tb",
+   "name": "iPhone 18 Pro Max 2TB",
+   "brand": "Apple",
+   "category": "dien-thoai",
+   "price": 80990000,
+   "old_price": null,
+   "stock": 10,
+   "rating": null,
+   "promo": "Chi thêm 30K - nhận Sim/Esim 5G VNSKY, có ngay 3GB data/ngày+500 phút gọi Mobifone & VNSKY, miễn phí 30 ngày đầu - chỉ á",
+   "image": "img/products/iphone-18-pro-max-2tb.jpg",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "iphone-18-pro-max-1tb",
+   "name": "iPhone 18 Pro Max 1TB",
+   "brand": "Apple",
+   "category": "dien-thoai",
+   "price": 61490000,
+   "old_price": null,
+   "stock": 10,
+   "rating": null,
+   "promo": "Ưu đãi 500K cho Apple Watch Series 12, Ultra 4 khi mua kèm Iphone 18 Pro/Pro Max và 1 km khác",
+   "image": "img/products/iphone-18-pro-max-1tb.jpg",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "dien-thoai-samsung-galaxy-s25-ultra",
+   "name": "Samsung Galaxy S25 Ultra 12GB 256GB",
+   "brand": "Samsung",
+   "category": "dien-thoai",
+   "price": 27990000,
+   "old_price": 33380000,
+   "stock": 10,
+   "rating": 4.7,
+   "promo": "PMH1,000,000 ₫",
+   "image": "img/products/dien-thoai-samsung-galaxy-s25-ultra.png",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "dien-thoai-oppo-reno16-f",
+   "name": "OPPO Reno16 F 5G 8GB 256GB",
+   "brand": "OPPO",
+   "category": "dien-thoai",
+   "price": 14990000,
+   "old_price": 15990000,
+   "stock": 10,
+   "rating": null,
+   "promo": null,
+   "image": "img/products/dien-thoai-oppo-reno16-f.jpg",
+   "details": {
+    "gallery": [
+     "img/products/dien-thoai-oppo-reno16-f-g0.jpg",
+     "img/products/dien-thoai-oppo-reno16-f-g1.png",
+     "img/products/dien-thoai-oppo-reno16-f-g2.jpg",
+     "img/products/dien-thoai-oppo-reno16-f-g3.jpg",
+     "img/products/dien-thoai-oppo-reno16-f-g4.jpg",
+     "img/products/dien-thoai-oppo-reno16-f-g5.jpg",
+     "img/products/dien-thoai-oppo-reno16-f-g6.jpg",
+     "img/products/dien-thoai-oppo-reno16-f-g7.jpg",
+     "img/products/dien-thoai-oppo-reno16-f-g8.jpg",
+     "img/products/dien-thoai-oppo-reno16-f-g9.jpg"
+    ],
+    "specs": [
+     [
+      "Hệ điều hành khi ra mắt",
+      "ColorOS 16, nền tảng Android 16"
+     ],
+     [
+      "Chipset",
+      "Dimensity 7300-Energy 5G"
+     ],
+     [
+      "Dung lượng RAM",
+      "8 GB"
+     ],
+     [
+      "Bộ nhớ trong",
+      "256 GB"
+     ],
+     [
+      "GPU",
+      "Arm Mali-G615@1.047GHz"
+     ],
+     [
+      "Kích thước màn hình",
+      "6.57 inches"
+     ],
+     [
+      "Công nghệ màn hình",
+      "AMOLED"
+     ],
+     [
+      "Độ phân giải màn hình",
+      "1080 x 2372 pixels (FullHD+)"
+     ],
+     [
+      "Tính năng màn hình",
+      "Tần số quét 120Hz Độ sáng tối đa 1400 nits Kính cường lực AGC DT Star D+ 1 tỷ màu"
+     ],
+     [
+      "Camera sau",
+      "50MP OIS, f/1.8 8MP góc rộng, f/2.2 50MP OIS Tele, f/2.8"
+     ],
+     [
+      "Camera trước",
+      "50MP, f/2.0"
+     ],
+     [
+      "Pin",
+      "7000 mAh"
+     ],
+     [
+      "Hỗ trợ mạng",
+      "5G"
+     ],
+     [
+      "Thẻ SIM",
+      "Dual nano-SIM hoặc 1 nano-SIM + 1 thẻ nhớ"
+     ]
+    ],
+    "versions": [],
+    "colors": [
+     {
+      "name": "Tím nhạt",
+      "price": 14990000,
+      "image": "img/products/dien-thoai-oppo-reno16-f-c0.jpg"
+     },
+     {
+      "name": "Tím đen",
+      "price": 14990000,
+      "image": "img/products/dien-thoai-oppo-reno16-f-c1.jpg"
+     },
+     {
+      "name": "Trắng",
+      "price": 14990000,
+      "image": "img/products/dien-thoai-oppo-reno16-f-c2.jpg"
+     }
+    ],
+    "promotions": [
+     "Áp dụng sản phẩm hiển thị voucher",
+     "Thời hạn thu thập: 23:59 31/10/2026",
+     "Chi thêm 10K - nhận Sim/Esim 5G VNSKY, có ngay 3GB data/ngày+500 phút gọi Mobifone & VNSKY, miễn phí 30 ngày đầu - chỉ áp dụng tại cửa hàng",
+     "DỊCH VỤ PREMIUM OPPO RENO16 F (Bảo hành 24 tháng, Bảo hiểm rơi vỡ 6 tháng, Bảo hiểm mặt lưng 12 tháng, sửa chữa nhanh trong 1 giờ)"
+    ],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "dien-thoai-xiaomi-poco-f9-ultra",
+   "name": "Xiaomi POCO F9 Ultra 5G 12GB 256GB",
+   "brand": "Xiaomi",
+   "category": "dien-thoai",
+   "price": 23990000,
+   "old_price": 29990000,
+   "stock": 10,
+   "rating": null,
+   "promo": null,
+   "image": "img/products/dien-thoai-xiaomi-poco-f9-ultra.jpg",
+   "details": {
+    "gallery": [
+     "img/products/dien-thoai-xiaomi-poco-f9-ultra-g0.jpg",
+     "img/products/dien-thoai-xiaomi-poco-f9-ultra-g1.png",
+     "img/products/dien-thoai-xiaomi-poco-f9-ultra-g2.png",
+     "img/products/dien-thoai-xiaomi-poco-f9-ultra-g3.png",
+     "img/products/dien-thoai-xiaomi-poco-f9-ultra-g4.png",
+     "img/products/dien-thoai-xiaomi-poco-f9-ultra-g5.png",
+     "img/products/dien-thoai-xiaomi-poco-f9-ultra-g6.png",
+     "img/products/dien-thoai-xiaomi-poco-f9-ultra-g7.jpg",
+     "img/products/dien-thoai-xiaomi-poco-f9-ultra-g8.jpg",
+     "img/products/dien-thoai-xiaomi-poco-f9-ultra-g9.jpg"
+    ],
+    "specs": [
+     [
+      "Hệ điều hành khi ra mắt",
+      "Xiaomi HyperOS 3"
+     ],
+     [
+      "Chipset",
+      "Snapdragon 8 Elite Gen 5"
+     ],
+     [
+      "Dung lượng RAM",
+      "12 GB"
+     ],
+     [
+      "Bộ nhớ trong",
+      "256 GB"
+     ],
+     [
+      "Loại CPU",
+      "8 nhân"
+     ],
+     [
+      "GPU",
+      "Adreno"
+     ],
+     [
+      "Kích thước màn hình",
+      "6.9 inches"
+     ],
+     [
+      "Công nghệ màn hình",
+      "AMOLED"
+     ],
+     [
+      "Tính năng màn hình",
+      "Tần số quét 185 Hz Tỷ lệ tương phản 5.000.000:1 68 tỷ màu DC dimming HDR10+ Dolby Vision"
+     ],
+     [
+      "Camera sau",
+      "Chính 200 MP, f/1.68, OIS Tele tiềm vọng 50 MP, f/3.0 Góc siêu rộng 50 MP, f/2.4"
+     ],
+     [
+      "Camera trước",
+      "32 MP"
+     ],
+     [
+      "Pin",
+      "8050 mAh"
+     ],
+     [
+      "Hỗ trợ mạng",
+      "5G"
+     ],
+     [
+      "Thẻ SIM",
+      "Nano SIM hoặc eSIM"
+     ]
+    ],
+    "versions": [
+     "12GB 256GB",
+     "16GB 512GB",
+     "16GB 1TB"
+    ],
+    "colors": [
+     {
+      "name": "Đen",
+      "price": 23990000,
+      "image": "img/products/dien-thoai-xiaomi-poco-f9-ultra-c0.jpg"
+     },
+     {
+      "name": "Đỏ",
+      "price": 23990000,
+      "image": "img/products/dien-thoai-xiaomi-poco-f9-ultra-c1.jpg"
+     }
+    ],
+    "promotions": [
+     "Tặng Gói 3 tháng trải nghiệm Google AI Pro không tốn phí.",
+     "Giảm thêm 500.000Đ cho MTB Xiaomi - Poco khi mua cùng bất kỳ Điện thoại Xiaomi",
+     "Tặng phiếu mua hàng trị giá lên đến 300.000đ khi mua kèm Tai nghe Buds 8 Pro/8 Active",
+     "Tặng phiếu mua hàng đồng hồ Xiaomi Watch 5 trị giá 3.000.000đ (áp dụng trên giá niêm yết)"
+    ],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "dien-thoai-samsung-galaxy-z-fold-8",
+   "name": "Samsung Galaxy Z Fold8 5G 12GB 256GB",
+   "brand": "Samsung",
+   "category": "dien-thoai",
+   "price": 40490000,
+   "old_price": 46990000,
+   "stock": 10,
+   "rating": null,
+   "promo": "Ưu đãi dịch vụ hậu mãi độc quyền Galaxy Z Care và 2 km khác",
+   "image": "img/products/dien-thoai-samsung-galaxy-z-fold-8.jpg",
+   "details": {
+    "gallery": [
+     "img/products/dien-thoai-samsung-galaxy-z-fold-8-g0.jpg",
+     "img/products/dien-thoai-samsung-galaxy-z-fold-8-g1.png",
+     "img/products/dien-thoai-samsung-galaxy-z-fold-8-g2.png",
+     "img/products/dien-thoai-samsung-galaxy-z-fold-8-g3.png",
+     "img/products/dien-thoai-samsung-galaxy-z-fold-8-g4.png",
+     "img/products/dien-thoai-samsung-galaxy-z-fold-8-g5.png",
+     "img/products/dien-thoai-samsung-galaxy-z-fold-8-g6.png",
+     "img/products/dien-thoai-samsung-galaxy-z-fold-8-g7.jpg",
+     "img/products/dien-thoai-samsung-galaxy-z-fold-8-g8.jpg",
+     "img/products/dien-thoai-samsung-galaxy-z-fold-8-g9.jpg"
+    ],
+    "specs": [
+     [
+      "Hệ điều hành khi ra mắt",
+      "Android 17, One UI 9"
+     ],
+     [
+      "Chipset",
+      "Snapdragon® 8 Elite Gen 5"
+     ],
+     [
+      "Dung lượng RAM",
+      "12 GB"
+     ],
+     [
+      "Bộ nhớ trong",
+      "256 GB"
+     ],
+     [
+      "GPU",
+      "8 nhân: 2 nhân 4.74 GHz và 6 nhân 3.62 GHz"
+     ],
+     [
+      "Kích thước màn hình",
+      "Chính 7.6 inches, Phụ 5.5 inches"
+     ],
+     [
+      "Công nghệ màn hình",
+      "Dynamic AMOLED 2X"
+     ],
+     [
+      "Độ phân giải màn hình",
+      "Chính: 2448 x 1848 pixels (QXGA+) - Phụ: 1972 x 1248 pixels (FHD+)"
+     ],
+     [
+      "Tính năng màn hình",
+      "Tần số quét 120 Hz Độ sáng tối đa 3000 nits Kính Corning Gorilla Glass Ceramic 3"
+     ],
+     [
+      "Camera sau",
+      "Góc rộng 50 MP, f/1.9 Góc siêu rộng 50 MP, f/1.8"
+     ],
+     [
+      "Camera trước",
+      "10 MP, f/2.2 10 MP"
+     ],
+     [
+      "Pin",
+      "4800 mAh"
+     ],
+     [
+      "Hỗ trợ mạng",
+      "5G"
+     ],
+     [
+      "Thẻ SIM",
+      "Nano-SIM + eSIM"
+     ]
+    ],
+    "versions": [
+     "12GB 256GB",
+     "12GB 512GB",
+     "16GB 1TB"
+    ],
+    "colors": [
+     {
+      "name": "Trắng",
+      "price": 40490000,
+      "image": "img/products/dien-thoai-samsung-galaxy-z-fold-8-c0.jpg"
+     },
+     {
+      "name": "Tím",
+      "price": 40490000,
+      "image": "img/products/dien-thoai-samsung-galaxy-z-fold-8-c1.jpg"
+     },
+     {
+      "name": "Đen",
+      "price": 40490000,
+      "image": "img/products/dien-thoai-samsung-galaxy-z-fold-8-c2.jpg"
+     }
+    ],
+    "promotions": [
+     "Ưu đãi dịch vụ hậu mãi độc quyền Galaxy Z Care",
+     "Ưu đãi gói dùng thử gói Google AI Pro 6 tháng trị giá 3 triệu",
+     "Trả góp 0% lên đến 24 tháng",
+     "Định giá nhanh theo tình trạng máy"
+    ],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "iphone-air-256gb",
+   "name": "iPhone Air 256GB | Chính hãng",
+   "brand": "Apple",
+   "category": "dien-thoai",
+   "price": 23390000,
+   "old_price": 31990000,
+   "stock": 10,
+   "rating": 4.9,
+   "promo": "Chi thêm 30K - nhận Sim/Esim 5G VNSKY, có ngay 3GB data/ngày+500 phút gọi Mobifone & VNSKY, miễn phí 30 ngày đầu - chỉ á",
+   "image": "img/products/iphone-air-256gb.jpg",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "laptop-hp-omnibook-5-ai-16-af1048tu-bz7q9pa",
+   "name": "Laptop HP Omnibook 5 AI 16-AF1048TU BZ7Q9PA",
+   "brand": "HP",
+   "category": "laptop",
+   "price": 26990000,
+   "old_price": 27190000,
+   "stock": 10,
+   "rating": null,
+   "promo": null,
+   "image": "img/products/laptop-hp-omnibook-5-ai-16-af1048tu-bz7q9pa.png",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "laptop-asus-vivobook-14-x1407ca-ly008w",
+   "name": "Laptop ASUS VivoBook 14 X1407CA-LY008W",
+   "brand": "ASUS",
+   "category": "laptop",
+   "price": 23590000,
+   "old_price": 25990000,
+   "stock": 10,
+   "rating": 5.0,
+   "promo": "trả góp 0% lãi suất, tối đa 12 tháng, trả trước từ 10% qua CTTC hoặc 0đ qua thẻ tín dụng và 3 km khác",
+   "image": "img/products/laptop-asus-vivobook-14-x1407ca-ly008w.png",
+   "details": {
+    "gallery": [
+     "img/products/laptop-asus-vivobook-14-x1407ca-ly008w-g0.png",
+     "img/products/laptop-asus-vivobook-14-x1407ca-ly008w-g1.png",
+     "img/products/laptop-asus-vivobook-14-x1407ca-ly008w-g2.png",
+     "img/products/laptop-asus-vivobook-14-x1407ca-ly008w-g3.png",
+     "img/products/laptop-asus-vivobook-14-x1407ca-ly008w-g4.png",
+     "img/products/laptop-asus-vivobook-14-x1407ca-ly008w-g5.png",
+     "img/products/laptop-asus-vivobook-14-x1407ca-ly008w-g6.png",
+     "img/products/laptop-asus-vivobook-14-x1407ca-ly008w-g7.png",
+     "img/products/laptop-asus-vivobook-14-x1407ca-ly008w-g8.png",
+     "img/products/laptop-asus-vivobook-14-x1407ca-ly008w-g9.png"
+    ],
+    "specs": [
+     [
+      "Chip AI",
+      "Intel AI Boost NPU up to 13TOPS"
+     ],
+     [
+      "Loại card đồ họa",
+      "Intel Graphics"
+     ],
+     [
+      "Dung lượng RAM",
+      "16GB"
+     ],
+     [
+      "Loại RAM",
+      "DDR5 Onboard"
+     ],
+     [
+      "Số khe ram",
+      "1 khe Onboard + 1 khe nâng cấp tối đa 16GB"
+     ],
+     [
+      "Ổ cứng",
+      "512GB M.2 NVMe PCIe 4.0 SSD"
+     ],
+     [
+      "Công nghệ màn hình",
+      "Màn hình chống chói Độ phủ màu 45% NTSC Độ sáng 300nits"
+     ],
+     [
+      "Hệ điều hành khi ra mắt",
+      "Windows 11 Home"
+     ],
+     [
+      "Loại CPU",
+      "Intel Core Ultra 5 225H 1.7 GHz (18MB Cache, up to 4.9 GHz, 14 lõi, 14 luồng)"
+     ],
+     [
+      "Kích thước màn hình",
+      "14 inches"
+     ],
+     [
+      "Độ phân giải màn hình",
+      "1920 x 1200 pixels (WUXGA)"
+     ],
+     [
+      "Pin",
+      "42WHrs, 3S1P, 3-cell Li-ion"
+     ],
+     [
+      "Cổng giao tiếp",
+      "2 x USB 3.2 Gen 1 Type-A (tốc độ truyền dữ liệu lên đến 5Gbps) 2 x USB 3.2 Gen 1 Type-C (hỗ trợ xuất hình ảnh và cấp nguồn, tốc độ lên đến 5Gbps) 1 x HDMI 1.4 1 x Jack tai nghe / micro 3.5mm (combo)"
+     ]
+    ],
+    "versions": [],
+    "colors": [
+     {
+      "name": "HSSV, Giáo viên đến 1.000.000đ Xác thực",
+      "price": null,
+      "image": "img/products/laptop-asus-vivobook-14-x1407ca-ly008w-c0.png"
+     },
+     {
+      "name": "Smember Giảm thêm đến 236.000đ Kiểm tra",
+      "price": null,
+      "image": "img/products/laptop-asus-vivobook-14-x1407ca-ly008w-c1.png"
+     },
+     {
+      "name": "Bạc",
+      "price": 23590000,
+      "image": "img/products/laptop-asus-vivobook-14-x1407ca-ly008w-c2.png"
+     },
+     {
+      "name": "Định giá máy chuyên sâu Mới Miễn phí • Chỉ 2 phút",
+      "price": null,
+      "image": "img/products/laptop-asus-vivobook-14-x1407ca-ly008w-c3.png"
+     },
+     {
+      "name": "Giảm tối đa 1 triệu khi thanh toán qua thẻ tín dụng Nam Á Bank Kết thúc sau 70 ngày Chi tiết",
+      "price": null,
+      "image": "img/products/laptop-asus-vivobook-14-x1407ca-ly008w-c4.png"
+     }
+    ],
+    "promotions": [
+     "Tối đa 500k, áp dụng toàn bộ Laptop (trừ Macbook)",
+     "Thời hạn thu thập: 22:30 31/10/2026",
+     "Áp dụng toàn bộ Laptop (trừ Macbook)",
+     "trả góp 0% lãi suất, tối đa 12 tháng, trả trước từ 10% qua CTTC hoặc 0đ qua thẻ tín dụng"
+    ],
+    "faqs": [
+     "em là sinh viên mua máy bên mình có ưu đãi không ạ ?",
+     "có 2 khe ram không ạ, nâng cấp ram được không?"
+    ]
+   }
+  },
+  {
+   "slug": "laptop-msi-cyborg-15-a13uc-2082vn",
+   "name": "Laptop MSI Cyborg 15 A13UC-2082VN",
+   "brand": "MSI",
+   "category": "laptop",
+   "price": 29990000,
+   "old_price": 30690000,
+   "stock": 10,
+   "rating": null,
+   "promo": "Nâng cấp Laptop - PC lên Windows 11 Pro chỉ với 1,690,000đ (DV.PM.41/DV.PM.42) và 2 km khác",
+   "image": "img/products/laptop-msi-cyborg-15-a13uc-2082vn.png",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "macbook-neo-13-a18-pro-6-cpu-5-gpu-8gb-256gb",
+   "name": "MacBook Neo 13 inch A18 Pro 2026 6CPU 5GPU 8GB 256GB | Chính hãng Apple Việt Nam",
+   "brand": "Apple",
+   "category": "laptop",
+   "price": 18790000,
+   "old_price": 19490000,
+   "stock": 10,
+   "rating": 5.0,
+   "promo": "mua HUB TYPE C ORICO PW11-5P-GY 5 IN 1 PD-60W giá 129k (giá gốc 490k) và 2 km khác",
+   "image": "img/products/macbook-neo-13-a18-pro-6-cpu-5-gpu-8gb-256gb.png",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "laptop-dell-14-dc14250-dc4c5386w",
+   "name": "Laptop Dell 14 DC14250 DC4C5386W",
+   "brand": "Dell",
+   "category": "laptop",
+   "price": 26990000,
+   "old_price": 30990000,
+   "stock": 10,
+   "rating": 5.0,
+   "promo": "Sản phẩm không áp dụng bán sỉ, giá khuyến mãi áp dụng giới hạn tối đa 2 sản phẩm/khách hàng và 4 km khác",
+   "image": "img/products/laptop-dell-14-dc14250-dc4c5386w.png",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "macbook-air-13-m5-10-cpu-8-gpu-16gb-512gb",
+   "name": "MacBook Air M5 13 inch 2026 10CPU 8GPU 16GB 512GB | Chính hãng Apple Việt Nam",
+   "brand": "Apple",
+   "category": "laptop",
+   "price": 33890000,
+   "old_price": 35990000,
+   "stock": 10,
+   "rating": 5.0,
+   "promo": "mua HUB TYPE C ORICO PW11-5P-GY 5 IN 1 PD-60W giá 129k (giá gốc 490k) và 2 km khác",
+   "image": "img/products/macbook-air-13-m5-10-cpu-8-gpu-16gb-512gb.png",
+   "details": {
+    "gallery": [
+     "img/products/macbook-air-13-m5-10-cpu-8-gpu-16gb-512gb-g0.png",
+     "img/products/macbook-air-13-m5-10-cpu-8-gpu-16gb-512gb-g1.png",
+     "img/products/macbook-air-13-m5-10-cpu-8-gpu-16gb-512gb-g2.jpg",
+     "img/products/macbook-air-13-m5-10-cpu-8-gpu-16gb-512gb-g3.jpg",
+     "img/products/macbook-air-13-m5-10-cpu-8-gpu-16gb-512gb-g4.jpg",
+     "img/products/macbook-air-13-m5-10-cpu-8-gpu-16gb-512gb-g5.jpg",
+     "img/products/macbook-air-13-m5-10-cpu-8-gpu-16gb-512gb-g6.jpg",
+     "img/products/macbook-air-13-m5-10-cpu-8-gpu-16gb-512gb-g7.jpg",
+     "img/products/macbook-air-13-m5-10-cpu-8-gpu-16gb-512gb-g8.jpg",
+     "img/products/macbook-air-13-m5-10-cpu-8-gpu-16gb-512gb-g9.png"
+    ],
+    "specs": [
+     [
+      "Loại card đồ họa",
+      "GPU 8 lõi Neural Accelerators Công nghệ dò tia tốc độ cao bằng phần cứng Neural Engine 16 lõi Băng thông bộ nhớ 153GB/s"
+     ],
+     [
+      "Dung lượng RAM",
+      "16GB"
+     ],
+     [
+      "Ổ cứng",
+      "512GB"
+     ],
+     [
+      "Công nghệ màn hình",
+      "Màn hình Liquid Retina Màn hình có đèn nền LED với công nghệ IPS Độ sáng 500 nit Hỗ trợ một tỷ màu Dải màu rộng (P3) Công nghệ True Tone Hỗ trợ lên đến hai màn hình ngoài"
+     ],
+     [
+      "Hệ điều hành khi ra mắt",
+      "macOS"
+     ],
+     [
+      "Loại CPU",
+      "Chip Apple M5 CPU 10 lõi với 4 lõi siêu xử lý và 6 lõi tiết kiệm điện"
+     ],
+     [
+      "Kích thước màn hình",
+      "13.6 inches"
+     ],
+     [
+      "Độ phân giải màn hình",
+      "2560 x 1664 pixels"
+     ],
+     [
+      "Pin",
+      "Pin Li-Po 53,8 watt‑giờ tích hợp Thời gian xem video trực tuyến lên đến 18 giờ Thời gian duyệt web trên mạng không dây lên đến 15 giờ"
+     ],
+     [
+      "Cổng giao tiếp",
+      "Cổng sạc MagSafe 3 Jack cắm tai nghe 3,5 mm Hai cổng Thunderbolt 4 (USB-C) hỗ trợ Sạc / DisplayPort / Thunderbolt 4 (lên đến 40Gb/s) / USB 4 (lên đến 40Gb/s)"
+     ],
+     [
+      "Thông số",
+      "MacBook Air M4 13 inch 2025 10CPU 10GPU 16GB 512GB | Chính hãng Apple Việt Nam"
+     ],
+     [
+      "Loại card đồ họa",
+      "GPU 10 lõi Neural Engine 16 lõi Công nghệ dò tia tốc độ cao bằng phần cứngBăng thông bộ nhớ 120GB/s"
+     ],
+     [
+      "Dung lượng RAM",
+      "16GB"
+     ],
+     [
+      "Ổ cứng",
+      "512GB"
+     ]
+    ],
+    "versions": [],
+    "colors": [
+     {
+      "name": "Ánh sao",
+      "price": 33890000,
+      "image": "img/products/macbook-air-13-m5-10-cpu-8-gpu-16gb-512gb-c0.png"
+     },
+     {
+      "name": "Xanh da trời",
+      "price": 33890000,
+      "image": "img/products/macbook-air-13-m5-10-cpu-8-gpu-16gb-512gb-c1.png"
+     },
+     {
+      "name": "Bạc",
+      "price": 33890000,
+      "image": "img/products/macbook-air-13-m5-10-cpu-8-gpu-16gb-512gb-c2.png"
+     },
+     {
+      "name": "Đêm xanh thẳm",
+      "price": 33890000,
+      "image": "img/products/macbook-air-13-m5-10-cpu-8-gpu-16gb-512gb-c3.png"
+     }
+    ],
+    "promotions": [
+     "mua HUB TYPE C ORICO PW11-5P-GY 5 IN 1 PD-60W giá 129k (giá gốc 490k)",
+     "Đặc quyền trợ giá lên đến 3 triệu khi thu cũ Macbook chip M2 trở lên",
+     "trả góp 0% lãi suất, tối đa 12 tháng, trả trước từ 10% qua CTTC hoặc 0đ qua thẻ tín dụng",
+     "Định giá nhanh theo tình trạng máy"
+    ],
+    "faqs": [
+     "Dạ không biết mình đang ở khu vực tỉnh thành nào để em kiểm tra hàng hóa cho mình ạ?"
+    ]
+   }
+  },
+  {
+   "slug": "apple-studio-display-xdr-27-5k-ngam-vesa-2026",
+   "name": "Apple Studio Display XDR 27 5K Ngàm VESA 2026 | Chính hãng Apple Việt Nam",
+   "brand": "Apple",
+   "category": "man-hinh",
+   "price": 79990000,
+   "old_price": 89990000,
+   "stock": 10,
+   "rating": null,
+   "promo": "trả góp 0% lãi suất, tối đa 12 tháng, trả trước từ 10% qua CTTC hoặc 0đ qua thẻ tín dụng",
+   "image": "img/products/apple-studio-display-xdr-27-5k-ngam-vesa-2026.png",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "laptop-acer-gaming-aspire-7-a715-59g-59rd",
+   "name": "Laptop Acer Gaming Aspire 7 A715-59G-59RD",
+   "brand": "Acer",
+   "category": "laptop",
+   "price": 26490000,
+   "old_price": 27990000,
+   "stock": 10,
+   "rating": null,
+   "promo": "Từ 1/10 - 31/11 ƯU ĐÃI ROAD TO PREDATOR LEAGUE 2027 - Nhận ngay GIFT CODE 500,000Đ khi mua LAPTOP GAMING trong danh sách",
+   "image": "img/products/laptop-acer-gaming-aspire-7-a715-59g-59rd.png",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "macbook-air-13-inch-m5-10-cpu-8-gpu-16gb-512gb-2026-sac-70w",
+   "name": "MacBook Air M5 13 inch 2026 10CPU 8GPU 16GB 512GB Sạc 70W | Chính hãng Apple Việt Nam",
+   "brand": "Apple",
+   "category": "laptop",
+   "price": 33990000,
+   "old_price": 36590000,
+   "stock": 10,
+   "rating": 5.0,
+   "promo": "mua HUB TYPE C ORICO PW11-5P-GY 5 IN 1 PD-60W giá 129k (giá gốc 490k) và 2 km khác",
+   "image": "img/products/macbook-air-13-inch-m5-10-cpu-8-gpu-16gb-512gb-2026-sac-70w.png",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "laptop-asus-vivobook-14-x1404va-eb355w",
+   "name": "Laptop ASUS Vivobook 14 X1404VA-EB355W",
+   "brand": "ASUS",
+   "category": "laptop",
+   "price": 22990000,
+   "old_price": 25990000,
+   "stock": 10,
+   "rating": null,
+   "promo": "Mua kèm Chuột Asus Marshmallow MD100 giảm 50% giá chỉ 290.000đ và 3 km khác",
+   "image": "img/products/laptop-asus-vivobook-14-x1404va-eb355w.png",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "laptop-asus-vivobook-15-x1504ma-bq632w",
+   "name": "Laptop ASUS Vivobook 15 X1504MA-BQ632W",
+   "brand": "ASUS",
+   "category": "laptop",
+   "price": 19490000,
+   "old_price": 26990000,
+   "stock": 10,
+   "rating": null,
+   "promo": "trả góp 0% lãi suất, tối đa 12 tháng, trả trước từ 10% qua CTTC hoặc 0đ qua thẻ tín dụng và 3 km khác",
+   "image": "img/products/laptop-asus-vivobook-15-x1504ma-bq632w.png",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "laptop-msi-katana-15-b13vek-2440vn",
+   "name": "Laptop MSI Katana 15 B13VEK-2440VN",
+   "brand": "MSI",
+   "category": "laptop",
+   "price": 34990000,
+   "old_price": 35490000,
+   "stock": 10,
+   "rating": null,
+   "promo": "trả góp 0% lãi suất, tối đa 12 tháng, trả trước từ 10% qua CTTC hoặc 0đ qua thẻ tín dụng và 2 km khác",
+   "image": "img/products/laptop-msi-katana-15-b13vek-2440vn.png",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "laptop-acer-gaming-nitro-v-15-propanel-anv15-52-50va",
+   "name": "Laptop Acer Gaming Nitro ProPanel ANV15-52-50VA",
+   "brand": "Acer",
+   "category": "laptop",
+   "price": 29990000,
+   "old_price": null,
+   "stock": 10,
+   "rating": null,
+   "promo": "Nâng cấp Laptop - PC lên Windows 11 Pro chỉ với 1,690,000đ (DV.PM.41/DV.PM.42) và 3 km khác",
+   "image": "img/products/laptop-acer-gaming-nitro-v-15-propanel-anv15-52-50va.png",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "laptop-msi-modern-15-f1mg-1225vn",
+   "name": "Laptop MSI Modern 15 F1MG-1225VN",
+   "brand": "MSI",
+   "category": "laptop",
+   "price": 19990000,
+   "old_price": 21990000,
+   "stock": 10,
+   "rating": null,
+   "promo": "Nâng cấp Laptop - PC lên Windows 11 Pro chỉ với 1,690,000đ (DV.PM.41/DV.PM.42) và 2 km khác",
+   "image": "img/products/laptop-msi-modern-15-f1mg-1225vn.png",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "macbook-neo-13-a18-pro-6-cpu-5-gpu-8gb-512gb",
+   "name": "MacBook Neo 13 inch A18 Pro 2026 6CPU 5GPU 8GB 512GB Touch ID | Chính hãng Apple Việt Nam",
+   "brand": "Apple",
+   "category": "laptop",
+   "price": 21290000,
+   "old_price": 21990000,
+   "stock": 10,
+   "rating": 5.0,
+   "promo": "mua HUB TYPE C ORICO PW11-5P-GY 5 IN 1 PD-60W giá 129k (giá gốc 490k) và 2 km khác",
+   "image": "img/products/macbook-neo-13-a18-pro-6-cpu-5-gpu-8gb-512gb.png",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "laptop-lenovo-ideapad-slim-3-14iwc11-83rq002pvn",
+   "name": "Laptop Lenovo IdeaPad Slim 3 14IWC11 83RQ002PVN",
+   "brand": "Lenovo",
+   "category": "laptop",
+   "price": 18990000,
+   "old_price": 22990000,
+   "stock": 10,
+   "rating": 5.0,
+   "promo": "LAP XỊN QUÀ SLAY, NHẬN QUÀ LENOVO NGAY và 2 km khác",
+   "image": "img/products/laptop-lenovo-ideapad-slim-3-14iwc11-83rq002pvn.png",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "laptop-lenovo-ideapad-slim-3-14iph11-83uq003nvn",
+   "name": "Laptop Lenovo IdeaPad Slim 3 14IPH11 83UQ003NVN",
+   "brand": "Lenovo",
+   "category": "laptop",
+   "price": 24990000,
+   "old_price": 27990000,
+   "stock": 10,
+   "rating": null,
+   "promo": "Nâng cấp Laptop - PC lên Windows 11 Pro chỉ với 1,690,000đ (DV.PM.41/DV.PM.42) và 3 km khác",
+   "image": "img/products/laptop-lenovo-ideapad-slim-3-14iph11-83uq003nvn.png",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "laptop-hp-victus-15-fa2451tx-d17wppa",
+   "name": "Laptop HP Victus 15-FA2451TX D17WPPA",
+   "brand": "HP",
+   "category": "laptop",
+   "price": 30490000,
+   "old_price": 31190000,
+   "stock": 10,
+   "rating": null,
+   "promo": null,
+   "image": "img/products/laptop-hp-victus-15-fa2451tx-d17wppa.png",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "laptop-dell-pro-15-essential-pv15250-vkvkd",
+   "name": "Laptop Dell Pro 15 Essential PV15250 VKVKD - Nhập khẩu chính hãng",
+   "brand": "Dell",
+   "category": "laptop",
+   "price": 16990000,
+   "old_price": 17990000,
+   "stock": 10,
+   "rating": 5.0,
+   "promo": "Nâng cấp Laptop - PC lên Windows 11 Pro chỉ với 1,690,000đ (DV.PM.41/DV.PM.42) và 5 km khác",
+   "image": "img/products/laptop-dell-pro-15-essential-pv15250-vkvkd.png",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "laptop-hp-victus-15-fa2731tx-b85lnpa",
+   "name": "Laptop HP Victus 15-FA2731TX B85LNPA",
+   "brand": "HP",
+   "category": "laptop",
+   "price": 27990000,
+   "old_price": 29990000,
+   "stock": 10,
+   "rating": null,
+   "promo": null,
+   "image": "img/products/laptop-hp-victus-15-fa2731tx-b85lnpa.png",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "dong-ho-dinh-vi-tre-em-myalo-k74",
+   "name": "Đồng hồ định vị trẻ em myALO K74",
+   "brand": "myALO",
+   "category": "dong-ho",
+   "price": 1990000,
+   "old_price": 2490000,
+   "stock": 10,
+   "rating": null,
+   "promo": "Chi thêm 80k - Nhận ngay Sim/Esim 5G VNSKY, có ngay 3GB data/ngày+500 phút gọi Mobifone & VNSKY, miễn phí 30 ngày đầu - ",
+   "image": "img/products/dong-ho-dinh-vi-tre-em-myalo-k74.png",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "dong-ho-thong-minh-amazfit-active-max",
+   "name": "Đồng hồ thông minh Amazfit Active Max",
+   "brand": "Amazfit",
+   "category": "dong-ho",
+   "price": 3890000,
+   "old_price": 5190000,
+   "stock": 10,
+   "rating": null,
+   "promo": "Chi thêm 300K - Nhận ngay dịch vụ Bảo hành Vip 12 tháng 1 đổi 1 tại CellphoneS và 1 km khác",
+   "image": "img/products/dong-ho-thong-minh-amazfit-active-max.png",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "dong-ho-thong-minh-huawei-watch-gt7-41mm",
+   "name": "Đồng hồ thông minh Huawei Watch GT7 41mm",
+   "brand": "Huawei",
+   "category": "dong-ho",
+   "price": 4790000,
+   "old_price": 6490000,
+   "stock": 10,
+   "rating": null,
+   "promo": "Tặng gói Huawei Watch face (1 tháng) và Gói bảo hành 1 năm Huawei Care Worry-free và 3 km khác",
+   "image": "img/products/dong-ho-thong-minh-huawei-watch-gt7-41mm.png",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "dong-ho-thong-minh-huawei-watch-gt7",
+   "name": "Đồng hồ thông minh Huawei Watch GT7 46mm",
+   "brand": "Huawei",
+   "category": "dong-ho",
+   "price": 4790000,
+   "old_price": 6490000,
+   "stock": 10,
+   "rating": null,
+   "promo": "Tặng gói Huawei Watch face (1 tháng) và Gói bảo hành 1 năm Huawei Care Worry-free và 3 km khác",
+   "image": "img/products/dong-ho-thong-minh-huawei-watch-gt7.png",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "apple-watch-se-3-40mm",
+   "name": "Apple Watch SE 3 40mm (GPS) Viền Nhôm Dây Cao Su Size S/M | Chính hãng Apple Việt Nam",
+   "brand": "Apple",
+   "category": "dong-ho",
+   "price": 5990000,
+   "old_price": 6990000,
+   "stock": 10,
+   "rating": 5.0,
+   "promo": null,
+   "image": "img/products/apple-watch-se-3-40mm.png",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "dong-ho-thong-minh-huawei-watch-gt7-pro",
+   "name": "Đồng hồ thông minh Huawei Watch GT7 Pro 46mm",
+   "brand": "Huawei",
+   "category": "dong-ho",
+   "price": 7490000,
+   "old_price": 9490000,
+   "stock": 10,
+   "rating": null,
+   "promo": "Tặng gói Huawei Watch face (1 tháng) và Gói bảo hành 1 năm Huawei Care Worry-free và 3 km khác",
+   "image": "img/products/dong-ho-thong-minh-huawei-watch-gt7-pro.png",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "dong-ho-thong-minh-huawei-watch-fit-5",
+   "name": "Đồng hồ thông minh Huawei Watch Fit 5 Dây Cao Su",
+   "brand": "Huawei",
+   "category": "dong-ho",
+   "price": 2990000,
+   "old_price": 3690000,
+   "stock": 10,
+   "rating": null,
+   "promo": "Chi thêm 250K - Nhận ngay dịch vụ Bảo hành Vip 12 tháng 1 đổi 1 tại CellphoneS và 3 km khác",
+   "image": "img/products/dong-ho-thong-minh-huawei-watch-fit-5.png",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "vong-deo-tay-thong-minh-huawei-band-11",
+   "name": "Vòng đeo tay thông minh Huawei Band 11",
+   "brand": "Huawei",
+   "category": "dong-ho",
+   "price": 990000,
+   "old_price": 1090000,
+   "stock": 10,
+   "rating": 5.0,
+   "promo": "Chi thêm 50K - Nhận ngay dịch vụ Bảo hành Vip 12 tháng 1 đổi 1 tại CellphoneS và 2 km khác",
+   "image": "img/products/vong-deo-tay-thong-minh-huawei-band-11.png",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "vong-deo-tay-thong-minh-xiaomi-mi-band-11",
+   "name": "Vòng đeo tay thông minh Xiaomi Mi Band 11",
+   "brand": "Xiaomi",
+   "category": "dong-ho",
+   "price": 1195000,
+   "old_price": 1690000,
+   "stock": 10,
+   "rating": null,
+   "promo": "Chi thêm 100K - Nhận ngay dịch vụ Bảo hành Vip 12 tháng 1 đổi 1 tại CellphoneS",
+   "image": "img/products/vong-deo-tay-thong-minh-xiaomi-mi-band-11.png",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "dong-ho-thong-minh-huawei-watch-gt-6-pro",
+   "name": "Đồng hồ thông minh Huawei Watch GT 6 Pro",
+   "brand": "Huawei",
+   "category": "dong-ho",
+   "price": 7490000,
+   "old_price": 8490000,
+   "stock": 10,
+   "rating": 5.0,
+   "promo": "Tặng gói trải nghiệm 3 tháng Huawei Health và 3 km khác",
+   "image": "img/products/dong-ho-thong-minh-huawei-watch-gt-6-pro.png",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "dong-ho-thong-minh-xiaomi-redmi-watch-6-active",
+   "name": "Đồng hồ thông minh Xiaomi Redmi Watch 6 Active",
+   "brand": "Xiaomi",
+   "category": "dong-ho",
+   "price": 1190000,
+   "old_price": 1390000,
+   "stock": 10,
+   "rating": null,
+   "promo": "Chi thêm 100K - Nhận ngay dịch vụ Bảo hành Vip 12 tháng 1 đổi 1 tại CellphoneS và 1 km khác",
+   "image": "img/products/dong-ho-thong-minh-xiaomi-redmi-watch-6-active.png",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "apple-watch-series-12-42mm-size-m-l",
+   "name": "Apple Watch Series 12 42mm (GPS) Viền Nhôm Dây Cao Su Size M/L",
+   "brand": "Apple",
+   "category": "dong-ho",
+   "price": 11490000,
+   "old_price": null,
+   "stock": 10,
+   "rating": null,
+   "promo": "Ưu đãi 500K cho Apple Watch Series 12, Ultra 4 khi mua kèm Iphone 18 Pro/Pro Max",
+   "image": "img/products/apple-watch-series-12-42mm-size-m-l.png",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "dong-ho-thong-minh-garmin-forerunner-165",
+   "name": "Đồng hồ thông minh Garmin Forerunner 165",
+   "brand": "Garmin",
+   "category": "dong-ho",
+   "price": 3990000,
+   "old_price": 4990000,
+   "stock": 10,
+   "rating": 4.9,
+   "promo": "Chi thêm 250K - Nhận ngay dịch vụ Bảo hành Vip 12 tháng 1 đổi 1 tại CellphoneS và 1 km khác",
+   "image": "img/products/dong-ho-thong-minh-garmin-forerunner-165.png",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "apple-watch-ultra-4-49mm-5g-vien-titan-day-ocean",
+   "name": "Apple Watch Ultra 4 49mm (5G) Viền Titan Dây Ocean",
+   "brand": "Apple",
+   "category": "dong-ho",
+   "price": 23990000,
+   "old_price": null,
+   "stock": 10,
+   "rating": null,
+   "promo": "Ưu đãi 500K cho Apple Watch Series 12, Ultra 4 khi mua kèm Iphone 18 Pro/Pro Max",
+   "image": "img/products/apple-watch-ultra-4-49mm-5g-vien-titan-day-ocean.png",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "dong-ho-thong-minh-samsung-galaxy-watch-8",
+   "name": "Đồng hồ thông minh Samsung Galaxy Watch8",
+   "brand": "Samsung",
+   "category": "dong-ho",
+   "price": 6690000,
+   "old_price": 9990000,
+   "stock": 10,
+   "rating": 5.0,
+   "promo": null,
+   "image": "img/products/dong-ho-thong-minh-samsung-galaxy-watch-8.png",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "dong-ho-thong-minh-tre-em-masstel-smart-hero-neo",
+   "name": "Đồng hồ thông minh trẻ em Masstel Smart Hero Neo",
+   "brand": "Masstel",
+   "category": "dong-ho",
+   "price": 1090000,
+   "old_price": 1490000,
+   "stock": 10,
+   "rating": 5.0,
+   "promo": "Chi thêm 80k - Nhận ngay Sim/Esim 5G VNSKY, có ngay 3GB data/ngày+500 phút gọi Mobifone & VNSKY, miễn phí 30 ngày đầu - ",
+   "image": "img/products/dong-ho-thong-minh-tre-em-masstel-smart-hero-neo.png",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "apple-watch-series-11-42mm",
+   "name": "Apple Watch Series 11 42mm (GPS) Viền Nhôm Dây Cao Su Size S/M | Chính hãng Apple Việt Nam",
+   "brand": "Apple",
+   "category": "dong-ho",
+   "price": 10490000,
+   "old_price": 11490000,
+   "stock": 10,
+   "rating": null,
+   "promo": null,
+   "image": "img/products/apple-watch-series-11-42mm.png",
+   "details": {
+    "gallery": [
+     "img/products/apple-watch-series-11-42mm-g0.png",
+     "img/products/apple-watch-series-11-42mm-g1.png",
+     "img/products/apple-watch-series-11-42mm-g2.png",
+     "img/products/apple-watch-series-11-42mm-g3.png",
+     "img/products/apple-watch-series-11-42mm-g4.png",
+     "img/products/apple-watch-series-11-42mm-g5.png",
+     "img/products/apple-watch-series-11-42mm-g6.png",
+     "img/products/apple-watch-series-11-42mm-g7.png",
+     "img/products/apple-watch-series-11-42mm-g8.png",
+     "img/products/apple-watch-series-11-42mm-g9.png"
+    ],
+    "specs": [
+     [
+      "Công nghệ màn hình",
+      "Màn hình Retina Luôn Bật với OLED góc rộng và LTPO3 Độ sáng đỉnh lên đến 2000 nit Độ sáng tối thiểu 1 nit Mật độ 326 pixel mỗi inch"
+     ],
+     [
+      "Đường kính mặt",
+      "42 mm"
+     ],
+     [
+      "Kích thước cổ tay phù hợp",
+      "Vừa với cổ tay cỡ 13 – 18 cm"
+     ],
+     [
+      "Nghe,gọi",
+      "Nghe gọi qua Bluetooth"
+     ],
+     [
+      "Tiện ích sức khoẻ",
+      "Chế độ luyện tập, Theo dõi giấc ngủ, Đo nhịp tim, Đo lượng oxy trong máu, Đếm bước chân, Tính calo tiêu thụ, Tính quãng đường chạy, Đo mức độ stress, Cảm biến nhiệt độ, Phát hiện té ngã, Cảnh báo nhịp tim bất thường, Đo điện tâm đồ, Đo VO2 max (Đo lượng tiêu thụ oxy tối đa), Theo dõi chu kỳ, Nhắc nhở ít vận động, Phát hiện chứng ngưng thở khi ngủ"
+     ],
+     [
+      "Tương thích",
+      "iPhone 11 trở lên, bao gồm iPhone SE (thế hệ thứ 2 trở lên), sử dụng iOS 26 trở lên"
+     ],
+     [
+      "Thời lượng pin",
+      "Pin dùng cả ngày, lên đến 24 giờ khi sử dụng bình thường Lên đến 38 giờ ở Chế Độ Nguồn Điện Thấp"
+     ],
+     [
+      "Hãng sản xuất",
+      "Apple Chính hãng"
+     ]
+    ],
+    "versions": [],
+    "colors": [
+     {
+      "name": "Vàng Hồng - Dây hồng",
+      "price": 10490000,
+      "image": "img/products/apple-watch-series-11-42mm-c0.png"
+     },
+     {
+      "name": "Bạc - Dây tím",
+      "price": 10490000,
+      "image": "img/products/apple-watch-series-11-42mm-c1.png"
+     },
+     {
+      "name": "Đen bóng - Dây đen",
+      "price": 10490000,
+      "image": "img/products/apple-watch-series-11-42mm-c2.png"
+     },
+     {
+      "name": "Xám không gian - Dây đen",
+      "price": 10490000,
+      "image": "img/products/apple-watch-series-11-42mm-c3.png"
+     }
+    ],
+    "promotions": [],
+    "faqs": [
+     "Giá Apple Watch Series 11 42mm bao nhiêu tiền?",
+     "Đồng hồ Apple Watch Series 11 42mm có gì mới?",
+     "Hiện chưa có đánh giá nào. Bạn sẽ là người đầu tiên đánh giá sản phẩm này chứ?"
+    ]
+   }
+  },
+  {
+   "slug": "dong-ho-thong-minh-garmin-forerunner-70",
+   "name": "Đồng hồ thông minh Garmin Forerunner 70",
+   "brand": "Garmin",
+   "category": "dong-ho",
+   "price": 6830000,
+   "old_price": 7190000,
+   "stock": 10,
+   "rating": null,
+   "promo": "Chi thêm 300K - Nhận ngay dịch vụ Bảo hành Vip 12 tháng 1 đổi 1 tại CellphoneS",
+   "image": "img/products/dong-ho-thong-minh-garmin-forerunner-70.png",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "dong-ho-thong-minh-huawei-watch-fit-5-pro",
+   "name": "Đồng hồ thông minh Huawei Watch Fit 5 Pro",
+   "brand": "Huawei",
+   "category": "dong-ho",
+   "price": 4990000,
+   "old_price": 5490000,
+   "stock": 10,
+   "rating": null,
+   "promo": "Mở rộng phạm vi bảo hành áp dụng tại các nước khu vực APAC và 2 km khác",
+   "image": "img/products/dong-ho-thong-minh-huawei-watch-fit-5-pro.png",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "dong-ho-thong-minh-garmin-forerunner-55",
+   "name": "Đồng hồ thông minh Garmin Forerunner 55",
+   "brand": "Garmin",
+   "category": "dong-ho",
+   "price": 2590000,
+   "old_price": 3490000,
+   "stock": 10,
+   "rating": 4.4,
+   "promo": "Chi thêm 200K - Nhận ngay dịch vụ Bảo hành Vip 12 tháng 1 đổi 1 tại CellphoneS",
+   "image": "img/products/dong-ho-thong-minh-garmin-forerunner-55.png",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "man-hinh-thong-minh-lg-standbyme-2-27-inch-27lx6tdga-2025",
+   "name": "Màn hình thông minh LG Stand By Me 2 27 inch 2025 (27LX6TDGA)",
+   "brand": "LG",
+   "category": "man-hinh",
+   "price": 19990000,
+   "old_price": 29900000,
+   "stock": 10,
+   "rating": null,
+   "promo": "Giảm thêm 1 triệu cho sản phẩm tivi, điện máy trên 10 triệu khi mua điện thoại/laptop và 4 km khác",
+   "image": "img/products/man-hinh-thong-minh-lg-standbyme-2-27-inch-27lx6tdga-2025.png",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "google-tivi-xiaomi-s-mini-led-4k-75-inch-2026",
+   "name": "Google Tivi Xiaomi S Mini Led 4K 75 inch 2026",
+   "brand": "Xiaomi",
+   "category": "tivi",
+   "price": 22990000,
+   "old_price": 24990000,
+   "stock": 10,
+   "rating": null,
+   "promo": "PMH1,000,000 ₫Trả góp 0% lãi suất, trả trước 0 đồng, 0 phí - kì hạn tới 12 tháng và 4 km khác",
+   "image": "img/products/google-tivi-xiaomi-s-mini-led-4k-75-inch-2026.png",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "google-tivi-xiaomi-s-mini-led-4k-55-inch-2026",
+   "name": "Google Tivi Xiaomi S Mini Led 4K 55 inch 2026",
+   "brand": "Xiaomi",
+   "category": "tivi",
+   "price": 12990000,
+   "old_price": 14990000,
+   "stock": 10,
+   "rating": null,
+   "promo": "PMH1,000,000 ₫Trả góp 0% lãi suất, trả trước 0 đồng, 0 phí - kì hạn tới 12 tháng và 4 km khác",
+   "image": "img/products/google-tivi-xiaomi-s-mini-led-4k-55-inch-2026.png",
+   "details": {
+    "gallery": [
+     "img/products/google-tivi-xiaomi-s-mini-led-4k-55-inch-2026-g0.png",
+     "img/products/google-tivi-xiaomi-s-mini-led-4k-55-inch-2026-g1.png",
+     "img/products/google-tivi-xiaomi-s-mini-led-4k-55-inch-2026-g2.png",
+     "img/products/google-tivi-xiaomi-s-mini-led-4k-55-inch-2026-g3.png",
+     "img/products/google-tivi-xiaomi-s-mini-led-4k-55-inch-2026-g4.png",
+     "img/products/google-tivi-xiaomi-s-mini-led-4k-55-inch-2026-g5.png",
+     "img/products/google-tivi-xiaomi-s-mini-led-4k-55-inch-2026-g6.png",
+     "img/products/google-tivi-xiaomi-s-mini-led-4k-55-inch-2026-g7.png",
+     "img/products/google-tivi-xiaomi-s-mini-led-4k-55-inch-2026-g8.png",
+     "img/products/google-tivi-xiaomi-s-mini-led-4k-55-inch-2026-g9.png"
+    ],
+    "specs": [
+     [
+      "Kích cỡ màn hình",
+      "55 inch"
+     ],
+     [
+      "Công nghệ hình ảnh",
+      "HDR 10+ Độ sâu 1,07 tỷ màu Dải màu DCI-P3 94% Độ sáng 600 nits (điển hình) / 1200 nits (tối đa) Hỗ trợ chế độ Filmmaker Mode"
+     ],
+     [
+      "Độ phân giải",
+      "4K"
+     ],
+     [
+      "Loại màn hình",
+      "Mini LED"
+     ],
+     [
+      "Tần số quét",
+      "60Hz"
+     ],
+     [
+      "Loại tivi",
+      "Google tivi, Mini LED"
+     ],
+     [
+      "Công nghệ âm thanh",
+      "Dolby Audio DTS:X"
+     ],
+     [
+      "Tiện ích nổi bật",
+      "Tích hợp trợ lí ảo Google Assistant, Chiếu hình ảnh từ điện thoại lên TV"
+     ],
+     [
+      "Thương hiệu",
+      "Xiaomi"
+     ],
+     [
+      "Năm ra mắt",
+      "2026"
+     ]
+    ],
+    "versions": [],
+    "colors": [],
+    "promotions": [
+     "Tặng khung treo trị giá 400K khi mua tivi với khách hàng mới (Snull/Snew)",
+     "Mua thêm điểu khiển đa năng REMOTEE chỉ với giá 279K ( giảm thêm 20%)",
+     "Liên hệ hotline 1800.2097 để được nhận Voucher đến 5 triệu —> Bao rẻ - đâu rẻ hơn CellphoneS giảm thêm",
+     "Miễn phí vận chuyển, lắp đặt"
+    ],
+    "faqs": [
+     "Hiện chưa có đánh giá nào. Bạn sẽ là người đầu tiên đánh giá sản phẩm này chứ?"
+    ]
+   }
+  },
+  {
+   "slug": "google-tivi-xiaomi-smart-display-s-mini-led-4k-85-inch-2026",
+   "name": "Google Tivi Xiaomi Smart Display S Mini Led 4K 85 inch 2026",
+   "brand": "Xiaomi",
+   "category": "tivi",
+   "price": 35990000,
+   "old_price": 39990000,
+   "stock": 10,
+   "rating": null,
+   "promo": "PMH2,000,000 ₫Trả góp 0% lãi suất, trả trước 0 đồng, 0 phí - kì hạn tới 12 tháng và 4 km khác",
+   "image": "img/products/google-tivi-xiaomi-smart-display-s-mini-led-4k-85-inch-2026.png",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "smart-tivi-lg-uhd-4k-55-inch-55ua8055psa",
+   "name": "Smart tivi LG UHD 4K 55 inch 2026 (55UA8055PSA)",
+   "brand": "LG",
+   "category": "tivi",
+   "price": 10790000,
+   "old_price": 15590000,
+   "stock": 10,
+   "rating": null,
+   "promo": "Tặng khung treo trị giá 400K khi mua tivi với khách hàng mới (Snull/Snew) và 5 km khác",
+   "image": "img/products/smart-tivi-lg-uhd-4k-55-inch-55ua8055psa.png",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "google-tivi-xiaomi-s-mini-led-4k-65-inch-2026",
+   "name": "Google Tivi Xiaomi S Mini Led 4K 65 inch 2026",
+   "brand": "Xiaomi",
+   "category": "tivi",
+   "price": 16990000,
+   "old_price": 18990000,
+   "stock": 10,
+   "rating": null,
+   "promo": "PMH1,000,000 ₫Tặng khung treo trị giá 400K khi mua tivi với khách hàng mới (Snull/Snew) và 4 km khác",
+   "image": "img/products/google-tivi-xiaomi-s-mini-led-4k-65-inch-2026.png",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "smart-tivi-samsung-qled-55q6fa-4k-55-inch",
+   "name": "Smart tivi Samsung QLED 4K 55 inch 2025 (55Q6FA)",
+   "brand": "Samsung",
+   "category": "tivi",
+   "price": 9990000,
+   "old_price": 14500000,
+   "stock": 10,
+   "rating": null,
+   "promo": "Tặng khung treo trị giá 400K khi mua tivi với khách hàng mới (Snull/Snew) và 5 km khác",
+   "image": "img/products/smart-tivi-samsung-qled-55q6fa-4k-55-inch.png",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "smart-tivi-samsung-qled-65q6fa-4k-65-inch",
+   "name": "Smart tivi Samsung QLED 4K 65 inch 2025 (65Q6FA)",
+   "brand": "Samsung",
+   "category": "tivi",
+   "price": 11890000,
+   "old_price": 18100000,
+   "stock": 10,
+   "rating": 5.0,
+   "promo": "Giảm thêm 1 triệu cho sản phẩm tivi, điện máy trên 10 triệu khi mua điện thoại/laptop và 5 km khác",
+   "image": "img/products/smart-tivi-samsung-qled-65q6fa-4k-65-inch.png",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "smart-tivi-coocaa-fhd-43-inch-43s3u-plus",
+   "name": "Smart Tivi Coocaa FHD 43 inch 43S3U+",
+   "brand": "Coocaa",
+   "category": "tivi",
+   "price": 4990000,
+   "old_price": 5490000,
+   "stock": 10,
+   "rating": 5.0,
+   "promo": "Trả góp 0% lãi suất, trả trước 0 đồng, 0 phí - kì hạn tới 12 tháng và 5 km khác",
+   "image": "img/products/smart-tivi-coocaa-fhd-43-inch-43s3u-plus.png",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "tivi-xiaomi-qled-4k-a-pro-43-inch-2026",
+   "name": "Tivi Xiaomi A Pro 4K 43 inch QLED 2026",
+   "brand": "Xiaomi",
+   "category": "tivi",
+   "price": 7690000,
+   "old_price": 8490000,
+   "stock": 10,
+   "rating": null,
+   "promo": "PMH500,000 ₫Trả góp 0% lãi suất, trả trước 0 đồng, 0 phí - kì hạn tới 12 tháng và 5 km khác",
+   "image": "img/products/tivi-xiaomi-qled-4k-a-pro-43-inch-2026.png",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "google-tivi-coocaa-qled-4k-55-inch-2026-55y79se",
+   "name": "Google tivi Coocaa QLED 4K 55 inch 2026 (55Y79SE)",
+   "brand": "Coocaa",
+   "category": "tivi",
+   "price": 8290000,
+   "old_price": 12590000,
+   "stock": 10,
+   "rating": null,
+   "promo": "Tặng khung treo trị giá 400K khi mua tivi với khách hàng mới (Snull/Snew) và 3 km khác",
+   "image": "img/products/google-tivi-coocaa-qled-4k-55-inch-2026-55y79se.png",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "smart-tivi-samsung-uhd-55u8500f-4k-55-inch-2025",
+   "name": "Smart Tivi Samsung UHD 4K 55 inch 2025 (55U8500F)",
+   "brand": "Samsung",
+   "category": "tivi",
+   "price": 9790000,
+   "old_price": 15900000,
+   "stock": 10,
+   "rating": null,
+   "promo": "Giảm thêm 1 triệu cho sản phẩm tivi, điện máy trên 10 triệu khi mua điện thoại/laptop và 6 km khác",
+   "image": "img/products/smart-tivi-samsung-uhd-55u8500f-4k-55-inch-2025.png",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "smart-tivi-samsung-uhd-43u8000f-4k-43-inch-2025",
+   "name": "Smart Tivi Samsung UHD 4K 43 inch 2025 (43U8000F)",
+   "brand": "Samsung",
+   "category": "tivi",
+   "price": 6990000,
+   "old_price": 9900000,
+   "stock": 10,
+   "rating": null,
+   "promo": "Tặng khung treo trị giá 400K khi mua tivi với khách hàng mới (Snull/Snew) và 6 km khác",
+   "image": "img/products/smart-tivi-samsung-uhd-43u8000f-4k-43-inch-2025.png",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "smart-tivi-coocaa-hd-32-inch-32s3u-plus",
+   "name": "Smart Tivi Coocaa HD 32 inch 32S3U+",
+   "brand": "Coocaa",
+   "category": "tivi",
+   "price": 3690000,
+   "old_price": 4990000,
+   "stock": 10,
+   "rating": 5.0,
+   "promo": "Tặng khung treo trị giá 400K khi mua tivi với khách hàng mới (Snull/Snew) và 5 km khác",
+   "image": "img/products/smart-tivi-coocaa-hd-32-inch-32s3u-plus.png",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "tivi-xiaomi-4k-a-55-inch-2026",
+   "name": "Tivi Xiaomi A 4K 55 inch 2026",
+   "brand": "Xiaomi",
+   "category": "tivi",
+   "price": 9990000,
+   "old_price": 10990000,
+   "stock": 10,
+   "rating": null,
+   "promo": "PMH1,500,000 ₫Tặng khung treo trị giá 400K khi mua tivi với khách hàng mới (Snull/Snew) và 5 km khác",
+   "image": "img/products/tivi-xiaomi-4k-a-55-inch-2026.png",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "tivi-xiaomi-fhd-a-43-inch-2026",
+   "name": "Tivi Xiaomi A FHD 43 inch 2026",
+   "brand": "Xiaomi",
+   "category": "tivi",
+   "price": 6390000,
+   "old_price": 6890000,
+   "stock": 10,
+   "rating": null,
+   "promo": "PMH500,000 ₫Giảm thêm 1 triệu cho sản phẩm tivi, điện máy trên 10 triệu khi mua điện thoại/laptop và 5 km khác",
+   "image": "img/products/tivi-xiaomi-fhd-a-43-inch-2026.png",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "smart-tivi-lg-uhd-65ua8450-4k-65-inch-2025",
+   "name": "Smart Tivi LG UHD 4K 65 inch 2025 (65UA8450PSA)",
+   "brand": "LG",
+   "category": "tivi",
+   "price": 12590000,
+   "old_price": 19900000,
+   "stock": 10,
+   "rating": null,
+   "promo": "Giảm thêm 1 triệu cho sản phẩm tivi, điện máy trên 10 triệu khi mua điện thoại/laptop và 6 km khác",
+   "image": "img/products/smart-tivi-lg-uhd-65ua8450-4k-65-inch-2025.png",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "google-tivi-tcl-qd-miniled-65c7k-4k-65-inch-2025",
+   "name": "Google tivi TCL QD-MiniLED 144Hz 4K 65 inch 2025 (65C7K)",
+   "brand": "TCL",
+   "category": "tivi",
+   "price": 18990000,
+   "old_price": 37490000,
+   "stock": 10,
+   "rating": null,
+   "promo": "Tặng khung treo trị giá 400K khi mua tivi với khách hàng mới (Snull/Snew) và 5 km khác",
+   "image": "img/products/google-tivi-tcl-qd-miniled-65c7k-4k-65-inch-2025.png",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "smart-tivi-samsung-uhd-43du7000-4k-43-inch-2024",
+   "name": "Tivi Samsung UHD 4K 43 inch 43DU7000",
+   "brand": "Samsung",
+   "category": "tivi",
+   "price": 6390000,
+   "old_price": 9400000,
+   "stock": 10,
+   "rating": null,
+   "promo": "Trả góp 0% lãi suất, trả trước 0 đồng, 0 phí - kì hạn tới 12 tháng và 6 km khác",
+   "image": "img/products/smart-tivi-samsung-uhd-43du7000-4k-43-inch-2024.png",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "google-tivi-coocaa-qled-4k-55-inch-55y68-pro-2025",
+   "name": "Google Tivi Coocaa QLED 4K 55 inch 2025 (55Y68 Pro)",
+   "brand": "Coocaa",
+   "category": "tivi",
+   "price": 7690000,
+   "old_price": 10990000,
+   "stock": 10,
+   "rating": null,
+   "promo": "Trả góp 0% lãi suất, trả trước 0 đồng, 0 phí - kì hạn tới 12 tháng và 5 km khác",
+   "image": "img/products/google-tivi-coocaa-qled-4k-55-inch-55y68-pro-2025.png",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "tu-lanh-xiaomi-mijia-multidoor-mrc51hmpa-2025-510-lit",
+   "name": "Tủ lạnh Xiaomi Mijia Multidoor 510L 2025 (MRC51HMPA)",
+   "brand": "Xiaomi",
+   "category": "tivi",
+   "price": 12990000,
+   "old_price": 15990000,
+   "stock": 10,
+   "rating": 5.0,
+   "promo": "Giảm thêm 1 triệu cho sản phẩm tivi, điện máy trên 10 triệu khi mua điện thoại/laptop và 2 km khác",
+   "image": "img/products/tu-lanh-xiaomi-mijia-multidoor-mrc51hmpa-2025-510-lit.png",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "tu-lanh-toshiba-inverter-471-lit-multi-door-gr-rf606wi-pmv-60-ag",
+   "name": "Tủ lạnh Toshiba Multidoor 471 lít 2025 (GR-RF606WI-PMV(60)-AG)",
+   "brand": "Toshiba",
+   "category": "tivi",
+   "price": 15490000,
+   "old_price": 17990000,
+   "stock": 10,
+   "rating": null,
+   "promo": "Trả góp 0% lãi suất, trả trước 0 đồng, 0 phí - kì hạn tới 12 tháng và 2 km khác",
+   "image": "img/products/tu-lanh-toshiba-inverter-471-lit-multi-door-gr-rf606wi-pmv-60-ag.png",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "tu-lanh-panasonic-inverter-multi-door-nr-xy680ymmv-621-lit",
+   "name": "Tủ lạnh Panasonic Multidoor 621L Prime + Edition 2023 (NR-XY680YMMV)",
+   "brand": "Panasonic",
+   "category": "tivi",
+   "price": 93390000,
+   "old_price": 99990000,
+   "stock": 10,
+   "rating": null,
+   "promo": "Miễn phí vận chuyển, lắp đặt và 2 km khác",
+   "image": "img/products/tu-lanh-panasonic-inverter-multi-door-nr-xy680ymmv-621-lit.png",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "tu-lanh-aqua-aqr-d100fa-bs-90-lit",
+   "name": "Tủ lạnh AQUA 90 lít 2024 (AQR-D100FA(BS))",
+   "brand": "AQUA",
+   "category": "tivi",
+   "price": 3390000,
+   "old_price": null,
+   "stock": 10,
+   "rating": null,
+   "promo": "Miễn phí vận chuyển, lắp đặt và 2 km khác",
+   "image": "img/products/tu-lanh-aqua-aqr-d100fa-bs-90-lit.png",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "tu-lanh-aqua-aqr-d59fa-bs-50-lit",
+   "name": "Tủ lạnh AQUA 50l ít 2020 (AQR-D59FA(BS))",
+   "brand": "AQUA",
+   "category": "tivi",
+   "price": 2390000,
+   "old_price": 3190000,
+   "stock": 10,
+   "rating": null,
+   "promo": "Trả góp 0% lãi suất, trả trước 0 đồng, 0 phí - kì hạn tới 12 tháng và 2 km khác",
+   "image": "img/products/tu-lanh-aqua-aqr-d59fa-bs-50-lit.png",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "tu-lanh-samsung-inverter-side-by-side-rs57dg400em9sv-583-lit",
+   "name": "Tủ lạnh Samsung Side By Side 583L 2024 RS57DG400EM9SV",
+   "brand": "Samsung",
+   "category": "tivi",
+   "price": 13390000,
+   "old_price": 20480000,
+   "stock": 10,
+   "rating": null,
+   "promo": "Miễn phí vận chuyển, lắp đặt và 2 km khác",
+   "image": "img/products/tu-lanh-samsung-inverter-side-by-side-rs57dg400em9sv-583-lit.png",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "tu-lanh-aqua-aqr-d60fa-bs-50-lit",
+   "name": "Tủ lạnh AQUA 50 lít 2024 (AQR-D60FA(BS))",
+   "brand": "AQUA",
+   "category": "tivi",
+   "price": 2890000,
+   "old_price": null,
+   "stock": 10,
+   "rating": null,
+   "promo": "Giảm thêm 1 triệu cho sản phẩm tivi, điện máy trên 10 triệu khi mua điện thoại/laptop và 2 km khác",
+   "image": "img/products/tu-lanh-aqua-aqr-d60fa-bs-50-lit.png",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "tu-lanh-lg-217-lit-ltb21svmd",
+   "name": "Tủ lạnh LG 217L 2024 (LTB21SVMD)",
+   "brand": "LG",
+   "category": "tivi",
+   "price": 4990000,
+   "old_price": 8490000,
+   "stock": 10,
+   "rating": null,
+   "promo": "Trả góp 0% lãi suất, trả trước 0 đồng, 0 phí - kì hạn tới 12 tháng và 2 km khác",
+   "image": "img/products/tu-lanh-lg-217-lit-ltb21svmd.png",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "tu-lanh-panasonic-inverter-nr-bx471gpkv-417-lit",
+   "name": "Tủ lạnh Panasonic ngăn đá dưới 417L ngăn đông mềm 2021 (NR-BX471GPKV)",
+   "brand": "Panasonic",
+   "category": "tivi",
+   "price": 14990000,
+   "old_price": 18990000,
+   "stock": 10,
+   "rating": null,
+   "promo": "Giảm thêm 1 triệu cho sản phẩm tivi, điện máy trên 10 triệu khi mua điện thoại/laptop và 2 km khác",
+   "image": "img/products/tu-lanh-panasonic-inverter-nr-bx471gpkv-417-lit.png",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "tu-lanh-hitachi-multidoor-422l-inverter-2026-hr4n7462dsdxvn",
+   "name": "Tủ lạnh Hitachi Multidoor 422L inverter 2026 (HR4N7462DSDXVN)",
+   "brand": "Hitachi",
+   "category": "tivi",
+   "price": 16790000,
+   "old_price": 19990000,
+   "stock": 10,
+   "rating": null,
+   "promo": "Trả góp 0% lãi suất, trả trước 0 đồng, 0 phí - kì hạn tới 12 tháng và 1 km khác",
+   "image": "img/products/tu-lanh-hitachi-multidoor-422l-inverter-2026-hr4n7462dsdxvn.png",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "tu-lanh-samsung-inverter-multi-door-rf48a4000b4sv-488-lit",
+   "name": "Tủ lạnh Samsung Multidoor 488 lít 2021 (RF48A4000B4/SV)",
+   "brand": "Samsung",
+   "category": "tivi",
+   "price": 15990000,
+   "old_price": 26550000,
+   "stock": 10,
+   "rating": 5.0,
+   "promo": "Giảm thêm 1 triệu cho sản phẩm tivi, điện máy trên 10 triệu khi mua điện thoại/laptop và 2 km khác",
+   "image": "img/products/tu-lanh-samsung-inverter-multi-door-rf48a4000b4sv-488-lit.png",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "tu-lanh-panasonic-inverter-nr-ba190ppvn-170-lit",
+   "name": "Tủ lạnh Panasonic 170L 2020 NR-BA190PPVN",
+   "brand": "Panasonic",
+   "category": "tivi",
+   "price": 5790000,
+   "old_price": 6490000,
+   "stock": 10,
+   "rating": null,
+   "promo": "Giảm thêm 1 triệu cho sản phẩm tivi, điện máy trên 10 triệu khi mua điện thoại/laptop và 2 km khác",
+   "image": "img/products/tu-lanh-panasonic-inverter-nr-ba190ppvn-170-lit.png",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "tu-lanh-lg-inverter-gv-b262ps-266-lit",
+   "name": "Tủ lạnh LG 266 lít 2022 (GV-B262PS)",
+   "brand": "LG",
+   "category": "tivi",
+   "price": 5390000,
+   "old_price": 9990000,
+   "stock": 10,
+   "rating": null,
+   "promo": "Giảm thêm 1 triệu cho sản phẩm tivi, điện máy trên 10 triệu khi mua điện thoại/laptop và 2 km khác",
+   "image": "img/products/tu-lanh-lg-inverter-gv-b262ps-266-lit.png",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "tu-lanh-lg-inverter-266-lit-ltb26blm",
+   "name": "Tủ lạnh LG 266L 2025 (LTB26BLM)",
+   "brand": "LG",
+   "category": "tivi",
+   "price": 6290000,
+   "old_price": 8790000,
+   "stock": 10,
+   "rating": null,
+   "promo": "Miễn phí vận chuyển, lắp đặt và 2 km khác",
+   "image": "img/products/tu-lanh-lg-inverter-266-lit-ltb26blm.png",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "tu-lanh-lg-inverter-ltd37blm-374-lit",
+   "name": "Tủ lạnh LG 374 lít 2024 (LTD37BLM)",
+   "brand": "LG",
+   "category": "tivi",
+   "price": 9290000,
+   "old_price": 16490000,
+   "stock": 10,
+   "rating": null,
+   "promo": "Trả góp 0% lãi suất, trả trước 0 đồng, 0 phí - kì hạn tới 12 tháng và 2 km khác",
+   "image": "img/products/tu-lanh-lg-inverter-ltd37blm-374-lit.png",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "tu-lanh-lg-inverter-519-lit-side-by-side-gr-b256jds",
+   "name": "Tủ Lạnh LG Side By Side 519L 2023 (GR-B256JDS)",
+   "brand": "LG",
+   "category": "tivi",
+   "price": 12390000,
+   "old_price": 19990000,
+   "stock": 10,
+   "rating": null,
+   "promo": "Trả góp 0% lãi suất, trả trước 0 đồng, 0 phí - kì hạn tới 12 tháng và 2 km khác",
+   "image": "img/products/tu-lanh-lg-inverter-519-lit-side-by-side-gr-b256jds.png",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "tu-lanh-toshiba-gr-rt325we-pmv-06-249-lit",
+   "name": "Tủ lạnh Toshiba 249 lít 2021 (GR-RT325WE-PMV(06)-MG)",
+   "brand": "Toshiba",
+   "category": "tivi",
+   "price": 6990000,
+   "old_price": 9990000,
+   "stock": 10,
+   "rating": null,
+   "promo": "Giảm thêm 1 triệu cho sản phẩm tivi, điện máy trên 10 triệu khi mua điện thoại/laptop và 2 km khác",
+   "image": "img/products/tu-lanh-toshiba-gr-rt325we-pmv-06-249-lit.png",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "tu-lanh-sharp-inverter-multidoor-362-lit-sj-fx420v-sl",
+   "name": "Tủ lạnh Sharp Multidoor 362L 2022 (SJ-FX420V-SL)",
+   "brand": "Sharp",
+   "category": "tivi",
+   "price": 11990000,
+   "old_price": 18390000,
+   "stock": 10,
+   "rating": null,
+   "promo": "Giảm thêm 1 triệu cho sản phẩm tivi, điện máy trên 10 triệu khi mua điện thoại/laptop và 2 km khác",
+   "image": "img/products/tu-lanh-sharp-inverter-multidoor-362-lit-sj-fx420v-sl.png",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "tu-lanh-lg-inverter-side-by-side-gr-x257bl-635-lit",
+   "name": "Tủ lạnh LG Side By Side 635 lít 2023 (GR-X257BL)",
+   "brand": "LG",
+   "category": "tivi",
+   "price": 35990000,
+   "old_price": 55990000,
+   "stock": 10,
+   "rating": null,
+   "promo": "Giảm thêm 1 triệu cho sản phẩm tivi, điện máy trên 10 triệu khi mua điện thoại/laptop và 2 km khác",
+   "image": "img/products/tu-lanh-lg-inverter-side-by-side-gr-x257bl-635-lit.png",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "tu-lanh-aqua-inverter-multi-door-506-lit-aqr-m570xafs",
+   "name": "Tủ lạnh AQUA Multidoor 506 lít 2026 (AQR-M570XA(FS))",
+   "brand": "AQUA",
+   "category": "tivi",
+   "price": 13690000,
+   "old_price": 15990000,
+   "stock": 10,
+   "rating": null,
+   "promo": "Trả góp 0% lãi suất, trả trước 0 đồng, 0 phí - kì hạn tới 12 tháng và 1 km khác",
+   "image": "img/products/tu-lanh-aqua-inverter-multi-door-506-lit-aqr-m570xafs.png",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  },
+  {
+   "slug": "iphone-16-pro-max",
+   "name": "Điện thoại iPhone 16 Pro Max 256GB",
+   "brand": "Apple",
+   "category": "dien-thoai",
+   "price": 30990000,
+   "old_price": 34990000,
+   "stock": 10,
+   "rating": null,
+   "promo": "Đặc quyền trợ giá lên đến 3 triệu khi thu cũ lên đời iPhone và 2 km khác",
+   "image": "img/products/iphone-16-pro-max.png",
+   "details": {
+    "gallery": [],
+    "specs": [],
+    "versions": [],
+    "colors": [],
+    "promotions": [],
+    "faqs": []
+   }
+  }
+ ],
+ "banners": [
+  {
+   "position": "hero",
+   "title": "MỪNG KHAI TRƯƠNG",
+   "subtitle": "Ưu đãi cực khủng",
+   "link": "/",
+   "sort": 0,
+   "image": "img/banners/hero-0.jpg"
+  },
+  {
+   "position": "hero",
+   "title": "IPHONE 18 PRO",
+   "subtitle": "Mua ngay",
+   "link": "/",
+   "sort": 1,
+   "image": "img/banners/hero-1.png"
+  },
+  {
+   "position": "hero",
+   "title": "GALAXY Z8 SERIES",
+   "subtitle": "Gập mở đẳng cấp",
+   "link": "/",
+   "sort": 2,
+   "image": "img/banners/hero-2.png"
+  },
+  {
+   "position": "hero",
+   "title": "OPPO FIND X10 SERIES",
+   "subtitle": "Đăng ký nhận tin",
+   "link": "/",
+   "sort": 3,
+   "image": "img/banners/hero-3.png"
+  },
+  {
+   "position": "hero",
+   "title": "IPHONE DUO",
+   "subtitle": "Đăng ký nhận tin",
+   "link": "/",
+   "sort": 4,
+   "image": "img/banners/hero-4.png"
+  },
+  {
+   "position": "hero",
+   "title": "ASUS VIVOBOOK S",
+   "subtitle": "Giá ưu đãi",
+   "link": "/",
+   "sort": 5,
+   "image": "img/banners/hero-5.png"
+  },
+  {
+   "position": "hero",
+   "title": "HONOR 600S 5G",
+   "subtitle": "Ưu đãi mở bán",
+   "link": "/",
+   "sort": 6,
+   "image": "img/banners/hero-6.jpg"
+  },
+  {
+   "position": "hero",
+   "title": "TAI NGHE SENNHEISER",
+   "subtitle": "Mua ngay giá sốc!",
+   "link": "/",
+   "sort": 7,
+   "image": "img/banners/hero-7.jpg"
+  },
+  {
+   "position": "hero_small",
+   "title": "Apple Watch Series 12",
+   "subtitle": "",
+   "link": "/",
+   "sort": 0,
+   "image": "img/banners/hero_small-0.png"
+  },
+  {
+   "position": "hero_small",
+   "title": "Samsung Galaxy A37",
+   "subtitle": "",
+   "link": "/",
+   "sort": 1,
+   "image": "img/banners/hero_small-1.png"
+  },
+  {
+   "position": "hero_small",
+   "title": "B2S Laptop",
+   "subtitle": "",
+   "link": "/",
+   "sort": 2,
+   "image": "img/banners/hero_small-2.png"
+  },
+  {
+   "position": "wide",
+   "title": "Back to School 2026 - Đặc quyền ưu đãi học sinh, sinh viên mùa tựu trường",
+   "subtitle": "",
+   "link": "/",
+   "sort": 0,
+   "image": "img/banners/wide-0.gif"
+  },
+  {
+   "position": "deal_tab",
+   "title": "Deal sốc mỗi ngày",
+   "subtitle": "",
+   "link": "/",
+   "sort": 0,
+   "image": "img/banners/deal_tab-0.png"
+  },
+  {
+   "position": "deal_tab",
+   "title": "Sản phẩm hot trend",
+   "subtitle": "",
+   "link": "/",
+   "sort": 1,
+   "image": "img/banners/deal_tab-1.png"
+  },
+  {
+   "position": "deal_tab",
+   "title": "Hàng mới về",
+   "subtitle": "",
+   "link": "/",
+   "sort": 2,
+   "image": "img/banners/deal_tab-2.png"
+  },
+  {
+   "position": "promo_edu",
+   "title": "Laptop AI",
+   "subtitle": "",
+   "link": "/",
+   "sort": 0,
+   "image": "img/banners/promo_edu-0.png"
+  },
+  {
+   "position": "promo_edu",
+   "title": "Ưu đãi Laptop",
+   "subtitle": "",
+   "link": "/",
+   "sort": 1,
+   "image": "img/banners/promo_edu-1.png"
+  },
+  {
+   "position": "promo_edu",
+   "title": "Trả góp",
+   "subtitle": "",
+   "link": "/",
+   "sort": 2,
+   "image": "img/banners/promo_edu-2.png"
+  },
+  {
+   "position": "promo_edu",
+   "title": "ƯU ĐÃI SINH VIÊN TỔNG",
+   "subtitle": "",
+   "link": "/",
+   "sort": 3,
+   "image": "img/banners/promo_edu-3.jpg"
+  },
+  {
+   "position": "promo_pay",
+   "title": "GIẢM ĐẾN 2.000.000 VND KHI THANH TOÁN BẰNG THẺ MASTERCARD VIKKI DIGITAL BANK QUA PAYOO POS",
+   "subtitle": "",
+   "link": "/",
+   "sort": 0,
+   "image": "img/banners/promo_pay-0.png"
+  },
+  {
+   "position": "promo_pay",
+   "title": "GIẢM 2 TRIỆU KHI MUA IPHONE 18 PRO & IPHONE DUO THANH TOÁN BẰNG THẺ TÍN DỤNG NAM A BANK JCB",
+   "subtitle": "",
+   "link": "/",
+   "sort": 1,
+   "image": "img/banners/promo_pay-1.png"
+  },
+  {
+   "position": "promo_pay",
+   "title": "ƯU ĐÃI THẺ MSB VISA KHI MUA IPHONE 18 PRO & IPHONE DUO TẠI CELLPHONES",
+   "subtitle": "",
+   "link": "/",
+   "sort": 2,
+   "image": "img/banners/promo_pay-2.png"
+  },
+  {
+   "position": "promo_pay",
+   "title": "GIẢM 1 TRIỆU KHI THANH TOÁN IPHONE 18 PRO VÀ IPHONE DUO BẰNG THẺ UOB",
+   "subtitle": "",
+   "link": "/",
+   "sort": 3,
+   "image": "img/banners/promo_pay-3.png"
+  },
+  {
+   "position": "plp",
+   "title": "iPhone Duo",
+   "subtitle": "",
+   "link": "/",
+   "sort": 0,
+   "image": "img/banners/plp-0.png"
+  },
+  {
+   "position": "plp",
+   "title": "iPhone 18 Series",
+   "subtitle": "",
+   "link": "/",
+   "sort": 1,
+   "image": "img/banners/plp-1.png"
+  },
+  {
+   "position": "plp",
+   "title": "Điện thoại Samsung Galaxy",
+   "subtitle": "",
+   "link": "/",
+   "sort": 2,
+   "image": "img/banners/plp-2.png"
+  },
+  {
+   "position": "plp",
+   "title": "OPPO Find X10 Series",
+   "subtitle": "",
+   "link": "/",
+   "sort": 3,
+   "image": "img/banners/plp-3.png"
+  },
+  {
+   "position": "plp",
+   "title": "Điện thoại Xiaomi",
+   "subtitle": "",
+   "link": "/",
+   "sort": 4,
+   "image": "img/banners/plp-4.png"
+  },
+  {
+   "position": "plp",
+   "title": "Samsung Galaxy Z8",
+   "subtitle": "",
+   "link": "/",
+   "sort": 5,
+   "image": "img/banners/plp-5.png"
+  },
+  {
+   "position": "plp",
+   "title": "REDMI NOTE 17 SERIES",
+   "subtitle": "",
+   "link": "/",
+   "sort": 6,
+   "image": "img/banners/plp-6.png"
+  },
+  {
+   "position": "brand_page",
+   "title": "Sis Apple",
+   "subtitle": "",
+   "link": "/",
+   "sort": 0,
+   "image": "img/banners/brand_page-0.jpg"
+  },
+  {
+   "position": "brand_page",
+   "title": "Samsung",
+   "subtitle": "",
+   "link": "/",
+   "sort": 1,
+   "image": "img/banners/brand_page-1.png"
+  },
+  {
+   "position": "brand_page",
+   "title": "Asus",
+   "subtitle": "",
+   "link": "/",
+   "sort": 2,
+   "image": "img/banners/brand_page-2.png"
+  },
+  {
+   "position": "brand_page",
+   "title": "Xiaomi",
+   "subtitle": "",
+   "link": "/",
+   "sort": 3,
+   "image": "img/banners/brand_page-3.png"
+  }
+ ],
+ "quick_links": [
+  {
+   "grp": "sub:dien-thoai",
+   "label": "Điện thoại chơi game",
+   "sort": 0,
+   "link": "/danh-muc/dien-thoai",
+   "image": "img/links/dien-thoai-0.png"
+  },
+  {
+   "grp": "sub:dien-thoai",
+   "label": "Điện thoại pin trâu",
+   "sort": 1,
+   "link": "/danh-muc/dien-thoai",
+   "image": "img/links/dien-thoai-1.png"
+  },
+  {
+   "grp": "sub:dien-thoai",
+   "label": "Điện thoại 5G",
+   "sort": 2,
+   "link": "/danh-muc/dien-thoai",
+   "image": "img/links/dien-thoai-2.png"
+  },
+  {
+   "grp": "sub:dien-thoai",
+   "label": "Điện thoại chụp ảnh đẹp",
+   "sort": 3,
+   "link": "/danh-muc/dien-thoai",
+   "image": "img/links/dien-thoai-3.png"
+  },
+  {
+   "grp": "sub:dien-thoai",
+   "label": "Điện thoại gập",
+   "sort": 4,
+   "link": "/danh-muc/dien-thoai",
+   "image": "img/links/dien-thoai-4.png"
+  },
+  {
+   "grp": "sub:dien-thoai",
+   "label": "Điện thoại AI",
+   "sort": 5,
+   "link": "/danh-muc/dien-thoai",
+   "image": "img/links/dien-thoai-5.png"
+  },
+  {
+   "grp": "sub:dien-thoai",
+   "label": "Điện thoại phổ thông",
+   "sort": 6,
+   "link": "/danh-muc/dien-thoai",
+   "image": "img/links/dien-thoai-6.png"
+  },
+  {
+   "grp": "sub:laptop",
+   "label": "Văn phòng",
+   "sort": 0,
+   "link": "/danh-muc/laptop",
+   "image": "img/links/laptop-0.png"
+  },
+  {
+   "grp": "sub:laptop",
+   "label": "Gaming",
+   "sort": 1,
+   "link": "/danh-muc/laptop",
+   "image": "img/links/laptop-1.png"
+  },
+  {
+   "grp": "sub:laptop",
+   "label": "Mỏng nhẹ",
+   "sort": 2,
+   "link": "/danh-muc/laptop",
+   "image": "img/links/laptop-2.png"
+  },
+  {
+   "grp": "sub:laptop",
+   "label": "Đồ họa - kỹ thuật",
+   "sort": 3,
+   "link": "/danh-muc/laptop",
+   "image": "img/links/laptop-3.png"
+  },
+  {
+   "grp": "sub:laptop",
+   "label": "Sinh viên",
+   "sort": 4,
+   "link": "/danh-muc/laptop",
+   "image": "img/links/laptop-4.png"
+  },
+  {
+   "grp": "sub:laptop",
+   "label": "Cảm ứng",
+   "sort": 5,
+   "link": "/danh-muc/laptop",
+   "image": "img/links/laptop-5.png"
+  },
+  {
+   "grp": "sub:laptop",
+   "label": "Laptop AI",
+   "sort": 6,
+   "link": "/danh-muc/laptop",
+   "image": "img/links/laptop-6.png"
+  },
+  {
+   "grp": "sub:dong-ho",
+   "label": "Tập luyện thể thao",
+   "sort": 0,
+   "link": "/danh-muc/dong-ho",
+   "image": "img/links/dong-ho-0.png"
+  },
+  {
+   "grp": "sub:dong-ho",
+   "label": "Nghe gọi",
+   "sort": 1,
+   "link": "/danh-muc/dong-ho",
+   "image": "img/links/dong-ho-1.png"
+  },
+  {
+   "grp": "sub:dong-ho",
+   "label": "Vòng đeo tay thông minh",
+   "sort": 2,
+   "link": "/danh-muc/dong-ho",
+   "image": "img/links/dong-ho-2.png"
+  },
+  {
+   "grp": "sub:dong-ho",
+   "label": "Định vị trẻ em",
+   "sort": 3,
+   "link": "/danh-muc/dong-ho",
+   "image": "img/links/dong-ho-3.png"
+  },
+  {
+   "grp": "sub:dong-ho",
+   "label": "Đo huyết áp",
+   "sort": 4,
+   "link": "/danh-muc/dong-ho",
+   "image": "img/links/dong-ho-4.png"
+  },
+  {
+   "grp": "sub:dong-ho",
+   "label": "Chống nước",
+   "sort": 5,
+   "link": "/danh-muc/dong-ho",
+   "image": "img/links/dong-ho-5.png"
+  },
+  {
+   "grp": "sub:tivi",
+   "label": "32 inch",
+   "sort": 0,
+   "link": "/danh-muc/tivi",
+   "image": "img/links/tivi-0.png"
+  },
+  {
+   "grp": "sub:tivi",
+   "label": "43 inch",
+   "sort": 1,
+   "link": "/danh-muc/tivi",
+   "image": "img/links/tivi-1.png"
+  },
+  {
+   "grp": "sub:tivi",
+   "label": "55 inch",
+   "sort": 2,
+   "link": "/danh-muc/tivi",
+   "image": "img/links/tivi-2.png"
+  },
+  {
+   "grp": "sub:tivi",
+   "label": "60 inch",
+   "sort": 3,
+   "link": "/danh-muc/tivi",
+   "image": "img/links/tivi-3.png"
+  },
+  {
+   "grp": "sub:tivi",
+   "label": "65 inch",
+   "sort": 4,
+   "link": "/danh-muc/tivi",
+   "image": "img/links/tivi-4.png"
+  },
+  {
+   "grp": "sub:tivi",
+   "label": "75 inch",
+   "sort": 5,
+   "link": "/danh-muc/tivi",
+   "image": "img/links/tivi-5.png"
+  },
+  {
+   "grp": "sub:tivi",
+   "label": "Tivi cũ",
+   "sort": 6,
+   "link": "/danh-muc/tivi",
+   "image": "img/links/tivi-6.png"
+  },
+  {
+   "grp": "sub:tivi",
+   "label": "Giá treo tivi",
+   "sort": 7,
+   "link": "/danh-muc/tivi",
+   "image": "img/links/tivi-7.png"
+  },
+  {
+   "grp": "accessory",
+   "label": "Phụ kiện Apple",
+   "sort": 0,
+   "link": "/danh-muc/phu-kien",
+   "image": "img/links/acc-0.png"
+  },
+  {
+   "grp": "accessory",
+   "label": "Cáp, sạc",
+   "sort": 1,
+   "link": "/danh-muc/phu-kien",
+   "image": "img/links/acc-1.png"
+  },
+  {
+   "grp": "accessory",
+   "label": "Pin sạc dự phòng",
+   "sort": 2,
+   "link": "/danh-muc/phu-kien",
+   "image": "img/links/acc-2.png"
+  },
+  {
+   "grp": "accessory",
+   "label": "Ốp lưng - Bao da",
+   "sort": 3,
+   "link": "/danh-muc/phu-kien",
+   "image": "img/links/acc-3.png"
+  },
+  {
+   "grp": "accessory",
+   "label": "Dán màn hình",
+   "sort": 4,
+   "link": "/danh-muc/phu-kien",
+   "image": "img/links/acc-4.png"
+  },
+  {
+   "grp": "accessory",
+   "label": "Thẻ nhớ, USB",
+   "sort": 5,
+   "link": "/danh-muc/phu-kien",
+   "image": "img/links/acc-5.png"
+  },
+  {
+   "grp": "accessory",
+   "label": "Gaming Gear, Playstation",
+   "sort": 6,
+   "link": "/danh-muc/phu-kien",
+   "image": "img/links/acc-6.png"
+  },
+  {
+   "grp": "accessory",
+   "label": "Sim 4G - 5G",
+   "sort": 7,
+   "link": "/danh-muc/phu-kien",
+   "image": "img/links/acc-7.png"
+  },
+  {
+   "grp": "accessory",
+   "label": "Thiết bị mạng",
+   "sort": 8,
+   "link": "/danh-muc/phu-kien",
+   "image": "img/links/acc-8.png"
+  },
+  {
+   "grp": "accessory",
+   "label": "Camera",
+   "sort": 9,
+   "link": "/danh-muc/phu-kien",
+   "image": "img/links/acc-9.png"
+  },
+  {
+   "grp": "accessory",
+   "label": "Gimbal",
+   "sort": 10,
+   "link": "/danh-muc/phu-kien",
+   "image": "img/links/acc-10.png"
+  },
+  {
+   "grp": "accessory",
+   "label": "Flycam",
+   "sort": 11,
+   "link": "/danh-muc/phu-kien",
+   "image": "img/links/acc-11.png"
+  },
+  {
+   "grp": "accessory",
+   "label": "Máy ảnh",
+   "sort": 12,
+   "link": "/danh-muc/phu-kien",
+   "image": "img/links/acc-12.png"
+  },
+  {
+   "grp": "accessory",
+   "label": "Chuột, bàn phím",
+   "sort": 13,
+   "link": "/danh-muc/phu-kien",
+   "image": "img/links/acc-13.png"
+  },
+  {
+   "grp": "accessory",
+   "label": "Balo, túi xách",
+   "sort": 14,
+   "link": "/danh-muc/phu-kien",
+   "image": "img/links/acc-14.png"
+  },
+  {
+   "grp": "accessory",
+   "label": "Hub chuyển đổi",
+   "sort": 15,
+   "link": "/danh-muc/phu-kien",
+   "image": "img/links/acc-15.png"
+  },
+  {
+   "grp": "accessory",
+   "label": "Phụ kiện điện thoại",
+   "sort": 16,
+   "link": "/danh-muc/phu-kien",
+   "image": "img/links/acc-16.png"
+  },
+  {
+   "grp": "accessory",
+   "label": "Phụ kiện Laptop",
+   "sort": 17,
+   "link": "/danh-muc/phu-kien",
+   "image": "img/links/acc-17.png"
+  }
+ ]
+}

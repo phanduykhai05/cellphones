@@ -1,0 +1,79 @@
+/* Đăng nhập/đăng ký, giỏ hàng, thanh toán, đơn hàng */
+.auth { display: grid; place-items: center; padding: 40px 0 24px; }
+.auth__card { width: min(440px, 100%); padding: 32px 28px; border-radius: 16px; background: #fff; box-shadow: var(--shadow-panel); text-align: center; }
+.auth__badge { display: inline-grid; place-items: center; width: 64px; height: 64px; border-radius: 50%; background: var(--red-50); color: var(--red-500); }
+.auth__title { margin: 12px 0 24px; font-size: 20px; font-weight: 700; color: var(--red-500); }
+.auth__form { display: grid; gap: 14px; text-align: left; }
+.auth__switch { margin-top: 18px; font-size: 14px; color: var(--n-500); }
+.auth__switch a { font-weight: 600; color: var(--red-500); }
+
+.shop { padding: 16px 0 24px; }
+.shop__title { margin: 8px 0 16px; font-size: 20px; font-weight: 700; color: var(--n-900); }
+.shop__grid { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 16px; align-items: start; }
+.shop__main { display: grid; gap: 12px; }
+
+.box { display: grid; gap: 12px; padding: 16px; border-radius: 12px; background: #fff; box-shadow: var(--shadow-card); }
+.box--info { background: var(--grad-blue); box-shadow: 0 0 0 1px #609AFA; font-size: 14px; }
+.box__title { font-size: 16px; font-weight: 700; color: var(--n-800); }
+.box__fields { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+.cart-line { display: grid; grid-template-columns: 100px minmax(0, 1fr) auto 32px; gap: 16px; align-items: center; padding: 16px; border-radius: 12px; background: #fff; box-shadow: var(--shadow-card); }
+.cart-line.is-warn { box-shadow: 0 0 0 1px var(--red-500); }
+.cart-line__img img { width: 100px; height: 100px; object-fit: contain; }
+.cart-line__name { font-size: 14px; font-weight: 600; color: var(--n-900); }
+.cart-line__name:hover { color: var(--red-500); }
+.cart-line__variant { margin-top: 2px; font-size: 12px; color: var(--n-500); }
+.cart-line__price { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px; margin-top: 6px; }
+.cart-line__price strong { font-size: 16px; color: var(--red-600); }
+.cart-line__price del { font-size: 12px; color: var(--n-500); }
+.cart-line__warn { margin-top: 4px; font-size: 12px; color: var(--red-500); }
+.cart-line__remove button { display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; color: var(--n-500); }
+.cart-line__remove button:hover { background: var(--n-100); color: var(--red-500); }
+
+.qty { display: grid; grid-template-columns: 32px 40px 32px; grid-template-areas: "minus value plus"; align-items: center; height: 32px; border: 1px solid var(--n-200); border-radius: 8px; }
+.qty__minus { grid-area: minus; } .qty__plus { grid-area: plus; }
+.qty__value { grid-area: value; font-size: 14px; font-weight: 600; text-align: center; }
+.qty button { width: 32px; height: 30px; font-size: 18px; color: var(--n-800); }
+.qty button:disabled { color: var(--n-300); cursor: default; }
+
+.summary { position: sticky; top: calc(var(--header-h-compact) + 12px); display: grid; gap: 12px; padding: 16px; border-radius: 12px; background: #fff; box-shadow: var(--shadow-card); }
+.summary__row { display: flex; justify-content: space-between; gap: 12px; font-size: 14px; color: var(--n-600); }
+.summary__row b { font-weight: 600; text-align: right; color: var(--n-800); }
+.summary__row--block { flex-direction: column; gap: 2px; }
+.summary__row--block b { text-align: left; }
+.summary__row--total { padding-top: 12px; border-top: 1px dashed var(--n-300); font-size: 16px; font-weight: 600; color: var(--n-800); }
+.summary__row--total strong { font-size: 20px; color: var(--red-600); }
+.summary__item { display: grid; grid-template-columns: 48px minmax(0, 1fr) auto; gap: 10px; align-items: center; font-size: 13px; }
+.summary__item img { width: 48px; height: 48px; object-fit: contain; }
+.summary__item small { display: block; color: var(--n-500); }
+.summary__back { display: inline-flex; align-items: center; gap: 4px; justify-self: center; font-size: 14px; color: var(--blue-500); }
+
+.pay-option { display: flex; align-items: center; gap: 10px; padding: 12px 14px; border: 1px solid var(--n-200); border-radius: 8px; font-size: 14px; cursor: pointer; }
+.pay-option:has(input:checked) { border-color: var(--red-500); background: var(--red-50); }
+.pay-option input { accent-color: var(--red-500); }
+
+.empty-cart { display: grid; justify-items: center; gap: 16px; padding: 48px 0; text-align: center; color: var(--n-400); }
+.empty-cart p { color: var(--n-600); }
+
+.order-done { display: grid; justify-items: center; gap: 6px; margin-bottom: 20px; text-align: center; }
+.order-done__icon { display: grid; place-items: center; width: 64px; height: 64px; border-radius: 50%; background: var(--green-100); color: var(--green-900); }
+.order-done h1 { font-size: 22px; color: var(--green-900); }
+
+.order-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.order-table th, .order-table td { padding: 10px 8px; border-bottom: 1px solid var(--n-100); text-align: left; }
+.order-table th { font-weight: 600; color: var(--n-500); }
+.order-table a { font-weight: 600; color: var(--blue-500); }
+.status { padding: 2px 8px; border-radius: 9999px; background: var(--n-100); font-size: 12px; font-weight: 600; white-space: nowrap; }
+.status--pending { background: #FFF5C7; color: #995200; }
+.status--paid, .status--done { background: var(--green-100); color: var(--green-900); }
+.status--shipping { background: var(--blue-100); color: var(--blue-900); }
+.status--cancelled { background: var(--red-50); color: var(--red-600); }
+
+@media (max-width: 1023px) { .shop__grid { grid-template-columns: 1fr; } .summary { position: static; } }
+@media (max-width: 599px) {
+  .box__fields { grid-template-columns: 1fr; }
+  .cart-line { grid-template-columns: 72px minmax(0, 1fr) 32px; grid-template-areas: "img info remove" "img qty qty"; gap: 8px 12px; }
+  .cart-line__img { grid-area: img; } .cart-line__img img { width: 72px; height: 72px; }
+  .cart-line__info { grid-area: info; } .cart-line .qty { grid-area: qty; justify-self: start; } .cart-line__remove { grid-area: remove; }
+  .order-table th:nth-child(3), .order-table td:nth-child(3) { display: none; }
+}

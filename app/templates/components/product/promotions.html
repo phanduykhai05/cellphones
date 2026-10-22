@@ -1,0 +1,8 @@
+{% from "components/icons.html" import icon %}
+{% set promos = product.details.promotions or ([product.promo] if product.promo else []) %}
+{% if promos %}
+  <div class="promo-box">
+    <h3 class="promo-box__title">{{ icon("gift", 20) }}Khuyến mãi đi kèm</h3>
+    <ol class="promo-box__list">{% for p in promos %}<li>{{ p }}</li>{% endfor %}</ol>
+  </div>
+{% endif %}

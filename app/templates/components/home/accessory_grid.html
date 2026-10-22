@@ -1,0 +1,16 @@
+{# "Sắm thêm phụ kiện chất lượng" — lưới 6 cột. Spec: accessory-grid.spec.md #}
+{% from "components/icons.html" import icon %}
+<section class="container home-section">
+  <div class="section-head">
+    <h2 class="section-title">Sắm thêm phụ kiện chất lượng</h2>
+    <a class="see-all" href="{{ url_for('catalog.category', slug='phu-kien') }}">Xem tất cả{{ icon("chevron-right", 16) }}</a>
+  </div>
+  <div class="acc-grid">
+    {% for a in accessories %}
+      <a class="acc-grid__item" href="{{ a.link }}">
+        {% if a.image %}<img src="{{ url_for('static', filename=a.image) }}" alt="" loading="lazy" width="64" height="64">{% endif %}
+        <span>{{ a.label }}</span>
+      </a>
+    {% endfor %}
+  </div>
+</section>

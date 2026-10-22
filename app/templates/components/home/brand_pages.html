@@ -1,0 +1,6 @@
+<section class="container home-section">
+  <div class="section-head"><h2 class="section-title">Chuyên trang thương hiệu</h2></div>
+  <div class="brand-pages">
+    {% for b in banners.brand_page %}<a href="{{ b.link }}"><img src="{{ url_for('static', filename=b.image) }}" alt="{{ b.title }}" loading="lazy"></a>{% endfor %}
+  </div>
+</section>

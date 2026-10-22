@@ -1,0 +1,11 @@
+# CategoryPage `/danh-muc/<slug>`
+- Screenshot: `plp-1440-0..4.png`
+- breadcrumb: icon nhà + "Trang chủ" / mục; 12px/18px 500 #18181B, mục cuối #707070; gap 10px; padding 8px 0
+- 2 banner: grid 2 cột gap 8px, radius 8px, shadow sidebar
+- H1 section: 20px/30px 700 #18181B, mb 16px
+- lưới logo hãng: flex wrap gap 8px; ô 108×40 border 1px #E4E4E7 radius 6px nền trắng
+- "Chọn theo nhu cầu": ô 125×125 bg #F7F7F7 radius 16px, ảnh ở trên, chữ 12px/18px 600 #1D1D20 padding 6px 8px căn giữa
+- chip bộ lọc: height 40, padding 8px 16px, radius 8px, 14px; "Bộ lọc" nền trắng chữ #D70018 với `box-shadow: 0 0 0 1px #D70018`; các chip khác bg #F2F2F3 #1D1D20; dropdown có chevron; hàng dính top 72px nền trắng
+- sắp xếp: tiêu đề "Sắp xếp theo" 20px 700; nút 40px cao padding 8px 12px radius 50px 14px; active: chữ #3B82F6 bg #EFF5FF shadow `0 0 0 1px #3B82F6`; thường: bg #F7F7F8 chữ #1D1D20 shadow `0 0 0 1px #E4E4E7`; gap 16px
+- lưới sản phẩm: 5 cột (1200 / 5), gap 10px hàng 20px, card như ProductCard có tag thông số
+- "Xem thêm" ở cuối: nút viền, bo

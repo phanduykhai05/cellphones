@@ -1,0 +1,15 @@
+{% from "components/icons.html" import icon %}
+<form id="buy-form" method="post" action="{{ url_for('shop.cart_add') }}">
+  <input type="hidden" name="_csrf" value="{{ csrf_token() }}">
+  <input type="hidden" name="product_id" value="{{ product.id }}">
+  <input type="hidden" name="next" value="{{ request.path }}">
+</form>
+{% if product.stock > 0 %}
+  <div class="buy-actions">
+    <a class="buy-actions__installment" href="#">Trả góp 0%</a>
+    <button class="buy-actions__buy" type="submit" form="buy-form" name="buy_now" value="1"><b>MUA NGAY</b><span>Giao nhanh từ 2 giờ hoặc nhận tại cửa hàng</span></button>
+    <button class="buy-actions__cart" type="submit" form="buy-form">{{ icon("cart", 24) }}<span>Thêm vào giỏ</span></button>
+  </div>
+{% else %}
+  <p class="buy-actions__out">Sản phẩm tạm hết hàng</p>
+{% endif %}

@@ -1,0 +1,26 @@
+{# Phiên bản + màu sắc: radio thuần, chọn màu sẽ đổi ảnh chính (JS). #}
+{% from "components/icons.html" import icon %}
+{% if product.details.versions %}
+  <h3 class="pdp-subtitle">Phiên bản</h3>
+  <div class="opt-grid">
+    {% for v in product.details.versions %}
+      <label class="opt"><input type="radio" name="version" value="{{ v }}" {% if loop.first %}checked{% endif %}><span class="opt__body"><b>{{ v }}</b></span><i class="opt__tick">{{ icon("check", 12) }}</i></label>
+    {% endfor %}
+  </div>
+{% endif %}
+{% if product.details.colors %}
+  <h3 class="pdp-subtitle">Màu sắc</h3>
+  <div class="opt-grid">
+    {% for c in product.details.colors %}
+      <label class="opt opt--color">
+        <input type="radio" name="color" form="buy-form" value="{{ c.name }}" {% if loop.first %}checked{% endif %}
+               {% if c.image %}data-color-img="{{ url_for('static', filename=c.image) }}"{% endif %}>
+        <span class="opt__body">
+          {% if c.image %}<img src="{{ url_for('static', filename=c.image) }}" alt="" width="40" height="40">{% endif %}
+          <span><b>{{ c.name }}</b>{% if c.price %}<small>{{ c.price | vnd }}</small>{% endif %}</span>
+        </span>
+        <i class="opt__tick">{{ icon("check", 12) }}</i>
+      </label>
+    {% endfor %}
+  </div>
+{% endif %}

@@ -1,0 +1,63 @@
+{# Header cố định: dải khuyến mãi chạy chữ (ẩn khi cuộn) + thanh chính. Spec: docs/research/components/site-header.spec.md #}
+{% from "components/icons.html" import icon %}
+{% set strip_items = [
+  ("box", "Sản phẩm", "Chính hãng - Xuất VAT", "đầy đủ"),
+  ("truck", "Giao nhanh - Miễn phí", "", "cho đơn 300k"),
+  ("swap", "Thu cũ", "giá ngon - Lên đời", "tiết kiệm"),
+] %}
+<header class="site-header" data-header>
+  <div class="hd-strip">
+    <div class="hd-strip__marquee">
+      <div class="hd-strip__track">
+        {% for _ in range(2) %}{% for ic, bold, text, tail in strip_items %}
+          <span class="hd-strip__item">{{ icon(ic, 14) }}<b>{{ bold }}</b>{% if text %} {{ text }}{% endif %} {{ tail }}</span>
+        {% endfor %}{% endfor %}
+      </div>
+    </div>
+    <div class="hd-strip__links">
+      <a href="#">{{ icon("store", 14) }}Cửa hàng gần bạn</a>
+      <a href="#">{{ icon("receipt", 14) }}Tra cứu đơn hàng</a>
+      <a href="tel:{{ site.HOTLINE_SALES }}">{{ icon("phone", 14) }}{{ site.HOTLINE_SALES }}</a>
+    </div>
+  </div>
+
+  <div class="hd-bar">
+    <a class="hd-logo" href="{{ url_for('main.home') }}" aria-label="{{ site.SITE_NAME }}">
+      <span class="hd-logo__full">{{ site.SITE_NAME | lower }}</span>
+      <span class="hd-logo__mark">{{ site.SITE_NAME[:1] }}</span>
+    </a>
+
+    <details class="hd-menu" data-menu>
+      <summary class="hd-btn hd-btn--fill">{{ icon("grid") }}<span>Danh mục</span>{{ icon("chevron-down", 16) }}</summary>
+      <div class="hd-menu__panel">{% include "components/category_menu.html" %}</div>
+    </details>
+
+    <span class="hd-btn hd-btn--fill hd-btn--loc">{{ icon("location") }}<span>Hồ Chí Minh</span>{{ icon("chevron-down", 16) }}</span>
+
+    <form class="hd-search" action="{{ url_for('catalog.search') }}" role="search">
+      <button class="hd-search__btn" aria-label="Tìm kiếm">{{ icon("search", 22) }}</button>
+      <input class="hd-search__input" type="search" name="q" value="{{ request.args.get('q', '') }}"
+             placeholder="Bạn muốn mua gì hôm nay?" aria-label="Tìm kiếm sản phẩm" autocomplete="off">
+    </form>
+
+    <a class="hd-btn hd-btn--ghost hd-cart" href="{{ url_for('shop.cart') }}">
+      <span>Giỏ hàng</span>{{ icon("cart", 24) }}<i class="hd-cart__count">{{ cart_count }}</i>
+    </a>
+    {% if g.user %}
+      <details class="hd-account">
+        <summary class="hd-btn hd-btn--fill hd-btn--login"><span>{{ g.user.name.split()[-1] }}</span>{{ icon("user", 24) }}</summary>
+        <div class="hd-account__panel">
+          <p class="hd-account__name">{{ g.user.name }}<small>{{ g.user.phone }}</small></p>
+          <a href="{{ url_for('shop.orders') }}">{{ icon("receipt", 18) }}Đơn hàng của tôi</a>
+          <form method="post" action="{{ url_for('auth.logout') }}">
+            <input type="hidden" name="_csrf" value="{{ csrf_token() }}">
+            <button type="submit">{{ icon("close", 18) }}Đăng xuất</button>
+          </form>
+        </div>
+      </details>
+    {% else %}
+      <a class="hd-btn hd-btn--fill hd-btn--login" href="{{ url_for('auth.login', next=request.full_path.rstrip('?')) }}"><span>Đăng nhập</span>{{ icon("user", 24) }}</a>
+    {% endif %}
+  </div>
+</header>
+<div class="hd-spacer"></div>

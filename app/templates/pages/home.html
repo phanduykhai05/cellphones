@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block styles %}<link rel="stylesheet" href="{{ url_for('static', filename='css/pages/home.css') }}">{% endblock %}
+{% block content %}
+  {% include "components/home/hero.html" %}
+  {% for b in banners.wide %}
+    <a class="container wide-banner" href="{{ b.link }}"><img src="{{ url_for('static', filename=b.image) }}" alt="{{ b.title }}"></a>
+  {% endfor %}
+  {% include "components/home/deal_tabs.html" %}
+  {% for block in blocks %}{% include "components/home/category_block.html" %}{% endfor %}
+  {% include "components/home/accessory_grid.html" %}
+  {% include "components/home/promo_grid.html" %}
+  {% include "components/home/brand_pages.html" %}
+{% endblock %}

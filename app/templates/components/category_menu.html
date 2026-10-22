@@ -1,0 +1,46 @@
+{# Menu danh mục + mega menu khi hover. Dùng ở sidebar trang chủ và nút "Danh mục" trên header.
+   Spec: docs/research/components/category-menu.spec.md #}
+{% from "components/icons.html" import icon %}
+<nav class="cat-menu" aria-label="Danh mục sản phẩm">
+  <ul class="cat-menu__list">
+    {% for c in nav_categories %}
+      {% set menu = mega_menus.get(c.slug) %}
+      <li class="cat-menu__item">
+        <a class="cat-menu__link" href="{{ url_for('catalog.category', slug=c.slug) }}">
+          {% if c.icon %}<img src="{{ url_for('static', filename=c.icon) }}" alt="" width="24" height="24">{% endif %}
+          <span>{{ c.name }}</span>{{ icon("chevron-right", 18) }}
+        </a>
+        {% if menu %}
+          <div class="mega">
+            <section>
+              <h4 class="mega__title">Hãng {{ c.short_name | lower }}</h4>
+              <div class="mega__brands">
+                {% for b in menu.brands %}
+                  <a class="mega__brand" href="{{ url_for('catalog.category', slug=c.slug, hang=b.name) }}">
+                    {% if b.logo %}<img src="{{ url_for('static', filename=b.logo) }}" alt="{{ b.name }}">{% else %}{{ b.name }}{% endif %}
+                  </a>
+                {% endfor %}
+              </div>
+              <h4 class="mega__title">Mức giá {{ c.short_name | lower }}</h4>
+              <div class="mega__chips">
+                {% for label, _, _ in price_ranges %}
+                  <a class="mega__chip" href="{{ url_for('catalog.category', slug=c.slug, gia=loop.index0) }}">{{ label }}</a>
+                {% endfor %}
+              </div>
+            </section>
+            <section class="mega__hot">
+              <h4 class="mega__title">{{ c.short_name }} HOT <span class="mega__bolt">⚡</span></h4>
+              <div class="mega__chips">
+                {% for p in menu.hot %}
+                  <a class="mega__chip" href="{{ url_for('catalog.product', slug=p.slug) }}">
+                    {{ p.name.split(' | ')[0] }}{% if loop.index <= 3 %}<i class="mega__tag">Hot</i>{% endif %}
+                  </a>
+                {% endfor %}
+              </div>
+            </section>
+          </div>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+</nav>

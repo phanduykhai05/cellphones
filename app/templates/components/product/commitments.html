@@ -1,0 +1,12 @@
+{% from "components/icons.html" import icon %}
+<section class="pdp-block">
+  <h2 class="pdp-subtitle">Cam kết sản phẩm</h2>
+  <div class="commit-grid">
+    {% for ic, text in [("device", "Mới, đầy đủ phụ kiện từ nhà sản xuất"),
+                        ("shield", "1 đổi 1 trong 30 ngày nếu có lỗi phần cứng nhà sản xuất. Bảo hành 12 tháng tại trung tâm bảo hành chính hãng"),
+                        ("box", "Máy, sách hướng dẫn, cáp sạc theo tiêu chuẩn của hãng"),
+                        ("receipt", "Giá sản phẩm đã bao gồm thuế VAT, hỗ trợ hoàn thuế VAT cho khách du lịch")] %}
+      <div class="commit-card"><span class="commit-card__icon">{{ icon(ic, 16) }}</span><p>{{ text }}</p></div>
+    {% endfor %}
+  </div>
+</section>

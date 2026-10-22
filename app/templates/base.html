@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}{{ site.SITE_NAME }} - Điện thoại, laptop, tablet, phụ kiện chính hãng{% endblock %}</title>
+  <link rel="icon" href="{{ url_for('static', filename='img/favicon.svg') }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+  {% for css in ["base", "components/header", "components/category-menu", "components/product-card", "components/footer", "components/flash"] %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/' ~ css ~ '.css') }}">
+  {% endfor %}
+  {% block styles %}{% endblock %}
+</head>
+<body>
+  {% include "components/site_header.html" %}
+  <main class="page">
+    {% include "components/flash.html" %}
+    {% block content %}{% endblock %}
+  </main>
+  {% include "components/site_footer.html" %}
+  {% include "components/floating_actions.html" %}
+  <script src="{{ url_for('static', filename='js/main.js') }}" defer></script>
+</body>
+</html>

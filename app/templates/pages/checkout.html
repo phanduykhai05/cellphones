@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}Thanh toán | {{ site.SITE_NAME }}{% endblock %}
+{% block styles %}<link rel="stylesheet" href="{{ url_for('static', filename='css/pages/shop.css') }}">{% endblock %}
+{% block content %}
+  <section class="shop container">
+    <h1 class="shop__title">Thông tin đặt hàng</h1>
+    <form class="shop__grid" method="post">
+      <input type="hidden" name="_csrf" value="{{ csrf_token() }}">
+      <div class="shop__main">
+        <div class="box">
+          <h2 class="box__title">Thông tin người nhận</h2>
+          <div class="box__fields">
+            <label class="field">Họ và tên<input name="name" required maxlength="100" value="{{ form.get('name', g.user.name) }}"></label>
+            <label class="field">Số điện thoại<input name="phone" type="tel" required value="{{ form.get('phone', g.user.phone) }}"></label>
+          </div>
+          <label class="field">Địa chỉ nhận hàng<input name="address" required minlength="5" maxlength="255" value="{{ form.get('address', '') }}" placeholder="Số nhà, đường, phường/xã, tỉnh/thành phố"></label>
+          <label class="field">Ghi chú <small>(không bắt buộc)</small><textarea name="note" rows="2" maxlength="500">{{ form.get('note', '') }}</textarea></label>
+        </div>
+        <div class="box">
+          <h2 class="box__title">Phương thức thanh toán</h2>
+          {% for key, label in methods.items() %}
+            <label class="pay-option"><input type="radio" name="payment" value="{{ key }}" required {% if form.get('payment', 'cod') == key %}checked{% endif %}><span>{{ label }}</span></label>
+          {% endfor %}
+        </div>
+      </div>
+      <aside class="summary">
+        <h2 class="box__title">Đơn hàng ({{ cart_count }} sản phẩm)</h2>
+        {% for line in lines %}
+          <div class="summary__item">
+            {% if line.product.image_url %}<img src="{{ url_for('static', filename=line.product.image_url) }}" alt="" width="48" height="48">{% endif %}
+            <p>{{ line.product.name }}{% if line.variant %} · {{ line.variant }}{% endif %}<small>x{{ line.qty }}</small></p>
+            <b>{{ line.subtotal | vnd }}</b>
+          </div>
+        {% endfor %}
+        <p class="summary__row"><span>Phí vận chuyển</span><b>Miễn phí</b></p>
+        <p class="summary__row summary__row--total"><span>Tổng tiền</span><strong>{{ total | vnd }}</strong></p>
+        <button class="btn btn--primary btn--block btn--lg" type="submit">Đặt hàng</button>
+      </aside>
+    </form>
+  </section>
+{% endblock %}

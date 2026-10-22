@@ -1,0 +1,8 @@
+{% if product.details.specs %}
+  <section class="pdp-block" id="thong-so">
+    <h2 class="pdp-title">Thông số kỹ thuật</h2>
+    <table class="spec-table">
+      {% for label, value in product.details.specs %}<tr><th>{{ label }}</th><td>{{ value }}</td></tr>{% endfor %}
+    </table>
+  </section>
+{% endif %}
