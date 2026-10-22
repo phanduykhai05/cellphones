@@ -1,0 +1,85 @@
+{# Macro UI dùng chung cho admin. Spec: docs/research/admin/components/*.spec.md #}
+{% from "admin/_icons.html" import i %}
+
+{% macro badge(text, kind="secondary", pill=false) -%}
+<span class="ab ab--{{ kind }}{% if pill %} ab--pill{% endif %}">{{ text }}</span>
+{%- endmacro %}
+
+{# % thay đổi so với kỳ trước: xanh khi tăng, đỏ khi giảm; None = chưa có kỳ trước để so #}
+{% macro trend(change, arrow="trend") -%}
+{% if change is none %}<span class="ab ab--secondary">Mới</span>
+{% elif change >= 0 %}<span class="ab ab--success">{{ i("trend-up" if arrow == "trend" else "arrow-up", 12) }}{{ change }}%</span>
+{% else %}<span class="ab ab--destructive">{{ i("trend-down" if arrow == "trend" else "arrow-down", 12) }}{{ change | abs }}%</span>{% endif %}
+{%- endmacro %}
+
+{% macro sort_th(key, label, sort, desc, cls="") -%}
+<th class="{{ cls }}">
+  <a class="th-sort" href="{{ url_with(sap_xep=key, chieu='asc' if sort == key and desc else 'desc', trang=None) }}">
+    {{ label }}{{ i(("arrow-down" if desc else "arrow-up") if sort == key else "sort", 14, "" if sort == key else "muted") }}
+  </a>
+</th>
+{%- endmacro %}
+
+{# Footer bảng: chọn số dòng + "1 - 8 of 49" + nút trang #}
+{% macro pagination(page) -%}
+<div class="dt-foot">
+  <form class="dt-foot__rows" method="get" data-autosubmit>
+    {% for k, v in request.args.items() if k not in ("so_dong", "trang") %}<input type="hidden" name="{{ k }}" value="{{ v }}">{% endfor %}
+    <label for="so_dong">Số dòng mỗi trang</label>
+    <select id="so_dong" name="so_dong" class="ainput ainput--sm">
+      {% for n in per_page_choices %}<option value="{{ n }}" {% if n == page.per_page %}selected{% endif %}>{{ n }}</option>{% endfor %}
+    </select>
+  </form>
+  <div class="dt-foot__pages">
+    <span class="muted">{{ page.start }} - {{ page.end }} / {{ page.total }}</span>
+    {% if page.pages > 1 %}
+      <a class="pg-btn {% if page.page == 1 %}is-disabled{% endif %}" href="{{ url_with(trang=page.page - 1) }}" aria-label="Trang trước">{{ i("chevron-left") }}</a>
+      {% set ns = namespace(last=0) %}
+      {% for p in page.window %}
+        {% if p - ns.last > 1 %}<span class="pg-gap">…</span>{% endif %}
+        <a class="pg-btn {% if p == page.page %}is-active{% endif %}" href="{{ url_with(trang=p) }}">{{ p }}</a>
+        {% set ns.last = p %}
+      {% endfor %}
+      <a class="pg-btn {% if page.page == page.pages %}is-disabled{% endif %}" href="{{ url_with(trang=page.page + 1) }}" aria-label="Trang sau">{{ i("chevron-right") }}</a>
+    {% endif %}
+  </div>
+</div>
+{%- endmacro %}
+
+{# Thanh lọc: [Filters] [icon Field | contains | input | x] ...... [Clear] #}
+{% macro filter_bar(field_icon, field_label, placeholder, q, extra="") -%}
+<form class="dt-toolbar" method="get">
+  {% for k, v in request.args.items() if k not in ("q", "trang") %}<input type="hidden" name="{{ k }}" value="{{ v }}">{% endfor %}
+  <span class="abtn abtn--outline">{{ i("filter") }}Lọc</span>
+  <div class="fchip">
+    <span class="fchip__field">{{ i(field_icon) }}{{ field_label }}</span>
+    <span class="fchip__op">chứa</span>
+    <input class="fchip__input" name="q" value="{{ q or '' }}" placeholder="{{ placeholder }}" aria-label="{{ placeholder }}">
+    {% if q %}<a class="fchip__x" href="{{ url_with(q=None, trang=None) }}" aria-label="Xoá tìm kiếm">{{ i("x", 14) }}</a>{% endif %}
+  </div>
+  {{ extra }}
+  {% if request.args %}<a class="abtn abtn--outline dt-toolbar__clear" href="{{ url_for(request.endpoint, **(request.view_args or {})) }}">{{ i("x") }}Xoá lọc</a>{% endif %}
+</form>
+{%- endmacro %}
+
+{% macro order_badges(o) -%}
+{% set status_kind = {"pending": "warning", "paid": "success", "shipping": "info", "done": "success", "cancelled": "destructive"} %}
+{{ badge(statuses[o.status], status_kind[o.status]) }}
+{%- endmacro %}
+
+{% macro payment_badge(o) -%}
+{% if o.status == "cancelled" %}{{ badge("Huỷ", "secondary") }}
+{% elif o.status in ("paid", "shipping", "done") and (o.payment_method == "bank" or o.status == "done") %}{{ badge("Đã thanh toán", "success") }}
+{% elif o.payment_method == "cod" %}{{ badge("Thu khi giao", "secondary") }}
+{% else %}{{ badge("Chờ chuyển khoản", "warning") }}{% endif %}
+{%- endmacro %}
+
+{% macro fulfill_badge(o) -%}
+{% if o.status == "done" %}{{ badge("Đã giao", "success") }}{% elif o.status == "shipping" %}{{ badge("Đang giao", "info") }}{% else %}{{ badge("Chưa giao", "secondary") }}{% endif %}
+{%- endmacro %}
+
+{% macro stock_badge(status) -%}
+{{ badge({"in": "Còn hàng", "low": "Sắp hết", "out": "Hết hàng"}[status], {"in": "success", "low": "warning", "out": "destructive"}[status]) }}
+{%- endmacro %}
+
+{% macro initials(name) -%}{{ (name.split()[0][:1] ~ (name.split()[-1][:1] if name.split() | length > 1 else "")) | upper }}{%- endmacro %}

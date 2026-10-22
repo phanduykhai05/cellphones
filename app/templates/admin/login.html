@@ -1,0 +1,33 @@
+{% from "admin/_icons.html" import i %}
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Đăng nhập quản trị - {{ site.SITE_NAME }}</title>
+  <link rel="icon" href="{{ url_for('static', filename='img/favicon.svg') }}">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="{{ url_for('static', filename='admin/admin.css') }}">
+</head>
+<body class="adm-body adm-login">
+  <form class="login-card" method="post">
+    <input type="hidden" name="_csrf" value="{{ csrf_token() }}">
+    <input type="hidden" name="next" value="{{ next }}">
+    <span class="adm-logo adm-logo--lg">{{ site.SITE_NAME[:1] }}</span>
+    <h1>Đăng nhập trang quản trị</h1>
+    <p class="muted">Nhập số điện thoại và mật khẩu tài khoản quản trị</p>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% for category, message in messages %}<p class="login-alert">{{ i("info") }}{{ message }}</p>{% endfor %}
+    {% endwith %}
+    <label class="afield">Số điện thoại<input class="ainput" name="phone" type="tel" value="{{ phone }}" required autocomplete="username" autofocus></label>
+    <label class="afield">Mật khẩu
+      <span class="ainput-wrap"><input class="ainput" name="password" type="password" required autocomplete="current-password" data-password>
+        <button type="button" class="ainput-wrap__btn" data-toggle-password aria-label="Hiện mật khẩu">{{ i("eye") }}</button></span>
+    </label>
+    <button class="abtn abtn--primary abtn--block" type="submit">Đăng nhập</button>
+    <a class="login-back" href="{{ url_for('main.home') }}">{{ i("chevron-left", 14) }}Về cửa hàng</a>
+  </form>
+  <script src="{{ url_for('static', filename='admin/admin.js') }}" defer></script>
+</body>
+</html>
