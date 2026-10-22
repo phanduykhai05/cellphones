@@ -224,10 +224,10 @@ def customer_page(args) -> dict:
 # ---------- CSV ----------
 
 def to_csv(header: list[str], rows: list[list]) -> str:
-    """CSV có BOM để Excel mở tiếng Việt đúng; chặn CSV injection (ô bắt đầu bằng = + - @)."""
+    """CSV có BOM để Excel mở tiếng Việt đúng; chặn CSV injection (ô bắt đầu bằng = + - @ tab, CR)."""
     buf = io.StringIO()
     writer = csv.writer(buf)
     writer.writerow(header)
     for row in rows:
-        writer.writerow(["'" + v if isinstance(v, str) and re.match(r"[=+\-@]", v) else v for v in row])
+        writer.writerow(["'" + v if isinstance(v, str) and re.match(r"[=+\-@\t\r]", v) else v for v in row])
     return "﻿" + buf.getvalue()

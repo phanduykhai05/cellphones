@@ -73,7 +73,14 @@ def test_admin_requires_admin_role(app):
 
 def test_create_admin_cli(app):
     runner = app.test_cli_runner()
-    r = runner.invoke(args=["create-admin", "--phone", "0900000002", "--password", ""])
+    # Số đã đăng ký + có mật khẩu -> từ chối (không âm thầm bỏ qua mật khẩu)
+    r = runner.invoke(args=["create-admin", "--phone", "0900000002", "--password", "matkhaumoi"])
+    assert r.exit_code != 0
+    with app.app_context():
+        assert user_repo.find_by_phone("0900000002")["is_admin"] == 0
+    # Chỉ cấp quyền: phải xác nhận
+    assert runner.invoke(args=["create-admin", "--phone", "0900000002", "--password", ""], input="n\n").exit_code != 0
+    r = runner.invoke(args=["create-admin", "--phone", "0900000002", "--password", ""], input="y\n")
     assert r.exit_code == 0, r.output
     with app.app_context():
         assert user_repo.find_by_phone("0900000002")["is_admin"] == 1
@@ -152,3 +159,8 @@ def test_csv_export_escapes_formulas(app, admin):
     body = admin.get("/admin/don-hang.csv").get_data(as_text=True)
     assert "'=HYPERLINK" in body and body.startswith("﻿")
     assert admin.get("/admin/san-pham.csv").status_code == 200
+
+
+def test_url_with_ignores_url_for_control_params(app, admin):
+    html = admin.get("/admin/san-pham?_scheme=javascript&_external=1&_anchor=x").get_data(as_text=True)
+    assert "javascript:" not in html

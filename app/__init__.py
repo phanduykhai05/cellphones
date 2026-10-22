@@ -17,8 +17,10 @@ def vnd(n: int | None) -> str:
 
 
 def url_with(**changes) -> str:
-    """URL trang hiện tại, giữ query string cũ và đổi/xoá (None) vài tham số."""
-    args = request.args.to_dict()
+    """URL trang hiện tại, giữ query string cũ và đổi/xoá (None) vài tham số.
+    Bỏ tham số bắt đầu bằng "_": url_for coi _scheme/_external/_anchor là tham số điều khiển,
+    để lọt từ query string vào là tạo được link javascript: (XSS)."""
+    args = {k: v for k, v in request.args.items() if not k.startswith("_")}
     for key, value in changes.items():
         if value is None:
             args.pop(key, None)

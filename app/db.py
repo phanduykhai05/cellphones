@@ -95,6 +95,13 @@ def create_admin_command(phone: str, name: str, password: str) -> None:
         except ValueError as e:
             raise click.ClickException(str(e))
     else:
+        # Không âm thầm bỏ qua mật khẩu: tài khoản có sẵn có thể do người khác đăng ký trước số này
+        if password:
+            raise click.ClickException(
+                "Số điện thoại đã được đăng ký — mật khẩu nhập vào sẽ KHÔNG được dùng. "
+                "Chạy lại với --password \"\" nếu muốn cấp quyền cho chính tài khoản đó.")
+        click.confirm(f"Cấp quyền admin cho tài khoản có sẵn “{user['name']}” (đăng ký {user['created_at']})?",
+                      abort=True)
         user_id = user["id"]
     user_repo.set_admin(user_id, True)
     click.echo(f"Đã cấp quyền admin cho {phone}.")
