@@ -1,0 +1,99 @@
+/* ===== Design tokens — trích từ :root của cellphones.com.vn (docs/research/css-vars.txt) ===== */
+:root {
+  --red-50: #FBE6E8; --red-300: #E45464; --red-400: #DF3346; --red-500: #D70018; --red-600: #C40016; --red-700: #990011;
+  --blue-50: #EBF3FE; --blue-100: #DBE8FE; --blue-400: #629BF8; --blue-500: #3B82F6; --blue-900: #1E478A; --blue-tint: #EFF5FF;
+  --n-0: #FFFFFF; --n-50: #F7F7F8; --n-100: #F2F2F3; --n-200: #E4E4E7; --n-300: #CFCFD3; --n-400: #A1A1AA;
+  --n-500: #71717A; --n-600: #52525B; --n-700: #2B2B30; --n-800: #1D1D20; --n-900: #18181B;
+  --green-100: #DFF9E8; --green-900: #1B4C2F; --yellow-400: #FFC400;
+
+  --grad-header: linear-gradient(in oklab, var(--red-300) 0px, var(--red-500) 100%);
+  --grad-btn: linear-gradient(0deg, var(--red-500), var(--red-300));
+  --grad-blue: linear-gradient(249.83deg, var(--blue-tint) 3.89%, rgba(244, 251, 255, .25) 65.75%);
+  --shadow-card: 0 4px 20px -8px rgba(0, 0, 0, .11), 0 0 10px 0 rgba(0, 0, 0, .06);
+  --shadow-panel: 0 4px 20px -8px rgba(0, 0, 0, .11), 0 0 32px -4px rgba(0, 0, 0, .06);
+  --ease: cubic-bezier(.4, 0, .2, 1);
+
+  --container: 1200px;
+  --header-h: 98px;
+  --header-h-compact: 72px;
+}
+
+/* ===== Reset ===== */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-padding-top: var(--header-h-compact); }
+body { margin: 0; font: 400 16px/1.5 Inter, system-ui, -apple-system, "Segoe UI", sans-serif; color: #000; background: var(--n-0); -webkit-font-smoothing: antialiased; }
+a { color: inherit; text-decoration: none; }
+h1, h2, h3, h4, p, ol, ul { margin: 0; }
+ol, ul { padding: 0; list-style: none; }
+img { display: block; max-width: 100%; }
+button, input { font: inherit; color: inherit; }
+button { background: none; border: 0; padding: 0; cursor: pointer; }
+details > summary { list-style: none; cursor: pointer; }
+details > summary::-webkit-details-marker { display: none; }
+:focus-visible { outline: 2px solid var(--blue-500); outline-offset: 2px; }
+[hidden] { display: none !important; }
+.icon { flex: none; }
+
+.container { width: min(var(--container), 100% - 16px); margin-inline: auto; }
+.page { padding-bottom: 12px; }
+
+/* ===== Buttons & chips dùng chung ===== */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 4px; height: 40px; padding: 8px 16px; border: 1px solid transparent; border-radius: 8px; font-size: 14px; line-height: 21px; }
+.btn--primary { background: var(--red-500); border-color: var(--red-500); color: #fff; }
+.btn--block { width: 100%; }
+
+.pill-chip { display: inline-flex; flex: none; align-items: center; gap: 4px; padding: 6px 12px; border: 1px solid var(--n-300); border-radius: 9999px; background: #fff; font-size: 14px; font-weight: 500; line-height: 21px; color: var(--n-800); transition: border-color .15s var(--ease), color .15s var(--ease); }
+.pill-chip:hover { border-color: var(--red-500); color: var(--red-500); }
+
+.see-all { display: inline-flex; flex: none; align-items: center; gap: 4px; font-size: 12px; font-weight: 500; line-height: 16px; color: var(--blue-500); }
+.see-all:hover { text-decoration: underline; }
+
+.section-head { display: flex; align-items: center; gap: 16px; margin-bottom: 16px; }
+.section-title { font-size: 20px; font-weight: 700; line-height: 32px; text-transform: uppercase; color: var(--n-800); }
+.section-head .see-all { padding-left: 16px; border-left: 1px solid var(--n-300); }
+
+/* ===== Carousel (scroll-snap) ===== */
+.carousel { position: relative; }
+.carousel__track {
+  display: grid; grid-auto-flow: column; grid-template-rows: repeat(var(--rows, 1), auto);
+  grid-auto-columns: calc(100% / var(--cols, 4));
+  overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; margin: 0 -4px;
+}
+.carousel__track::-webkit-scrollbar { display: none; }
+.carousel__track > * { scroll-snap-align: start; }
+.carousel__nav {
+  position: absolute; top: 50%; z-index: 2; display: grid; place-items: center; width: 40px; height: 40px; margin-top: -20px;
+  border-radius: 9999px; background: #fff; color: var(--n-800); box-shadow: var(--shadow-card); transition: opacity .2s;
+}
+.carousel__nav--prev { left: -8px; }
+.carousel__nav--next { right: -8px; }
+.carousel__nav:disabled { opacity: 0; pointer-events: none; }
+@media (max-width: 1023px) { .carousel { --cols: 2.15; } .carousel__nav { display: none; } }
+@media (min-width: 1024px) and (max-width: 1199px) { .carousel { --cols: 3; } }
+
+/* ===== Breadcrumb ===== */
+.breadcrumb { display: flex; flex-wrap: wrap; align-items: center; gap: 0 10px; padding: 7px 0; font-size: 12px; font-weight: 500; line-height: 18px; color: var(--n-900); }
+.breadcrumb a { display: inline-flex; align-items: center; gap: 4px; }
+.breadcrumb a:hover { color: var(--red-500); }
+.breadcrumb__sep { color: var(--n-500); }
+.breadcrumb [aria-current] { color: #707070; }
+
+/* ===== Nút nổi ===== */
+.floating { position: fixed; right: 16px; bottom: 30px; z-index: 900; display: grid; gap: 6px; }
+.floating__btn { display: inline-flex; align-items: center; justify-content: center; gap: 4px; width: 116px; height: 42px; padding: 8px 16px; border-radius: 12px; font-size: 14px; font-weight: 600; color: #fff; }
+.floating__btn--top { background: #000; }
+.floating__btn--contact { background: var(--red-500); }
+@media (max-width: 767px) {
+  .floating { right: 12px; bottom: 24px; }
+  body:has(.sticky-buy) .floating { bottom: 130px; }
+  .floating__btn { width: 44px; height: 44px; padding: 0; border-radius: 50%; font-size: 0; }  /* chỉ còn icon */
+}
+
+.empty { padding: 48px 0; text-align: center; color: var(--n-500); }
+
+.btn--lg { height: 48px; font-size: 16px; font-weight: 600; }
+.link { color: var(--blue-500); }
+.field { display: grid; gap: 6px; font-size: 14px; font-weight: 500; color: var(--n-800); }
+.field small { font-weight: 400; color: var(--n-500); }
+.field input, .field textarea { width: 100%; min-height: 44px; padding: 10px 14px; border: 1px solid var(--n-300); border-radius: 8px; font: inherit; font-weight: 400; }
+.field input:focus, .field textarea:focus { outline: none; border-color: var(--blue-500); }

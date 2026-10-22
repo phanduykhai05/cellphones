@@ -1,0 +1,4 @@
+.flash { display: grid; gap: 6px; margin-top: 12px; }
+.flash__item { padding: 10px 14px; border-radius: 8px; font-size: 14px; }
+.flash__item--success { background: var(--green-100); color: var(--green-900); }
+.flash__item--error { background: var(--red-50); color: var(--red-600); }

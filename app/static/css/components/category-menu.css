@@ -1,0 +1,26 @@
+/* CategoryMenu + MegaMenu — docs/research/components/category-menu.spec.md */
+.cat-menu { position: relative; display: flex; flex-direction: column; padding: 8px 0; border-radius: 12px; background: #fff; box-shadow: var(--shadow-card); color: var(--n-800); }
+.cat-menu__list { overflow-y: auto; scrollbar-width: thin; }
+.cat-menu__link { display: flex; align-items: center; gap: 4px; min-height: 40px; padding: 0 12px; font-size: 12px; font-weight: 600; line-height: 16px; }
+.cat-menu__link img { width: 24px; height: 24px; margin-right: 12px; }
+.cat-menu__link span { flex: 1; }
+.cat-menu__link .icon { color: var(--n-500); }
+.cat-menu__item:hover > .cat-menu__link, .cat-menu__item:focus-within > .cat-menu__link { background: var(--n-100); color: var(--red-500); }
+
+.mega {
+  position: absolute; top: 0; left: calc(100% + 8px); z-index: 20; display: none; grid-template-columns: 1fr 1fr; gap: 24px;
+  width: 968px; max-width: calc(100vw - 260px); height: 100%; padding: 16px; overflow-y: auto;
+  border-radius: 12px; background: #fff; box-shadow: var(--shadow-card);
+}
+.cat-menu__item:hover > .mega, .cat-menu__item:focus-within > .mega { display: grid; }
+.mega__title { margin: 0 0 8px; font-size: 14px; font-weight: 600; line-height: 21px; color: var(--n-800); }
+.mega__title:not(:first-child) { margin-top: 16px; }
+.mega__bolt { color: var(--yellow-400); }
+.mega__brands { display: grid; grid-template-columns: repeat(3, 90px); gap: 8px; }
+.mega__brand { display: grid; place-items: center; height: 40px; padding: 4px 8px; border: 1px solid var(--n-200); border-radius: 6px; font-size: 13px; font-weight: 700; }
+.mega__brand img { max-height: 30px; object-fit: contain; }
+.mega__brand:hover, .mega__chip:hover { border-color: var(--red-500); color: var(--red-500); }
+.mega__chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.mega__chip { position: relative; padding: 8px; border: 1px solid var(--n-200); border-radius: 6px; font-size: 12px; line-height: 16px; color: var(--n-800); }
+.mega__tag { position: absolute; top: -6px; right: 6px; padding: 0 4px; border-radius: 4px; background: var(--red-500); font-size: 8px; font-style: normal; font-weight: 700; line-height: 12px; color: #fff; }
+@media (max-width: 1023px) { .mega { display: none !important; } }
