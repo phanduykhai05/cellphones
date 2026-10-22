@@ -1,0 +1,55 @@
+// Hành vi admin — đối chiếu docs/research/admin/BEHAVIORS.md
+const adm = document.querySelector("[data-adm]");
+const mobile = () => matchMedia("(max-width: 1023px)").matches;
+
+// Thu/mở sidebar (desktop: thu gọn và nhớ trạng thái; mobile: trượt ra như drawer)
+try { if (localStorage.getItem("adm-collapsed") === "1" && !mobile()) adm?.classList.add("is-collapsed"); } catch {}
+document.querySelector("[data-sidebar-toggle]")?.addEventListener("click", () => {
+  if (mobile()) return adm.classList.toggle("is-open");
+  const collapsed = adm.classList.toggle("is-collapsed");
+  try { localStorage.setItem("adm-collapsed", collapsed ? "1" : "0"); } catch {}
+});
+
+// ⌘K / Ctrl+K: focus ô tìm kiếm
+document.addEventListener("keydown", (e) => {
+  if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
+    const input = document.querySelector("[data-search-input]");
+    if (input) { e.preventDefault(); if (mobile()) adm.classList.add("is-open"); input.focus(); }
+  }
+  if (e.key === "Escape") document.querySelectorAll(".amenu[open]").forEach((d) => d.removeAttribute("open"));
+});
+
+// Click cả hàng bảng để mở chi tiết (trừ khi click vào link/nút/menu bên trong)
+document.addEventListener("click", (e) => {
+  document.querySelectorAll(".amenu[open]").forEach((d) => !d.contains(e.target) && d.removeAttribute("open"));
+  const row = e.target.closest("tr[data-href]");
+  if (row && !e.target.closest("a, button, summary, details, input, select")) location.href = row.dataset.href;
+});
+
+// Chọn số dòng -> submit
+document.querySelectorAll("form[data-autosubmit] select").forEach((s) => s.addEventListener("change", () => s.form.submit()));
+
+// Hiện/ẩn mật khẩu
+document.querySelector("[data-toggle-password]")?.addEventListener("click", () => {
+  const input = document.querySelector("[data-password]");
+  input.type = input.type === "password" ? "text" : "password";
+});
+
+// Xem trước ảnh upload
+const imageInput = document.querySelector("[data-image-input]");
+imageInput?.addEventListener("change", () => {
+  const file = imageInput.files[0];
+  if (!file) return;
+  const preview = document.querySelector("[data-image-preview]");
+  preview.src = URL.createObjectURL(file);
+  preview.hidden = false;
+  document.querySelector("[data-image-name]").textContent = file.name;
+});
+
+// Xác nhận trước khi xoá / huỷ đơn
+document.addEventListener("submit", (e) => {
+  const btn = e.submitter;
+  if (btn?.dataset.confirm && !confirm(btn.dataset.confirm)) e.preventDefault();
+  const status = e.target.querySelector("select[name=status]");
+  if (status?.value === "cancelled" && !confirm("Huỷ đơn này? Sản phẩm sẽ được trả về kho.")) e.preventDefault();
+});
