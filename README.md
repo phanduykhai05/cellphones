@@ -30,6 +30,14 @@ Dữ liệu mẫu + ảnh được sinh bởi `python3 scripts/build_seed.py` (c
 | `/thanh-toan` | Đặt hàng — cần đăng nhập; COD hoặc chuyển khoản (`BANK_INFO` trong `.env`) |
 | `/don-hang`, `/don-hang/<id>` | Đơn hàng của tôi |
 | `/api/products` | JSON API (GET list, GET /<id>, POST) |
+| `/admin` | Trang quản trị (giao diện theo template Manifest Commerce): tổng quan, đơn hàng, sản phẩm, danh mục, khách hàng, xuất CSV |
+
+Tạo tài khoản quản trị (hoặc cấp quyền cho số điện thoại đã đăng ký):
+
+```bash
+flask init-db          # chạy lại sau khi cập nhật code: thêm cột mới, không mất dữ liệu
+flask create-admin     # hỏi số điện thoại + mật khẩu
+```
 
 Bảo mật: mật khẩu băm bằng `werkzeug.security`; mọi form POST có CSRF token; phiên mới khi đăng nhập;
 `next` chỉ nhận đường dẫn nội bộ; giá và tồn kho luôn đọc lại từ DB lúc đặt (trừ kho bằng `UPDATE ... WHERE stock >= qty`).
