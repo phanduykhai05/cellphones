@@ -7,7 +7,7 @@ from flask import Flask, request, url_for  # noqa: E402
 from app import db  # noqa: E402
 from app.config import Config  # noqa: E402
 from app import security  # noqa: E402
-from app.routes import auth, catalog, main, products, shop  # noqa: E402
+from app.routes import admin, auth, catalog, main, products, shop  # noqa: E402
 from app.services import cart_service, catalog_service  # noqa: E402
 
 
@@ -52,4 +52,5 @@ def create_app(overrides: dict | None = None) -> Flask:
     app.register_blueprint(products.bp)
     app.register_blueprint(auth.bp)
     app.register_blueprint(shop.bp)
+    app.register_blueprint(admin.bp)
     return app
