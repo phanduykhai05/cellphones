@@ -55,3 +55,15 @@ def login_required(view):
             return redirect(url_for("auth.login", next=request.full_path.rstrip("?")))
         return view(*args, **kwargs)
     return wrapped
+
+
+def admin_required(view):
+    """Chưa đăng nhập -> trang đăng nhập admin; đã đăng nhập nhưng không phải admin -> 403."""
+    @wraps(view)
+    def wrapped(*args, **kwargs):
+        if g.user is None:
+            return redirect(url_for("admin.login", next=request.full_path.rstrip("?")))
+        if not g.user.get("is_admin"):
+            abort(403)
+        return view(*args, **kwargs)
+    return wrapped

@@ -1,0 +1,33 @@
+{% extends "admin/base.html" %}
+{% from "admin/_icons.html" import i %}
+{% from "admin/_ui.html" import badge, pagination, filter_bar, initials with context %}
+{% block title %}Khách hàng{% endblock %}
+{% block content %}
+  <div class="page-head"><h1>Khách hàng {{ badge(page.total ~ " tài khoản", "secondary", true) }}</h1></div>
+  <section class="frame">
+    {{ filter_bar("users", "Khách hàng", "Tên, SĐT, email...", q) }}
+    <div class="frame__panel frame__panel--flush">
+      <div class="dt-scroll">
+        <table class="dt">
+          <thead><tr><th>Khách hàng</th><th>Email</th><th class="num">Đơn hàng</th><th class="num">Đã chi</th><th>Vai trò</th><th>Ngày đăng ký</th></tr></thead>
+          <tbody>
+            {% for u in page["items"] %}
+              <tr>
+                <td><div class="cell-product"><span class="avatar">{{ initials(u.name) }}</span>
+                  <span><b class="cell-title">{{ u.name }}</b><small class="muted cell-sub">{{ u.phone }}</small></span></div></td>
+                <td>{{ u.email or "—" }}</td>
+                <td class="num">{% if u.order_count %}<a class="link" href="{{ url_for('admin.orders', q=u.phone) }}">{{ u.order_count }}</a>{% else %}0{% endif %}</td>
+                <td class="num"><b>{{ u.spent | vnd }}</b></td>
+                <td>{{ badge("Quản trị", "info") if u.is_admin else badge("Khách", "secondary") }}</td>
+                <td class="muted">{{ u.created_at[:10] }}</td>
+              </tr>
+            {% else %}
+              <tr><td colspan="6" class="empty-state">Chưa có khách hàng.</td></tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      {{ pagination(page) }}
+    </div>
+  </section>
+{% endblock %}

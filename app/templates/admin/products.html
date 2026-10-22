@@ -1,0 +1,27 @@
+{% extends "admin/base.html" %}
+{% from "admin/_icons.html" import i %}
+{% from "admin/_ui.html" import badge, filter_bar with context %}
+{% block title %}Sản phẩm{% endblock %}
+{% block content %}
+  <div class="page-head">
+    <h1>Sản phẩm {{ badge(counts.all ~ " sản phẩm", "secondary", true) }}</h1>
+    <div class="page-head__actions">
+      <a class="abtn abtn--outline" href="{{ url_for('admin.products_csv') }}">{{ i("download") }}Xuất CSV</a>
+      <a class="abtn abtn--primary" href="{{ url_for('admin.product_new') }}">{{ i("plus") }}Sản phẩm mới</a>
+    </div>
+  </div>
+  {% set inv = {"page": page, "sort": sort, "desc": desc} %}
+  {% set cat_select %}
+    <select class="ainput ainput--auto" name="danh_muc" onchange="this.form.submit()" aria-label="Danh mục">
+      <option value="">Mọi danh mục</option>
+      {% for c in categories if c.product_count %}<option value="{{ c.slug }}" {% if category and category.id == c.id %}selected{% endif %}>{{ c.short_name }}</option>{% endfor %}
+    </select>
+    <select class="ainput ainput--auto" name="ton" onchange="this.form.submit()" aria-label="Tồn kho">
+      {% for key, label in [("", "Mọi tồn kho"), ("in", "Còn hàng"), ("low", "Sắp hết"), ("out", "Hết hàng")] %}<option value="{{ key }}" {% if (stock or "") == key %}selected{% endif %}>{{ label }}</option>{% endfor %}
+    </select>
+  {% endset %}
+  <section class="frame">
+    {{ filter_bar("tag", "Sản phẩm", "Tên hoặc hãng...", q, cat_select) }}
+    <div class="frame__panel frame__panel--flush">{% include "admin/_product_table.html" %}</div>
+  </section>
+{% endblock %}

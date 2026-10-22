@@ -1,0 +1,80 @@
+{% from "admin/_icons.html" import i %}
+{% from "admin/_ui.html" import badge, initials with context %}
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>{% block title %}Quản trị{% endblock %} - {{ site.SITE_NAME }}</title>
+  <link rel="icon" href="{{ url_for('static', filename='img/favicon.svg') }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="{{ url_for('static', filename='admin/admin.css') }}">
+</head>
+<body class="adm-body">
+{% set nav = [
+  ("Cửa hàng", [
+    ("admin.dashboard", "Tổng quan", "dashboard", ("admin.dashboard",)),
+    ("admin.orders", "Đơn hàng", "bag", ("admin.orders", "admin.order")),
+    ("admin.products", "Sản phẩm", "tag", ("admin.products", "admin.product_new", "admin.product_edit")),
+    ("admin.categories", "Danh mục", "folder-tree", ("admin.categories", "admin.category_edit")),
+    ("admin.customers", "Khách hàng", "users", ("admin.customers",)),
+  ]),
+] %}
+<div class="adm" data-adm>
+  <header class="adm-top">
+    <button class="aicon-btn" type="button" data-sidebar-toggle aria-label="Thu/mở thanh bên">{{ i("panel-left") }}</button>
+    <a class="adm-logo" href="{{ url_for('admin.dashboard') }}" aria-label="Trang quản trị">{{ site.SITE_NAME[:1] }}</a>
+    <a class="adm-store" href="{{ url_for('main.home') }}" target="_blank" rel="noopener"><i class="adm-store__dot"></i>{{ site.SITE_NAME }}</a>
+    <span class="adm-crumb-sep">/</span>
+    <span class="adm-crumb">{% block crumb %}{{ self.title() }}{% endblock %}</span>
+    <div class="adm-top__right">
+      {% if pending_orders %}
+        <a class="adm-status" href="{{ url_for('admin.orders', trang_thai='pending') }}">{{ i("loader", 14, "warn") }}Đơn hàng {{ badge(pending_orders ~ " chờ xử lý", "warning") }}</a>
+      {% endif %}
+      <a class="abtn abtn--outline abtn--sm" href="{{ url_for('main.home') }}" target="_blank" rel="noopener">{{ i("external", 14) }}Xem cửa hàng</a>
+    </div>
+  </header>
+
+  <aside class="adm-side">
+    <form class="adm-search" action="{{ url_for('admin.products') }}" method="get" role="search">
+      {{ i("search", 16) }}
+      <input name="q" placeholder="Tìm sản phẩm..." aria-label="Tìm sản phẩm" data-search-input>
+      <kbd>⌘K</kbd>
+    </form>
+    {% for group, items in nav %}
+      <p class="adm-side__label">{{ group }}</p>
+      <ul class="adm-nav">
+        {% for endpoint, label, icon_name, actives in items %}
+          <li><a class="adm-nav__item {% if request.endpoint in actives %}is-active{% endif %}" href="{{ url_for(endpoint) }}">{{ i(icon_name) }}<span>{{ label }}</span>
+            {% if endpoint == "admin.orders" and pending_orders %}<span class="adm-nav__count">{{ pending_orders }}</span>{% endif %}</a></li>
+        {% endfor %}
+      </ul>
+    {% endfor %}
+    <p class="adm-side__label">Hệ thống</p>
+    <ul class="adm-nav">
+      <li><a class="adm-nav__item" href="{{ url_for('main.home') }}" target="_blank" rel="noopener">{{ i("store") }}<span>Xem cửa hàng</span></a></li>
+    </ul>
+    <div class="adm-user">
+      <span class="adm-user__avatar">{{ initials(g.user.name) }}</span>
+      <span class="adm-user__info"><b>{{ g.user.name }}</b><small>{{ g.user.phone }}</small></span>
+      <form method="post" action="{{ url_for('auth.logout') }}">
+        <input type="hidden" name="_csrf" value="{{ csrf_token() }}">
+        <button class="aicon-btn" type="submit" aria-label="Đăng xuất" title="Đăng xuất">{{ i("log-out") }}</button>
+      </form>
+    </div>
+  </aside>
+
+  <div class="adm-backdrop" data-sidebar-close></div>
+  <main class="adm-main">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% for category, message in messages %}<p class="aflash aflash--{{ category }}" role="status">{{ message }}</p>{% endfor %}
+    {% endwith %}
+    {% block content %}{% endblock %}
+  </main>
+</div>
+<script src="{{ url_for('static', filename='admin/admin.js') }}" defer></script>
+</body>
+</html>

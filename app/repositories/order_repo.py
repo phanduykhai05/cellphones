@@ -47,3 +47,57 @@ def find_for_user(order_id: int, user_id: int) -> dict | None:
     order = dict(row)
     order["items"] = [dict(r) for r in db.execute("SELECT * FROM order_items WHERE order_id = ?", (order_id,))]
     return order
+
+
+ADMIN_SORTS = {"id": "o.id", "customer": "o.name", "total": "o.total", "status": "o.status", "items": "item_count"}
+
+
+def admin_page(q: str | None, status: str | None, sort: str, desc: bool, limit: int, offset: int) -> tuple[list[dict], int]:
+    where, params = [], []
+    if q:
+        where.append("(CAST(o.id AS TEXT) = ? OR o.name LIKE ? OR o.phone LIKE ?)")
+        params += [q.lstrip("#"), f"%{q}%", f"%{q}%"]
+    if status:
+        where.append("o.status = ?")
+        params.append(status)
+    sql_where = " WHERE " + " AND ".join(where) if where else ""
+    db = get_db()
+    total = db.execute(f"SELECT COUNT(*) FROM orders o{sql_where}", params).fetchone()[0]
+    rows = db.execute(
+        "SELECT o.*, u.email,"
+        " (SELECT SUM(qty) FROM order_items WHERE order_id = o.id) AS item_count,"
+        " (SELECT COUNT(*) FROM order_items WHERE order_id = o.id) AS line_count"
+        f" FROM orders o JOIN users u ON u.id = o.user_id{sql_where}"
+        f" ORDER BY {ADMIN_SORTS[sort]} {'DESC' if desc else 'ASC'}, o.id DESC LIMIT ? OFFSET ?",
+        [*params, limit, offset]).fetchall()
+    return [dict(r) for r in rows], total
+
+
+def count_by_status() -> dict[str, int]:
+    return dict(get_db().execute("SELECT status, COUNT(*) FROM orders GROUP BY status").fetchall())
+
+
+def find_by_id(order_id: int) -> dict | None:
+    db = get_db()
+    row = db.execute("SELECT o.*, u.email FROM orders o JOIN users u ON u.id = o.user_id WHERE o.id = ?",
+                     (order_id,)).fetchone()
+    if row is None:
+        return None
+    order = dict(row)
+    order["items"] = [dict(r) for r in db.execute("SELECT * FROM order_items WHERE order_id = ?", (order_id,))]
+    return order
+
+
+def update_status(order_id: int, status: str, restock: bool) -> None:
+    """Đổi trạng thái; restock=True (huỷ đơn) thì trả hàng về kho trong cùng transaction."""
+    db = get_db()
+    try:
+        if restock:
+            db.execute("UPDATE products SET stock = stock + (SELECT SUM(qty) FROM order_items oi"
+                       " WHERE oi.order_id = ? AND oi.product_id = products.id)"
+                       " WHERE id IN (SELECT product_id FROM order_items WHERE order_id = ?)", (order_id, order_id))
+        db.execute("UPDATE orders SET status = ? WHERE id = ?", (status, order_id))
+        db.commit()
+    except Exception:
+        db.rollback()
+        raise

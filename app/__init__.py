@@ -7,7 +7,7 @@ from flask import Flask, request, url_for  # noqa: E402
 from app import db  # noqa: E402
 from app.config import Config  # noqa: E402
 from app import security  # noqa: E402
-from app.routes import auth, catalog, main, products, shop  # noqa: E402
+from app.routes import admin, auth, catalog, main, products, shop  # noqa: E402
 from app.services import cart_service, catalog_service  # noqa: E402
 
 
@@ -17,8 +17,10 @@ def vnd(n: int | None) -> str:
 
 
 def url_with(**changes) -> str:
-    """URL trang hiện tại, giữ query string cũ và đổi/xoá (None) vài tham số."""
-    args = request.args.to_dict()
+    """URL trang hiện tại, giữ query string cũ và đổi/xoá (None) vài tham số.
+    Bỏ tham số bắt đầu bằng "_": url_for coi _scheme/_external/_anchor là tham số điều khiển,
+    để lọt từ query string vào là tạo được link javascript: (XSS)."""
+    args = {k: v for k, v in request.args.items() if not k.startswith("_")}
     for key, value in changes.items():
         if value is None:
             args.pop(key, None)
@@ -52,4 +54,5 @@ def create_app(overrides: dict | None = None) -> Flask:
     app.register_blueprint(products.bp)
     app.register_blueprint(auth.bp)
     app.register_blueprint(shop.bp)
+    app.register_blueprint(admin.bp)
     return app

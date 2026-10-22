@@ -61,3 +61,66 @@ def insert(slug: str, name: str, brand: str, category_id: int, price: int, old_p
     )
     db.commit()
     return cur.lastrowid
+
+
+ADMIN_SORTS = {"name": "p.name", "category": "c.short_name", "price": "p.price", "stock": "p.stock", "id": "p.id"}
+
+
+def admin_page(q: str | None, category_id: int | None, stock: str | None, low: int, sort: str, desc: bool,
+               limit: int, offset: int) -> tuple[list[dict], int]:
+    """stock: None | 'in' (> low) | 'low' (1..low) | 'out' (0). sort phải thuộc ADMIN_SORTS."""
+    where, params = [], []
+    if q:
+        where.append("(p.name LIKE ? OR p.brand LIKE ?)")
+        params += [f"%{q}%"] * 2
+    if category_id:
+        where.append("p.category_id = ?")
+        params.append(category_id)
+    if stock == "in":
+        where.append("p.stock > ?")
+        params.append(low)
+    elif stock == "low":
+        where.append("p.stock BETWEEN 1 AND ?")
+        params.append(low)
+    elif stock == "out":
+        where.append("p.stock = 0")
+    sql_where = " WHERE " + " AND ".join(where) if where else ""
+    db = get_db()
+    total = db.execute(f"SELECT COUNT(*) FROM products p{sql_where}", params).fetchone()[0]
+    order = f"{ADMIN_SORTS[sort]} {'DESC' if desc else 'ASC'}, p.id"
+    rows = db.execute(
+        "SELECT p.*, c.short_name AS category_name, c.slug AS category_slug,"
+        " (SELECT COALESCE(SUM(oi.qty), 0) FROM order_items oi JOIN orders o ON o.id = oi.order_id"
+        "  WHERE oi.product_id = p.id AND o.status != 'cancelled') AS sold"
+        f" FROM products p JOIN categories c ON c.id = p.category_id{sql_where}"
+        f" ORDER BY {order} LIMIT ? OFFSET ?", [*params, limit, offset]).fetchall()
+    return [dict(r) for r in rows], total
+
+
+def stock_counts(low: int) -> dict[str, int]:
+    row = get_db().execute(
+        "SELECT COUNT(*), SUM(stock > ?), SUM(stock BETWEEN 1 AND ?), SUM(stock = 0) FROM products",
+        (low, low)).fetchone()
+    return {"all": row[0], "in": row[1] or 0, "low": row[2] or 0, "out": row[3] or 0}
+
+
+def update(product_id: int, fields: dict) -> None:
+    """fields: chỉ các cột trong UPDATABLE."""
+    cols = [c for c in fields if c in UPDATABLE]
+    db = get_db()
+    db.execute(f"UPDATE products SET {', '.join(f'{c} = ?' for c in cols)} WHERE id = ?",
+               [fields[c] for c in cols] + [product_id])
+    db.commit()
+
+
+UPDATABLE = {"slug", "name", "brand", "category_id", "price", "old_price", "stock", "promo", "image_url", "details"}
+
+
+def has_orders(product_id: int) -> bool:
+    return get_db().execute("SELECT 1 FROM order_items WHERE product_id = ? LIMIT 1", (product_id,)).fetchone() is not None
+
+
+def delete(product_id: int) -> None:
+    db = get_db()
+    db.execute("DELETE FROM products WHERE id = ?", (product_id,))
+    db.commit()

@@ -1,0 +1,82 @@
+{% extends "admin/base.html" %}
+{% from "admin/_icons.html" import i %}
+{% from "admin/_ui.html" import badge, trend, sort_th, pagination, stock_badge with context %}
+{% block title %}Tổng quan{% endblock %}
+{% block content %}
+  <div class="page-head">
+    <h1>Chào mừng đến {{ site.SITE_NAME }}</h1>
+    <div class="page-head__actions">
+      <div class="seg" role="group" aria-label="Khoảng thời gian">
+        {% for d in [7, 30, 90] %}<a class="seg__item {% if d == days %}is-active{% endif %}" href="{{ url_with(ky=d) }}">{{ d }} ngày</a>{% endfor %}
+      </div>
+      <a class="abtn abtn--outline" href="{{ url_for('admin.orders_csv') }}">{{ i("download") }}Xuất đơn hàng</a>
+      <a class="abtn abtn--primary" href="{{ url_for('admin.product_new') }}">{{ i("plus") }}Sản phẩm mới</a>
+    </div>
+  </div>
+
+  <div class="kpi-grid">
+    {% for k in kpis %}
+      <section class="frame">
+        <header class="frame__head"><h2>{{ k.title }}</h2><span class="muted small">{{ days }} ngày</span></header>
+        <div class="frame__panel kpi">
+          <p class="kpi__row"><b class="kpi__value" data-count="{{ k.value }}"{% if k.money %} data-money{% endif %}>{{ (k.value | vnd) if k.money else ("{:,}".format(k.value).replace(",", ".")) }}</b>{{ trend(k.change, "arrow") }}</p>
+          <p class="kpi__prev">So với kỳ trước: <b>{{ (k.prev | vnd) if k.money else k.prev }}</b></p>
+        </div>
+      </section>
+    {% endfor %}
+  </div>
+
+  <div class="dash-row">
+    <section class="frame">
+      <header class="frame__head">
+        <div><h2>Tốc độ bán hàng</h2><p class="muted">Số sản phẩm bán theo danh mục</p></div>
+        {{ trend(units_change) }}
+      </header>
+      <div class="frame__panel chart">
+        {% if max_units %}
+          <div class="chart__plot">
+            {% for c in categories %}
+              <div class="chart__col" style="--h: {{ (c.units * 100 / max_units) | round(1) }}%; --c: var(--chart-{{ loop.index0 % 7 }}); --i: {{ loop.index0 }}" title="{{ c.name }}: {{ c.units }} sản phẩm">
+                <span class="chart__value">{{ c.units }}</span><span class="chart__bar"></span>
+              </div>
+            {% endfor %}
+          </div>
+          <div class="chart__labels">{% for c in categories %}<span>{{ c.name }}</span>{% endfor %}</div>
+        {% else %}
+          <p class="empty-state">Chưa có đơn hàng nào trong {{ days }} ngày qua.</p>
+        {% endif %}
+      </div>
+    </section>
+
+    <section class="frame">
+      <header class="frame__head">
+        <div><h2>Danh mục bán chạy</h2><p class="muted">Theo doanh thu</p></div>
+        <a class="abtn abtn--outline abtn--sm" href="{{ url_for('admin.categories') }}">Xem tất cả</a>
+      </header>
+      <ul class="frame__panel top-cats">
+        {% for c in categories %}
+          <li>
+            <span class="thumb thumb--sm">{% if c.image %}<img src="{{ url_for('static', filename=c.image) }}" alt="">{% endif %}</span>
+            <span class="top-cats__info"><b>{{ c.name }}</b><small>{{ c.revenue | vnd }} <i>•</i> {{ c.units }} sp</small></span>
+            {{ trend(c.change) }}
+          </li>
+        {% endfor %}
+      </ul>
+    </section>
+  </div>
+
+  <section class="frame">
+    <header class="frame__head">
+      <div><h2>Tồn kho</h2><p class="muted">Toàn bộ sản phẩm</p></div>
+      <a class="abtn abtn--outline abtn--sm" href="{{ url_for('admin.products_csv') }}">{{ i("download", 14) }}Xuất CSV</a>
+    </header>
+    <div class="frame__panel frame__panel--flush">
+      <nav class="atabs">
+        {% for key, label in [(None, "Tất cả"), ("in", "Còn hàng"), ("low", "Sắp hết"), ("out", "Hết hàng")] %}
+          <a class="atabs__item {% if inv.stock == key %}is-active{% endif %}" href="{{ url_with(ton=key, trang=None) }}">{{ label }} {{ badge(inv.counts[key or "all"], "secondary", true) }}</a>
+        {% endfor %}
+      </nav>
+      {% include "admin/_product_table.html" %}
+    </div>
+  </section>
+{% endblock %}
