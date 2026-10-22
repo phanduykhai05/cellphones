@@ -82,7 +82,10 @@
 .adm-nav { display: grid; gap: 1px; margin-bottom: 20px; }
 .adm-nav__item { display: flex; align-items: center; gap: 8px; height: 32px; padding: 8px; border-radius: var(--radius-md); font-size: 14px; transition: background .15s; }
 .adm-nav__item:hover { background: var(--accent); }
-.adm-nav__item.is-active { background: color-mix(in oklab, var(--primary) 5%, transparent); font-weight: 500; color: var(--primary); }
+.adm-nav__item { position: relative; isolation: isolate; }
+/* Nền active nằm ở ::before để có view-transition-name riêng -> trượt giữa các mục khi chuyển trang */
+.adm-nav__item.is-active { font-weight: 500; color: var(--primary); }
+.adm-nav__item.is-active::before { content: ""; position: absolute; inset: 0; z-index: -1; border-radius: inherit; background: color-mix(in oklab, var(--primary) 5%, transparent); view-transition-name: nav-pill; }
 .adm-nav__item span { flex: 1; }
 .adm-nav__count { flex: none !important; min-width: 20px; height: 20px; padding: 0 6px; border-radius: 9999px; background: var(--primary); font-size: 11px; font-weight: 600; line-height: 20px; text-align: center; color: var(--primary-foreground); }
 .adm-user { display: flex; align-items: center; gap: 8px; margin-top: auto; padding: 8px; border-radius: var(--radius-md); }
@@ -179,7 +182,7 @@
 .atabs { display: flex; gap: 20px; padding: 12px 16px 0; overflow-x: auto; border-bottom: 1px solid var(--border); }
 .atabs__item { position: relative; display: inline-flex; align-items: center; gap: 8px; padding: 2px 0 12px; font-size: 14px; font-weight: 500; white-space: nowrap; color: color-mix(in oklab, var(--foreground) 60%, transparent); }
 .atabs__item:hover, .atabs__item.is-active { color: var(--foreground); }
-.atabs__item.is-active::after { content: ""; position: absolute; right: 0; bottom: -1px; left: 0; height: 2px; background: var(--foreground); }
+.atabs__item.is-active::after { content: ""; position: absolute; right: 0; bottom: -1px; left: 0; height: 2px; background: var(--foreground); view-transition-name: tab-indicator; }
 
 /* ===== Data table (data-table.spec.md) ===== */
 .dt-scroll { overflow-x: auto; }
@@ -284,4 +287,79 @@ select.ainput { padding-right: 30px; appearance: none; background: var(--backgro
   .frow { grid-template-columns: 1fr; padding: 12px 16px; }
   .fchip__input { width: 120px; }
   .chart__plot, .chart__labels { gap: 8px; }
+}
+
+
+/* ===== Motion — tắt toàn bộ khi người dùng bật "giảm chuyển động" ===== */
+:root { --ease-out: cubic-bezier(.22, 1, .36, 1); }
+.adm-backdrop { display: none; }
+
+@media (prefers-reduced-motion: no-preference) {
+  /* Chuyển trang (View Transitions API, trình duyệt không hỗ trợ thì chuyển trang bình thường):
+     topbar/sidebar đứng yên, chỉ vùng nội dung mờ dần; nền menu active và vạch tab trượt tới vị trí mới */
+  @view-transition { navigation: auto; }
+  .adm-main { view-transition-name: adm-main; }
+  ::view-transition-old(root), ::view-transition-new(root) { animation: none; }
+  ::view-transition-old(adm-main) { animation: vt-fade-out .15s ease-out both; }
+  ::view-transition-new(adm-main) { animation: vt-fade-in .25s ease-out both; }
+  ::view-transition-group(nav-pill), ::view-transition-group(tab-indicator) { animation-duration: .35s; animation-timing-function: var(--ease-out); }
+  @keyframes vt-fade-out { to { opacity: 0; } }
+  @keyframes vt-fade-in { from { opacity: 0; } }
+
+  /* Nội dung vào trang: trồi lên + hiện dần, lần lượt từng khối */
+  @keyframes rise { from { opacity: 0; transform: translateY(10px); } }
+  .adm-main > *, .kpi-grid > .frame, .dash-row > .frame, .pform__main > .frame, .pform__side > .frame { animation: rise .5s var(--ease-out) both; }
+  .adm-main > :nth-child(2) { animation-delay: .04s; }
+  .adm-main > :nth-child(3) { animation-delay: .08s; }
+  .adm-main > :nth-child(n+4) { animation-delay: .12s; }
+  .kpi-grid > :nth-child(2), .dash-row > :nth-child(2), .pform__main > :nth-child(2), .pform__side > :nth-child(2) { animation-delay: .06s; }
+  .kpi-grid > :nth-child(3), .pform__main > :nth-child(3), .pform__side > :nth-child(3) { animation-delay: .12s; }
+  .kpi-grid > :nth-child(4), .pform__side > :nth-child(4) { animation-delay: .18s; }
+
+  /* Dòng bảng hiện lần lượt (--row do admin.js gắn, tối đa 12 bậc) */
+  @keyframes row-in { from { opacity: 0; transform: translateY(4px); } }
+  .dt tbody tr { animation: row-in .35s var(--ease-out) both; animation-delay: calc(.15s + var(--row, 0) * 30ms); }
+
+  /* Cột biểu đồ mọc lần lượt; số trên cột hiện sau */
+  .chart__bar { animation: grow .7s var(--ease-out) both; animation-delay: calc(.2s + var(--i, 0) * 70ms); }
+  .chart__value { animation: rise .4s var(--ease-out) both; animation-delay: calc(.55s + var(--i, 0) * 70ms); }
+
+  /* KPI: nhấc nhẹ khi hover */
+  .kpi-grid .frame { transition: transform .2s var(--ease-out), box-shadow .2s var(--ease-out); }
+  .kpi-grid .frame:hover { transform: translateY(-2px); box-shadow: 0 8px 24px -12px rgb(0 0 0 / .15); }
+
+  /* Menu "…" và dropdown bật ra từ góc */
+  @keyframes pop { from { opacity: 0; transform: translateY(-4px) scale(.96); } }
+  .amenu[open] .amenu__panel { transform-origin: top right; animation: pop .16s var(--ease-out); }
+
+  /* Nút lún nhẹ khi bấm */
+  .abtn, .aicon-btn, .pg-btn, .seg__item, .adm-nav__item { transition: background .15s, color .15s, transform .1s; }
+  .abtn:active, .aicon-btn:active, .pg-btn:active, .seg__item:active { transform: scale(.97); }
+  .adm-nav__item:hover .ai { transform: translateX(1px); }
+  .adm-nav__item .ai { transition: transform .2s var(--ease-out); }
+
+  /* Thông báo: trượt xuống, tự ẩn (admin.js thêm .is-leaving sau 4s) */
+  @keyframes flash-in { from { opacity: 0; transform: translateY(-8px); } }
+  .aflash { animation: flash-in .35s var(--ease-out) both; transition: opacity .3s, transform .3s; }
+  .aflash.is-leaving { opacity: 0; transform: translateY(-6px); }
+
+  /* Trang đăng nhập */
+  .login-card { animation: rise .55s var(--ease-out) both; }
+  .login-card > * { animation: rise .5s var(--ease-out) both; }
+  .login-card > :nth-child(n+5) { animation-delay: .08s; }
+  .login-card > :nth-child(n+7) { animation-delay: .14s; }
+
+  /* Thu/mở sidebar trên desktop: co cột grid, nội dung giữ nguyên bề rộng nên không xô chữ */
+  .adm { transition: grid-template-columns .28s var(--ease-out); }
+  .adm-side { overflow-x: hidden; transition: visibility 0s .28s; }
+  .adm-side > * { min-width: calc(var(--side-w) - 33px); }
+  .adm:not(.is-collapsed) .adm-side { transition-delay: 0s; }
+  .adm.is-collapsed .adm-side { padding: 16px 0; border-right-color: transparent; }
+}
+
+/* Drawer mobile: lớp nền mờ phía sau, bấm để đóng */
+@media (max-width: 1023px) {
+  .adm-backdrop { position: fixed; inset: var(--top-h) 0 0; z-index: 30; display: block; background: rgb(0 0 0 / .35); opacity: 0; pointer-events: none; transition: opacity .25s; }
+  .adm.is-open .adm-backdrop { opacity: 1; pointer-events: auto; }
+  .adm-side { transition: transform .3s var(--ease-out), visibility .3s; }
 }

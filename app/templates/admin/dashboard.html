@@ -19,7 +19,7 @@
       <section class="frame">
         <header class="frame__head"><h2>{{ k.title }}</h2><span class="muted small">{{ days }} ngày</span></header>
         <div class="frame__panel kpi">
-          <p class="kpi__row"><b class="kpi__value">{{ (k.value | vnd) if k.money else ("{:,}".format(k.value).replace(",", ".")) }}</b>{{ trend(k.change, "arrow") }}</p>
+          <p class="kpi__row"><b class="kpi__value" data-count="{{ k.value }}"{% if k.money %} data-money{% endif %}>{{ (k.value | vnd) if k.money else ("{:,}".format(k.value).replace(",", ".")) }}</b>{{ trend(k.change, "arrow") }}</p>
           <p class="kpi__prev">So với kỳ trước: <b>{{ (k.prev | vnd) if k.money else k.prev }}</b></p>
         </div>
       </section>
@@ -36,7 +36,7 @@
         {% if max_units %}
           <div class="chart__plot">
             {% for c in categories %}
-              <div class="chart__col" style="--h: {{ (c.units * 100 / max_units) | round(1) }}%; --c: var(--chart-{{ loop.index0 % 7 }})" title="{{ c.name }}: {{ c.units }} sản phẩm">
+              <div class="chart__col" style="--h: {{ (c.units * 100 / max_units) | round(1) }}%; --c: var(--chart-{{ loop.index0 % 7 }}); --i: {{ loop.index0 }}" title="{{ c.name }}: {{ c.units }} sản phẩm">
                 <span class="chart__value">{{ c.units }}</span><span class="chart__bar"></span>
               </div>
             {% endfor %}

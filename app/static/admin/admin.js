@@ -53,3 +53,39 @@ document.addEventListener("submit", (e) => {
   const status = e.target.querySelector("select[name=status]");
   if (status?.value === "cancelled" && !confirm("Huỷ đơn này? Sản phẩm sẽ được trả về kho.")) e.preventDefault();
 });
+
+// ===== Motion =====
+const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+// Đóng drawer khi bấm lớp nền mờ
+document.querySelector("[data-sidebar-close]")?.addEventListener("click", () => adm.classList.remove("is-open"));
+
+// Thứ tự dòng bảng cho hiệu ứng hiện lần lượt
+document.querySelectorAll(".dt tbody").forEach((tbody) =>
+  [...tbody.rows].forEach((tr, i) => tr.style.setProperty("--row", Math.min(i, 12))));
+
+// Số KPI chạy từ 0 lên giá trị thật (ease-out cubic, 0.9s)
+if (!reduceMotion) {
+  document.querySelectorAll("[data-count]").forEach((el) => {
+    const target = Number(el.dataset.count);
+    if (!target) return;
+    const suffix = el.hasAttribute("data-money") ? "đ" : "";
+    const fmt = (n) => n.toLocaleString("vi-VN") + suffix;
+    const start = performance.now() + 150;
+    const tick = (now) => {
+      const t = Math.min(Math.max((now - start) / 900, 0), 1);
+      el.textContent = fmt(Math.round(target * (1 - (1 - t) ** 3)));
+      if (t < 1) requestAnimationFrame(tick);
+    };
+    el.textContent = fmt(0);
+    requestAnimationFrame(tick);
+  });
+}
+
+// Thông báo tự ẩn sau 4 giây
+document.querySelectorAll(".aflash").forEach((el) => {
+  setTimeout(() => {
+    el.classList.add("is-leaving");
+    setTimeout(() => el.remove(), reduceMotion ? 0 : 300);
+  }, 4000);
+});

@@ -67,6 +67,7 @@
     </div>
   </aside>
 
+  <div class="adm-backdrop" data-sidebar-close></div>
   <main class="adm-main">
     {% with messages = get_flashed_messages(with_categories=true) %}
       {% for category, message in messages %}<p class="aflash aflash--{{ category }}" role="status">{{ message }}</p>{% endfor %}
