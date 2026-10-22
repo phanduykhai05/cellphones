@@ -1,0 +1,70 @@
+{% extends "admin/base.html" %}
+{% from "admin/_icons.html" import i %}
+{% from "admin/_ui.html" import badge, order_badges, payment_badge, fulfill_badge with context %}
+{% block title %}Đơn #{{ order.id }}{% endblock %}
+{% block crumb %}<a href="{{ url_for('admin.orders') }}">Đơn hàng</a> / #{{ order.id }}{% endblock %}
+{% block content %}
+  <div class="page-head">
+    <div><h1>Đơn hàng <span class="mono">#{{ order.id }}</span> {{ order_badges(order) }}</h1>
+      <p class="muted">Đặt lúc {{ order.created_at }}</p></div>
+    <div class="page-head__actions"><a class="abtn abtn--outline" href="{{ url_for('admin.orders') }}">{{ i("chevron-left") }}Tất cả đơn</a></div>
+  </div>
+  <div class="pform__grid">
+    <div class="pform__main">
+      <section class="frame">
+        <header class="frame__head"><h2>Sản phẩm</h2>{{ fulfill_badge(order) }}</header>
+        <div class="frame__panel frame__panel--flush">
+          <table class="dt">
+            <thead><tr><th>Sản phẩm</th><th class="num">Đơn giá</th><th class="num">SL</th><th class="num">Thành tiền</th></tr></thead>
+            <tbody>
+              {% for it in order["items"] %}
+                <tr>
+                  <td><div class="cell-product"><span class="thumb">{% if it.image_url %}<img src="{{ url_for('static', filename=it.image_url) }}" alt="">{% endif %}</span>
+                    <span><a class="cell-title" href="{{ url_for('admin.product_edit', product_id=it.product_id) }}">{{ it.name }}</a>{% if it.variant %}<small class="muted cell-sub">Màu: {{ it.variant }}</small>{% endif %}</span></div></td>
+                  <td class="num">{{ it.price | vnd }}</td><td class="num">{{ it.qty }}</td><td class="num"><b>{{ (it.price * it.qty) | vnd }}</b></td>
+                </tr>
+              {% endfor %}
+            </tbody>
+            <tfoot><tr><td colspan="3">Tổng cộng (miễn phí vận chuyển)</td><td class="num"><b>{{ order.total | vnd }}</b></td></tr></tfoot>
+          </table>
+        </div>
+      </section>
+    </div>
+    <div class="pform__side">
+      <section class="frame">
+        <header class="frame__head"><h2>Trạng thái</h2></header>
+        <div class="frame__panel fstack">
+          {% if next_statuses %}
+            <form class="fstack" method="post">
+              <input type="hidden" name="_csrf" value="{{ csrf_token() }}">
+              <select class="ainput" name="status" aria-label="Trạng thái mới">
+                {% for s in next_statuses %}<option value="{{ s }}">{{ statuses[s] }}</option>{% endfor %}
+              </select>
+              <button class="abtn abtn--primary" type="submit" data-confirm-if="cancelled" >Cập nhật trạng thái</button>
+              <p class="muted small">Huỷ đơn sẽ trả số lượng sản phẩm về kho.</p>
+            </form>
+          {% else %}
+            <p class="muted small">Đơn đã {{ statuses[order.status] | lower }}, không thể đổi trạng thái.</p>
+          {% endif %}
+        </div>
+      </section>
+      <section class="frame">
+        <header class="frame__head"><h2>Khách hàng</h2></header>
+        <dl class="frame__panel dlist">
+          <dt>Người nhận</dt><dd>{{ order.name }}</dd>
+          <dt>Số điện thoại</dt><dd><a class="link" href="tel:{{ order.phone }}">{{ order.phone }}</a></dd>
+          {% if order.email %}<dt>Email</dt><dd>{{ order.email }}</dd>{% endif %}
+          <dt>Địa chỉ</dt><dd>{{ order.address }}</dd>
+          {% if order.note %}<dt>Ghi chú</dt><dd>{{ order.note }}</dd>{% endif %}
+        </dl>
+      </section>
+      <section class="frame">
+        <header class="frame__head"><h2>Thanh toán</h2>{{ payment_badge(order) }}</header>
+        <dl class="frame__panel dlist">
+          <dt>Phương thức</dt><dd>{{ methods[order.payment_method] }}</dd>
+          <dt>Tổng tiền</dt><dd><b>{{ order.total | vnd }}</b></dd>
+        </dl>
+      </section>
+    </div>
+  </div>
+{% endblock %}

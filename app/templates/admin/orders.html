@@ -1,0 +1,55 @@
+{% extends "admin/base.html" %}
+{% from "admin/_icons.html" import i %}
+{% from "admin/_ui.html" import badge, sort_th, pagination, filter_bar, order_badges, payment_badge, fulfill_badge, initials with context %}
+{% block title %}Đơn hàng{% endblock %}
+{% block content %}
+  <div class="page-head">
+    <h1>Đơn hàng {{ badge(counts.values() | sum ~ " đơn", "secondary", true) }}</h1>
+    <div class="page-head__actions">
+      <a class="abtn abtn--outline" href="{{ url_for('admin.orders_csv') }}">{{ i("download") }}Xuất CSV</a>
+    </div>
+  </div>
+  {% set status_select %}
+    <select class="ainput ainput--auto" name="trang_thai" onchange="this.form.submit()" aria-label="Trạng thái">
+      <option value="">Mọi trạng thái</option>
+      {% for key, label in statuses.items() %}<option value="{{ key }}" {% if status == key %}selected{% endif %}>{{ label }} ({{ counts.get(key, 0) }})</option>{% endfor %}
+    </select>
+  {% endset %}
+  <section class="frame">
+    {{ filter_bar("hash", "Đơn hàng", "Mã đơn, tên, SĐT...", q, status_select) }}
+    <div class="frame__panel frame__panel--flush">
+      <div class="dt-scroll">
+        <table class="dt">
+          <thead><tr>
+            {{ sort_th("id", "Đơn hàng", sort, desc) }}
+            {{ sort_th("customer", "Khách hàng", sort, desc) }}
+            {{ sort_th("items", "Sản phẩm", sort, desc) }}
+            <th>Giao hàng</th>
+            {{ sort_th("total", "Tổng tiền", sort, desc) }}
+            <th>Thanh toán</th>
+            {{ sort_th("status", "Trạng thái", sort, desc) }}
+            <th class="dt__actions"><span class="sr-only">Thao tác</span></th>
+          </tr></thead>
+          <tbody>
+            {% for o in page["items"] %}
+              <tr data-href="{{ url_for('admin.order', order_id=o.id) }}">
+                <td><a class="cell-title mono" href="{{ url_for('admin.order', order_id=o.id) }}">#{{ o.id }}</a><small class="muted cell-sub">{{ o.created_at[:16] }}</small></td>
+                <td><div class="cell-product"><span class="avatar">{{ initials(o.name) }}</span>
+                  <span><b class="cell-title">{{ o.name }}</b><small class="muted cell-sub">{{ o.phone }}</small></span></div></td>
+                <td>{{ o.item_count }} sp<small class="muted cell-sub">{{ o.line_count }} mặt hàng</small></td>
+                <td>{{ fulfill_badge(o) }}</td>
+                <td><b class="num">{{ o.total | vnd }}</b></td>
+                <td>{{ payment_badge(o) }}</td>
+                <td>{{ order_badges(o) }}</td>
+                <td class="dt__actions"><a class="aicon-btn" href="{{ url_for('admin.order', order_id=o.id) }}" aria-label="Xem đơn #{{ o.id }}">{{ i("chevron-right") }}</a></td>
+              </tr>
+            {% else %}
+              <tr><td colspan="8" class="empty-state">Chưa có đơn hàng phù hợp.</td></tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      {{ pagination(page) }}
+    </div>
+  </section>
+{% endblock %}

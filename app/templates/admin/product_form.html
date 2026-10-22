@@ -1,0 +1,89 @@
+{% extends "admin/base.html" %}
+{% from "admin/_icons.html" import i %}
+{% block title %}{{ product.name if product else "Sản phẩm mới" }}{% endblock %}
+{% block crumb %}<a href="{{ url_for('admin.products') }}">Sản phẩm</a>{% endblock %}
+{% block content %}
+  {% set v = form if form else (product or {}) %}
+  <form class="pform" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="_csrf" value="{{ csrf_token() }}">
+    <div class="page-head">
+      <div><h1>{{ product.name if product else "Sản phẩm mới" }}</h1>
+        {% if product %}<p class="muted">#{{ product.id }} · <a class="link" href="{{ url_for('catalog.product', slug=product.slug) }}" target="_blank" rel="noopener">Xem trên cửa hàng</a></p>{% endif %}</div>
+      <div class="page-head__actions">
+        <a class="abtn abtn--outline" href="{{ url_for('admin.products') }}">Huỷ</a>
+        <button class="abtn abtn--primary" type="submit">{{ "Lưu thay đổi" if product else "Tạo sản phẩm" }}</button>
+      </div>
+    </div>
+
+    <div class="pform__grid">
+      <div class="pform__main">
+        <section class="frame">
+          <header class="frame__head"><h2>Thông tin chung</h2></header>
+          <div class="frame__panel frame__panel--flush">
+            <label class="frow"><span class="frow__label">Tên sản phẩm<small>Tên hiển thị trên cửa hàng.</small></span>
+              <input class="ainput" name="name" value="{{ v.get('name', '') }}" required maxlength="200" placeholder="VD: iPhone 17 Pro 256GB"></label>
+            <label class="frow"><span class="frow__label">Hãng<small>Dùng cho bộ lọc theo hãng.</small></span>
+              <input class="ainput" name="brand" value="{{ v.get('brand', '') }}" required maxlength="60" placeholder="VD: Apple"></label>
+            <label class="frow"><span class="frow__label">Khuyến mãi<small>Dòng ưu đãi trên card sản phẩm.</small></span>
+              <textarea class="ainput" name="promo" rows="2" maxlength="300">{{ v.get('promo') or '' }}</textarea></label>
+          </div>
+        </section>
+
+        <section class="frame">
+          <header class="frame__head"><h2>Hình ảnh</h2></header>
+          <div class="frame__panel">
+            <div class="dropzone">
+              <label class="abtn abtn--outline abtn--sm">{{ i("plus", 14) }}Chọn ảnh<input type="file" name="image" accept="image/jpeg,image/png,image/webp" hidden data-image-input></label>
+              <span class="muted" data-image-name>{{ "Ảnh chính hiện tại — chọn ảnh mới để thay." if product and product.image_url else "JPG, PNG hoặc WebP, tối đa 5MB." }}</span>
+              {% if product and product.image_url %}<img class="dropzone__thumb" src="{{ url_for('static', filename=product.image_url) }}" alt="" data-image-preview>
+              {% else %}<img class="dropzone__thumb" alt="" data-image-preview hidden>{% endif %}
+              {% for g in details.get("gallery", [])[1:6] %}<img class="dropzone__thumb" src="{{ url_for('static', filename=g) }}" alt="">{% endfor %}
+            </div>
+          </div>
+        </section>
+
+        <section class="frame">
+          <header class="frame__head"><div><h2>Thông số kỹ thuật</h2><p class="muted">Mỗi dòng một thông số dạng “Nhãn: Giá trị”.</p></div></header>
+          <div class="frame__panel">
+            <textarea class="ainput ainput--mono" name="specs" rows="10" placeholder="Chipset: Apple A19 Pro&#10;Bộ nhớ trong: 256 GB">{% if form %}{{ form.get('specs', '') }}{% else %}{% for label, value in details.get("specs", []) %}{{ label }}: {{ value }}
+{% endfor %}{% endif %}</textarea>
+          </div>
+        </section>
+      </div>
+
+      <div class="pform__side">
+        <section class="frame">
+          <header class="frame__head"><h2>Giá & tồn kho</h2></header>
+          <div class="frame__panel fstack">
+            <label class="afield">Giá bán (đ)<input class="ainput" name="price" type="number" min="0" step="1000" value="{{ v.get('price', '') }}" required></label>
+            <label class="afield">Giá gốc (đ) <small class="muted">để trống nếu không giảm</small><input class="ainput" name="old_price" type="number" min="0" step="1000" value="{{ v.get('old_price') or '' }}"></label>
+            <label class="afield">Tồn kho<input class="ainput" name="stock" type="number" min="0" value="{{ v.get('stock', 0) }}" required></label>
+          </div>
+        </section>
+        <section class="frame">
+          <header class="frame__head"><h2>Phân loại</h2></header>
+          <div class="frame__panel fstack">
+            <label class="afield">Danh mục
+              <select class="ainput" name="category_id" required>
+                {% for c in categories %}<option value="{{ c.id }}" {% if v.get('category_id') | string == c.id | string %}selected{% endif %}>{{ c.name }}</option>{% endfor %}
+              </select></label>
+          </div>
+        </section>
+        {% if product %}
+          <section class="frame frame--danger">
+            <header class="frame__head"><h2>Xoá sản phẩm</h2></header>
+            <div class="frame__panel fstack">
+              <p class="muted small">Chỉ xoá được sản phẩm chưa có trong đơn hàng nào.</p>
+              <button class="abtn abtn--danger" type="submit" form="delete-form" data-confirm="Xoá vĩnh viễn “{{ product.name }}”?">{{ i("trash", 14) }}Xoá sản phẩm</button>
+            </div>
+          </section>
+        {% endif %}
+      </div>
+    </div>
+  </form>
+  {% if product %}
+    <form id="delete-form" method="post" action="{{ url_for('admin.product_delete', product_id=product.id) }}">
+      <input type="hidden" name="_csrf" value="{{ csrf_token() }}">
+    </form>
+  {% endif %}
+{% endblock %}

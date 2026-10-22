@@ -1,0 +1,28 @@
+{% extends "admin/base.html" %}
+{% from "admin/_icons.html" import i %}
+{% from "admin/_ui.html" import badge with context %}
+{% block title %}Danh mục{% endblock %}
+{% block content %}
+  <div class="page-head"><h1>Danh mục {{ badge(categories | length ~ " danh mục", "secondary", true) }}</h1></div>
+  <section class="frame">
+    <header class="frame__head"><div><h2>Cây danh mục</h2><p class="muted">Nhóm trang chủ: các danh mục cùng số nhóm được gộp thành 1 khối tab.</p></div></header>
+    <div class="frame__panel frame__panel--flush">
+      <table class="dt">
+        <thead><tr><th>Danh mục</th><th>Tên ngắn</th><th class="num">Sản phẩm</th><th>Khối trang chủ</th><th>Trạng thái</th><th class="dt__actions"></th></tr></thead>
+        <tbody>
+          {% for c in categories %}
+            <tr data-href="{{ url_for('admin.category_edit', category_id=c.id) }}">
+              <td><div class="cell-product"><span class="thumb thumb--icon">{% if c.icon %}<img src="{{ url_for('static', filename=c.icon) }}" alt="">{% endif %}</span>
+                <span><a class="cell-title" href="{{ url_for('admin.category_edit', category_id=c.id) }}">{{ c.name }}</a><small class="muted cell-sub">/danh-muc/{{ c.slug }}</small></span></div></td>
+              <td>{{ c.short_name }}</td>
+              <td class="num">{{ c.product_count }} <span class="muted">sp</span></td>
+              <td>{% if c.home_group %}{{ badge("Nhóm " ~ c.home_group, "info") }}{% else %}<span class="muted">—</span>{% endif %}</td>
+              <td>{{ badge("Đang bán", "success") if c.product_count else badge("Chưa có sản phẩm", "secondary") }}</td>
+              <td class="dt__actions"><a class="aicon-btn" href="{{ url_for('admin.category_edit', category_id=c.id) }}" aria-label="Sửa {{ c.name }}">{{ i("pencil", 14) }}</a></td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </section>
+{% endblock %}

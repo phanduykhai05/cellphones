@@ -1,0 +1,26 @@
+{% extends "admin/base.html" %}
+{% from "admin/_icons.html" import i %}
+{% block title %}{{ category.name }}{% endblock %}
+{% block crumb %}<a href="{{ url_for('admin.categories') }}">Danh mục</a> / {{ category.short_name }}{% endblock %}
+{% block content %}
+  {% set v = form if form else category %}
+  <form method="post">
+    <input type="hidden" name="_csrf" value="{{ csrf_token() }}">
+    <div class="page-head">
+      <h1>{{ category.name }}</h1>
+      <div class="page-head__actions">
+        <a class="abtn abtn--outline" href="{{ url_for('admin.categories') }}">Huỷ</a>
+        <button class="abtn abtn--primary" type="submit">Lưu thay đổi</button>
+      </div>
+    </div>
+    <section class="frame frame--narrow">
+      <header class="frame__head"><h2>Thông tin danh mục</h2></header>
+      <div class="frame__panel frame__panel--flush">
+        <label class="frow"><span class="frow__label">Tên<small>Hiện ở menu danh mục.</small></span><input class="ainput" name="name" value="{{ v.get('name', '') }}" required maxlength="60"></label>
+        <label class="frow"><span class="frow__label">Tên ngắn<small>Tiêu đề trang danh mục, tab trang chủ.</small></span><input class="ainput" name="short_name" value="{{ v.get('short_name', '') }}" required maxlength="40"></label>
+        <label class="frow"><span class="frow__label">Khối trang chủ<small>0 = không hiện; cùng số = chung khối tab.</small></span><input class="ainput" name="home_group" type="number" min="0" value="{{ v.get('home_group', 0) }}"></label>
+        <label class="frow"><span class="frow__label">Thứ tự<small>Số nhỏ hiện trước.</small></span><input class="ainput" name="sort" type="number" value="{{ v.get('sort', 0) }}"></label>
+      </div>
+    </section>
+  </form>
+{% endblock %}

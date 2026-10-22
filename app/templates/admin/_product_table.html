@@ -1,0 +1,44 @@
+{% from "admin/_icons.html" import i %}
+{# Bảng sản phẩm dùng ở dashboard (tồn kho) và trang Sản phẩm. Biến: inv (kết quả product_page) #}
+{% from "admin/_ui.html" import badge, sort_th, pagination, stock_badge with context %}
+<div class="dt-scroll">
+  <table class="dt">
+    <thead><tr>
+      {{ sort_th("name", "Sản phẩm", inv.sort, inv.desc) }}
+      {{ sort_th("category", "Danh mục", inv.sort, inv.desc) }}
+      {{ sort_th("price", "Giá", inv.sort, inv.desc) }}
+      {{ sort_th("stock", "Tồn kho", inv.sort, inv.desc) }}
+      <th>Trạng thái</th><th>Đã bán</th><th class="dt__actions"><span class="sr-only">Thao tác</span></th>
+    </tr></thead>
+    <tbody>
+      {% for p in inv.page["items"] %}
+        <tr data-href="{{ url_for('admin.product_edit', product_id=p.id) }}">
+          <td>
+            <div class="cell-product">
+              <span class="thumb">{% if p.image_url %}<img src="{{ url_for('static', filename=p.image_url) }}" alt="" loading="lazy">{% endif %}</span>
+              <span><a class="cell-title" href="{{ url_for('admin.product_edit', product_id=p.id) }}">{{ p.name }}</a>
+                <small class="muted"><code>#{{ p.id }}</code> • {{ p.brand }}</small></span>
+            </div>
+          </td>
+          <td>{{ badge(p.category_name) }}</td>
+          <td><b class="num">{{ p.price | vnd }}</b>{% if p.old_price %}<small class="muted cell-sub">gốc {{ p.old_price | vnd }}</small>{% endif %}</td>
+          <td><b class="num {% if p.stock_status != 'in' %}text-{{ 'warn' if p.stock_status == 'low' else 'danger' }}{% endif %}">{{ p.stock }}</b></td>
+          <td>{{ stock_badge(p.stock_status) }}</td>
+          <td class="num">{{ p.sold }}</td>
+          <td class="dt__actions">
+            <details class="amenu">
+              <summary class="aicon-btn" aria-label="Thao tác">{{ i("dots") }}</summary>
+              <div class="amenu__panel">
+                <a href="{{ url_for('admin.product_edit', product_id=p.id) }}">{{ i("pencil", 14) }}Sửa</a>
+                <a href="{{ url_for('catalog.product', slug=p.slug) }}" target="_blank" rel="noopener">{{ i("external", 14) }}Xem trên cửa hàng</a>
+              </div>
+            </details>
+          </td>
+        </tr>
+      {% else %}
+        <tr><td colspan="7" class="empty-state">Không có sản phẩm phù hợp.</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{{ pagination(inv.page) }}
