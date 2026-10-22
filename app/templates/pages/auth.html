@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% from "components/icons.html" import icon %}
+{% set is_login = mode == "login" %}
+{% block title %}{{ "Đăng nhập" if is_login else "Đăng ký" }} | {{ site.SITE_NAME }}{% endblock %}
+{% block styles %}<link rel="stylesheet" href="{{ url_for('static', filename='css/pages/shop.css') }}">{% endblock %}
+{% block content %}
+  <section class="auth container">
+    <div class="auth__card">
+      <span class="auth__badge">{{ icon("user", 32) }}</span>
+      <h1 class="auth__title">{{ "Đăng nhập" if is_login else "Đăng ký" }} tài khoản {{ site.SITE_NAME }}</h1>
+      <form class="auth__form" method="post">
+        <input type="hidden" name="_csrf" value="{{ csrf_token() }}">
+        <input type="hidden" name="next" value="{{ next }}">
+        {% if not is_login %}
+          <label class="field">Họ và tên<input name="name" value="{{ form.get('name', '') }}" required maxlength="100" autocomplete="name" placeholder="Nhập họ và tên"></label>
+        {% endif %}
+        <label class="field">Số điện thoại<input name="phone" type="tel" value="{{ form.get('phone', '') }}" required inputmode="numeric" pattern="0[0-9\s.\-]{9,12}" autocomplete="tel" placeholder="Nhập số điện thoại"></label>
+        {% if not is_login %}
+          <label class="field">Email <small>(không bắt buộc)</small><input name="email" type="email" value="{{ form.get('email', '') }}" autocomplete="email" placeholder="Nhập email"></label>
+        {% endif %}
+        <label class="field">Mật khẩu<input name="password" type="password" required minlength="{{ 1 if is_login else 6 }}" maxlength="128" autocomplete="{{ 'current-password' if is_login else 'new-password' }}" placeholder="Nhập mật khẩu"></label>
+        {% if not is_login %}
+          <label class="field">Nhập lại mật khẩu<input name="password2" type="password" required minlength="6" maxlength="128" autocomplete="new-password" placeholder="Nhập lại mật khẩu"></label>
+        {% endif %}
+        <button class="btn btn--primary btn--block btn--lg" type="submit">{{ "Đăng nhập" if is_login else "Đăng ký" }}</button>
+      </form>
+      <p class="auth__switch">
+        {% if is_login %}Bạn chưa có tài khoản? <a href="{{ url_for('auth.register', next=next) }}">Đăng ký ngay</a>
+        {% else %}Bạn đã có tài khoản? <a href="{{ url_for('auth.login', next=next) }}">Đăng nhập ngay</a>{% endif %}
+      </p>
+    </div>
+  </section>
+{% endblock %}

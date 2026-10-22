@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% from "components/icons.html" import icon %}
+{% block title %}Giỏ hàng | {{ site.SITE_NAME }}{% endblock %}
+{% block styles %}<link rel="stylesheet" href="{{ url_for('static', filename='css/pages/shop.css') }}">{% endblock %}
+{% block content %}
+  <section class="shop container">
+    <h1 class="shop__title">Giỏ hàng của bạn</h1>
+    {% if lines %}
+      <div class="shop__grid">
+        <div class="shop__main">
+          {% for line in lines %}
+            <article class="cart-line {% if not line.in_stock %}is-warn{% endif %}">
+              <a href="{{ url_for('catalog.product', slug=line.product.slug) }}" class="cart-line__img">
+                {% if line.product.image_url %}<img src="{{ url_for('static', filename=line.product.image_url) }}" alt="" width="100" height="100">{% endif %}
+              </a>
+              <div class="cart-line__info">
+                <a class="cart-line__name" href="{{ url_for('catalog.product', slug=line.product.slug) }}">{{ line.product.name }}</a>
+                {% if line.variant %}<p class="cart-line__variant">Màu: {{ line.variant }}</p>{% endif %}
+                <p class="cart-line__price"><strong>{{ line.product.price | vnd }}</strong>{% if line.product.old_price %}<del>{{ line.product.old_price | vnd }}</del>{% endif %}</p>
+                {% if not line.in_stock %}<p class="cart-line__warn">Chỉ còn {{ line.product.stock }} sản phẩm</p>{% endif %}
+              </div>
+              {% include "components/qty_form.html" %}
+              <form method="post" action="{{ url_for('shop.cart_remove') }}" class="cart-line__remove">
+                <input type="hidden" name="_csrf" value="{{ csrf_token() }}">
+                <input type="hidden" name="key" value="{{ line.key }}">
+                <button type="submit" aria-label="Xoá {{ line.product.name }}">{{ icon("close", 18) }}</button>
+              </form>
+            </article>
+          {% endfor %}
+        </div>
+        <aside class="summary">
+          <p class="summary__row"><span>Tạm tính ({{ cart_count }} sản phẩm)</span><b>{{ total | vnd }}</b></p>
+          <p class="summary__row summary__row--total"><span>Tổng tiền</span><strong>{{ total | vnd }}</strong></p>
+          <a class="btn btn--primary btn--block btn--lg" href="{{ url_for('shop.checkout') }}">Mua ngay ({{ cart_count }})</a>
+          <a class="summary__back" href="{{ url_for('main.home') }}">{{ icon("chevron-left", 16) }}Chọn thêm sản phẩm khác</a>
+        </aside>
+      </div>
+    {% else %}
+      <div class="empty-cart">
+        {{ icon("cart", 64) }}
+        <p>Giỏ hàng của bạn đang trống.<br>Hãy chọn thêm sản phẩm để mua sắm nhé</p>
+        <a class="btn btn--primary btn--lg" href="{{ url_for('main.home') }}">Quay lại trang chủ</a>
+      </div>
+    {% endif %}
+  </section>
+{% endblock %}

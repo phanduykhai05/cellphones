@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% from "components/icons.html" import icon %}
+{% block title %}Đơn hàng #{{ order.id }} | {{ site.SITE_NAME }}{% endblock %}
+{% block styles %}<link rel="stylesheet" href="{{ url_for('static', filename='css/pages/shop.css') }}">{% endblock %}
+{% block content %}
+  <section class="shop container">
+    {% if is_new %}
+      <div class="order-done">
+        <span class="order-done__icon">{{ icon("check", 32) }}</span>
+        <h1>Đặt hàng thành công</h1>
+        <p>Mã đơn <b>#{{ order.id }}</b>. Chúng tôi sẽ gọi xác nhận qua số {{ order.phone }}.</p>
+      </div>
+    {% else %}
+      <h1 class="shop__title">Đơn hàng #{{ order.id }}</h1>
+    {% endif %}
+    <div class="shop__grid">
+      <div class="shop__main">
+        <div class="box">
+          <h2 class="box__title">Sản phẩm</h2>
+          {% for it in order["items"] %}
+            <div class="summary__item">
+              {% if it.image_url %}<img src="{{ url_for('static', filename=it.image_url) }}" alt="" width="48" height="48">{% endif %}
+              <p>{{ it.name }}{% if it.variant %} · {{ it.variant }}{% endif %}<small>{{ it.price | vnd }} x{{ it.qty }}</small></p>
+              <b>{{ (it.price * it.qty) | vnd }}</b>
+            </div>
+          {% endfor %}
+        </div>
+        {% if order.payment_method == "bank" and order.status == "pending" %}
+          <div class="box box--info">
+            <h2 class="box__title">Thông tin chuyển khoản</h2>
+            <p>{{ site.BANK_INFO }}</p>
+            <p>Số tiền: <b>{{ order.total | vnd }}</b> · Nội dung: <b>DH{{ order.id }} {{ order.phone }}</b></p>
+          </div>
+        {% endif %}
+      </div>
+      <aside class="summary">
+        <p class="summary__row"><span>Trạng thái</span><span class="status status--{{ order.status }}">{{ statuses[order.status] }}</span></p>
+        <p class="summary__row"><span>Người nhận</span><b>{{ order.name }} · {{ order.phone }}</b></p>
+        <p class="summary__row summary__row--block"><span>Địa chỉ</span><b>{{ order.address }}</b></p>
+        {% if order.note %}<p class="summary__row summary__row--block"><span>Ghi chú</span><b>{{ order.note }}</b></p>{% endif %}
+        <p class="summary__row"><span>Thanh toán</span><b>{{ methods[order.payment_method] }}</b></p>
+        <p class="summary__row summary__row--total"><span>Tổng tiền</span><strong>{{ order.total | vnd }}</strong></p>
+        <a class="summary__back" href="{{ url_for('shop.orders') }}">{{ icon("chevron-left", 16) }}Tất cả đơn hàng</a>
+      </aside>
+    </div>
+  </section>
+{% endblock %}
