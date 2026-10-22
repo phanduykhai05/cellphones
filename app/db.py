@@ -5,6 +5,7 @@ from pathlib import Path
 
 import click
 from flask import Flask, current_app, g
+from flask.cli import with_appcontext
 
 HERE = Path(__file__).parent
 
@@ -25,8 +26,17 @@ def close_db(_=None) -> None:
         conn.close()
 
 
+# Cột thêm sau khi DB đã có dữ liệu: CREATE TABLE IF NOT EXISTS không tự thêm cột vào bảng cũ
+MIGRATIONS = [("users", "is_admin", "INTEGER NOT NULL DEFAULT 0")]
+
+
 def init_db() -> None:
-    get_db().executescript((HERE / "schema.sql").read_text(encoding="utf-8"))
+    db = get_db()
+    db.executescript((HERE / "schema.sql").read_text(encoding="utf-8"))
+    for table, column, ddl in MIGRATIONS:
+        if column not in {r["name"] for r in db.execute(f"PRAGMA table_info({table})")}:
+            db.execute(f"ALTER TABLE {table} ADD COLUMN {column} {ddl}")
+    db.commit()
 
 
 def seed(path: Path = HERE / "seed_data.json") -> None:
@@ -53,6 +63,7 @@ def seed(path: Path = HERE / "seed_data.json") -> None:
 
 
 @click.command("init-db")
+@with_appcontext
 def init_db_command() -> None:
     """Tạo bảng từ schema.sql."""
     init_db()
@@ -60,13 +71,37 @@ def init_db_command() -> None:
 
 
 @click.command("seed")
+@with_appcontext
 def seed_command() -> None:
     """Nạp dữ liệu mẫu từ seed_data.json (chạy trên DB trống)."""
     seed()
     click.echo("Đã nạp dữ liệu mẫu.")
 
 
+@click.command("create-admin")
+@with_appcontext
+@click.option("--phone", prompt="Số điện thoại")
+@click.option("--name", default="Quản trị viên", show_default=True)
+@click.password_option("--password", prompt="Mật khẩu (bỏ trống nếu chỉ cấp quyền cho tài khoản có sẵn)", default="",
+                       show_default=False)
+def create_admin_command(phone: str, name: str, password: str) -> None:
+    """Tạo tài khoản admin, hoặc cấp quyền admin cho số điện thoại đã đăng ký."""
+    from app.repositories import user_repo
+    from app.services import auth_service
+    user = user_repo.find_by_phone(auth_service.normalize_phone(phone))
+    if user is None:
+        try:
+            user_id = auth_service.register(name, phone, password)
+        except ValueError as e:
+            raise click.ClickException(str(e))
+    else:
+        user_id = user["id"]
+    user_repo.set_admin(user_id, True)
+    click.echo(f"Đã cấp quyền admin cho {phone}.")
+
+
 def init_app(app: Flask) -> None:
     app.teardown_appcontext(close_db)
     app.cli.add_command(init_db_command)
     app.cli.add_command(seed_command)
+    app.cli.add_command(create_admin_command)
