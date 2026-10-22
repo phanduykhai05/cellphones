@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %}{{ title }} | {{ site.SITE_NAME }}{% endblock %}
+{% block styles %}<link rel="stylesheet" href="{{ url_for('static', filename='css/pages/category.css') }}">{% endblock %}
+{% block content %}
+  {% with crumbs=[(title, None)] %}{% include "components/breadcrumb.html" %}{% endwith %}
+  <div class="container plp">
+    {% if category and top_banners %}
+      <div class="plp-banners">
+        {% for b in top_banners %}<a href="{{ b.link }}"><img src="{{ url_for('static', filename=b.image) }}" alt="{{ b.title }}"></a>{% endfor %}
+      </div>
+    {% endif %}
+
+    <h1 class="plp-heading">{{ title }}</h1>
+    {% if brands %}
+      <div class="brand-grid">
+        {% for b in brands %}
+          <a class="brand-grid__item {% if args.get('hang') == b.name %}is-active{% endif %}" href="{{ url_with(hang=b.name) }}" title="{{ b.name }}">
+            {% if b.logo %}<img src="{{ url_for('static', filename=b.logo) }}" alt="{{ b.name }}">{% else %}<span>{{ b.name }}</span>{% endif %}
+          </a>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    {% if needs %}
+      <h2 class="plp-heading">Chọn theo nhu cầu</h2>
+      <div class="need-tiles">
+        {% for n in needs %}
+          <a class="need-tile" href="{{ n.link }}">
+            {% if n.image %}<img src="{{ url_for('static', filename=n.image) }}" alt="" loading="lazy">{% endif %}
+            <span>{{ n.label }}</span>
+          </a>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    {% include "components/category/filter_bar.html" %}
+
+    {% if products %}
+      <div class="plp-grid">
+        {% for product in products %}{% with show_tags=true %}{% include "components/product_card.html" %}{% endwith %}{% endfor %}
+      </div>
+    {% else %}
+      <p class="empty">Không tìm thấy sản phẩm phù hợp.</p>
+    {% endif %}
+  </div>
+{% endblock %}

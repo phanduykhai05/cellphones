@@ -1,0 +1,48 @@
+{# Hàng bộ lọc dính dưới header + sắp xếp. Mọi link giữ nguyên tham số khác nhờ url_with(). #}
+{% from "components/icons.html" import icon %}
+<h2 class="plp-heading">Chọn theo tiêu chí</h2>
+<div class="filter-bar">
+  <details class="filter-dd">
+    <summary class="filter-btn filter-btn--main">{{ icon("filter", 18) }}Bộ lọc</summary>
+    <div class="filter-dd__panel">
+      <p class="filter-dd__title">Mức giá</p>
+      <div class="filter-dd__chips">
+        {% for label, _, _ in price_ranges %}
+          <a class="filter-btn {% if args.get('gia') == loop.index0 | string %}is-active{% endif %}" href="{{ url_with(gia=loop.index0) }}">{{ label }}</a>
+        {% endfor %}
+      </div>
+      {% if brands %}
+        <p class="filter-dd__title">Hãng</p>
+        <div class="filter-dd__chips">
+          {% for b in brands %}<a class="filter-btn {% if args.get('hang') == b.name %}is-active{% endif %}" href="{{ url_with(hang=b.name) }}">{{ b.name }}</a>{% endfor %}
+        </div>
+      {% endif %}
+    </div>
+  </details>
+  <a class="filter-btn {% if args.get('con_hang') == '1' %}is-active{% endif %}"
+     href="{{ url_with(con_hang=None if args.get('con_hang') == '1' else 1) }}">{{ icon("truck", 18) }}Sẵn hàng</a>
+  <details class="filter-dd">
+    <summary class="filter-btn">{{ icon("receipt", 18) }}Xem theo giá{{ icon("chevron-down", 16) }}</summary>
+    <div class="filter-dd__panel">
+      <div class="filter-dd__chips">
+        {% for label, _, _ in price_ranges %}
+          <a class="filter-btn {% if args.get('gia') == loop.index0 | string %}is-active{% endif %}" href="{{ url_with(gia=loop.index0) }}">{{ label }}</a>
+        {% endfor %}
+      </div>
+    </div>
+  </details>
+  {% for key, label in active_filters %}
+    <a class="filter-btn is-active" href="{{ url_with(**{key: None}) }}">{{ label }}{{ icon("close", 14) }}</a>
+  {% endfor %}
+</div>
+
+<div class="sort-bar">
+  <h2 class="plp-heading">Sắp xếp theo</h2>
+  <div class="sort-bar__list">
+    {% for key, label in sort_labels %}
+      <a class="sort-btn {% if args.get('sap_xep', 'popular') == key %}is-active{% endif %}" href="{{ url_with(sap_xep=key) }}">
+        {{ icon({"popular": "star", "discount": "fire", "price_asc": "sort-asc", "price_desc": "sort-desc"}[key], 18) }}{{ label }}
+      </a>
+    {% endfor %}
+  </div>
+</div>
