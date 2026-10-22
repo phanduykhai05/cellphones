@@ -1,0 +1,58 @@
+{# Hàng hero: sidebar danh mục | slider + 3 banner nhỏ | cột chào mừng.
+   Spec: category-menu.spec.md, hero-slider.spec.md #}
+{% from "components/icons.html" import icon %}
+<section class="hero container">
+  <aside class="hero__sidebar">{% include "components/category_menu.html" %}</aside>
+
+  <div class="hero__center">
+    <div class="slider" data-slider>
+      <div class="slider__tabbar">
+        <div class="slider__tabs" data-slider-tabs>
+          {% for b in banners.hero %}
+            <button class="slider__tab {% if loop.first %}is-active{% endif %}" type="button" data-slide-to="{{ loop.index0 }}">
+              <b>{{ b.title }}</b><span>{{ b.subtitle }}</span>
+            </button>
+          {% endfor %}
+        </div>
+        <button class="slider__tabnav slider__tabnav--prev" type="button" aria-label="Cuộn tab trái" data-tabs-prev>{{ icon("chevron-left", 14) }}</button>
+        <button class="slider__tabnav slider__tabnav--next" type="button" aria-label="Cuộn tab phải" data-tabs-next>{{ icon("chevron-right", 14) }}</button>
+      </div>
+      <div class="slider__viewport">
+        {% for b in banners.hero %}
+          <a class="slider__slide {% if loop.first %}is-active{% endif %}" href="{{ b.link }}" data-slide>
+            <img src="{{ url_for('static', filename=b.image) }}" alt="{{ b.title }}" width="736" height="320" {% if not loop.first %}loading="lazy"{% endif %}>
+          </a>
+        {% endfor %}
+        <button class="slider__arrow slider__arrow--prev" type="button" aria-label="Banner trước" data-slide-prev>{{ icon("chevron-left", 22) }}</button>
+        <button class="slider__arrow slider__arrow--next" type="button" aria-label="Banner sau" data-slide-next>{{ icon("chevron-right", 22) }}</button>
+      </div>
+    </div>
+    <div class="hero__smalls">
+      {% for b in banners.hero_small %}
+        <a href="{{ b.link }}"><img src="{{ url_for('static', filename=b.image) }}" alt="{{ b.title }}" width="240" height="106"></a>
+      {% endfor %}
+    </div>
+  </div>
+
+  <aside class="hero__right">
+    <div class="welcome">
+      <div class="welcome__head">
+        <span class="welcome__avatar">{{ icon("user", 26) }}</span>
+        <p class="welcome__title">Chào mừng bạn đến với {{ site.SITE_NAME }}</p>
+      </div>
+      <p class="welcome__text">Nhập hội thành viên để không bỏ lỡ các ưu đãi hấp dẫn.</p>
+      <p class="welcome__auth"><a href="#">Đăng nhập</a> hoặc <a href="#">Đăng ký</a></p>
+      <a class="welcome__more" href="#">{{ icon("gift", 18) }}Xem ưu đãi thành viên{{ icon("chevron-right", 16) }}</a>
+    </div>
+    <div class="perks">
+      {% for title, items in [
+        ("Ưu đãi cho giáo dục", [("student", "Đăng ký", "nhận ưu đãi"), ("student", "Deal hot", "học sinh sinh viên"), ("student", "Laptop", "ưu đãi khủng")]),
+        ("Thu cũ lên đời giá hời", [("swap", "Định giá máy", "chuyên sâu"), ("swap", "iPhone trợ giá", "đến 5 triệu"), ("swap", "Samsung trợ giá", "đến 6 triệu")]),
+        ("Khách hàng doanh nghiệp (B2B)", [("store", "Đăng ký", "S-Business")]),
+      ] %}
+        <p class="perks__title">{{ title }}</p>
+        {% for ic, a, b in items %}<a class="perks__item" href="#">{{ icon(ic, 16) }}{{ a }} <b>{{ b }}</b></a>{% endfor %}
+      {% endfor %}
+    </div>
+  </aside>
+</section>

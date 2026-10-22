@@ -1,0 +1,22 @@
+{# Khối "Deal sốc / Hot trend / Hàng mới về": click tab đổi bộ sản phẩm. #}
+<section class="deals container" data-tabs>
+  <div class="deals__tabs" role="tablist">
+    {% for t in deal_tabs %}
+      <button class="deals__tab {% if loop.first %}is-active{% endif %}" type="button" role="tab" data-tab="{{ loop.index0 }}">
+        {% if t.image %}<img src="{{ url_for('static', filename=t.image) }}" alt="{{ t.title }}">{% else %}{{ t.title }}{% endif %}
+      </button>
+    {% endfor %}
+  </div>
+  <div class="deals__body">
+    <div class="deals__pills">
+      {% for c in nav_categories if c.product_count %}
+        <a class="pill-chip" href="{{ url_for('catalog.category', slug=c.slug) }}">{{ c.short_name }}</a>
+      {% endfor %}
+    </div>
+    {% for t in deal_tabs %}
+      <div class="deals__panel" data-panel="{{ loop.index0 }}" {% if not loop.first %}hidden{% endif %}>
+        {% with products=t.products, rows=1 %}{% include "components/carousel.html" %}{% endwith %}
+      </div>
+    {% endfor %}
+  </div>
+</section>

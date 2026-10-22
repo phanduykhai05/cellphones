@@ -1,0 +1,11 @@
+{# 2 khối ưu đãi (giáo dục / thanh toán), mỗi khối 2×2 banner #}
+<section class="container promo-grid">
+  {% for title, items in [("Ưu đãi giáo dục", banners.promo_edu), ("Ưu đãi thanh toán", banners.promo_pay)] if items %}
+    <div class="promo-grid__box">
+      <h2 class="promo-grid__title">{{ title }}</h2>
+      <div class="promo-grid__items">
+        {% for b in items %}<a href="{{ b.link }}"><img src="{{ url_for('static', filename=b.image) }}" alt="{{ b.title }}" loading="lazy"></a>{% endfor %}
+      </div>
+    </div>
+  {% endfor %}
+</section>

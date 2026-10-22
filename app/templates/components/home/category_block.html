@@ -1,0 +1,37 @@
+{# Block danh mục: banner trái + tab danh mục + chip danh mục con + chip hãng + carousel 2 hàng.
+   Biến: block = {banner, tabs: [{category, links, brands, products}]}. Spec: category-block.spec.md #}
+{% from "components/icons.html" import icon %}
+<section class="cblock container" data-tabs>
+  {% if block.banner %}
+    <a class="cblock__banner" href="{{ url_for('catalog.category', slug=block.tabs[0].category.slug) }}">
+      <img src="{{ url_for('static', filename=block.banner) }}" alt="{{ block.tabs[0].category.name }}" loading="lazy">
+    </a>
+  {% endif %}
+  <div class="cblock__main">
+    <div class="cblock__tabs" role="tablist">
+      {% for t in block.tabs %}
+        <button class="cblock__tab {% if loop.first %}is-active{% endif %}" type="button" role="tab" data-tab="{{ loop.index0 }}">{{ t.category.short_name }}</button>
+      {% endfor %}
+    </div>
+    {% for t in block.tabs %}
+      <div class="cblock__panel" data-panel="{{ loop.index0 }}" {% if not loop.first %}hidden{% endif %}>
+        {% if t.links %}
+          <div class="cblock__subs">
+            {% for l in t.links %}
+              <a class="sub-chip" href="{{ l.link }}">
+                {% if l.image %}<img src="{{ url_for('static', filename=l.image) }}" alt="" loading="lazy">{% endif %}<span>{{ l.label }}</span>
+              </a>
+            {% endfor %}
+          </div>
+        {% endif %}
+        <div class="cblock__brands">
+          {% for b in t.brands %}
+            <a class="pill-chip" href="{{ url_for('catalog.category', slug=t.category.slug, hang=b) }}">{{ b }}</a>
+          {% endfor %}
+          <a class="see-all" href="{{ url_for('catalog.category', slug=t.category.slug) }}">Xem tất cả{{ icon("chevron-right", 16) }}</a>
+        </div>
+        {% with products=t.products, rows=2 %}{% include "components/carousel.html" %}{% endwith %}
+      </div>
+    {% endfor %}
+  </div>
+</section>
