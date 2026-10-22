@@ -1,0 +1,466 @@
+{
+ "pageTitle": [
+  {
+   "fontSize": "12px",
+   "fontWeight": "700",
+   "lineHeight": "18px",
+   "color": "rgb(52, 58, 64)",
+   "display": "inline",
+   "_r": "0x0",
+   "_c": ""
+  }
+ ],
+ "brandBox": [],
+ "banner": [],
+ "needTile": [
+  {
+   "fontSize": "12px",
+   "fontWeight": "600",
+   "lineHeight": "18px",
+   "color": "rgb(29, 29, 32)",
+   "padding": "6px 8px",
+   "width": "125px",
+   "height": "30px",
+   "_r": "125x30",
+   "_c": ""
+  },
+  {
+   "fontSize": "16px",
+   "fontWeight": "400",
+   "lineHeight": "24px",
+   "color": "rgb(72, 95, 199)",
+   "backgroundColor": "rgb(247, 247, 247)",
+   "width": "125px",
+   "height": "125px",
+   "display": "flex",
+   "justifyContent": "flex-start",
+   "alignItems": "center",
+   "borderRadius": "16px",
+   "position": "relative",
+   "_r": "125x125",
+   "_c": "button__link item-categories "
+  },
+  {
+   "fontSize": "16px",
+   "fontWeight": "400",
+   "lineHeight": "24px",
+   "color": "rgb(74, 74, 74)",
+   "width": "125px",
+   "height": "125px",
+   "_r": "125x125",
+   "_c": "item-categories-outer"
+  }
+ ],
+ "sectionH": [
+  {
+   "fontSize": "20px",
+   "fontWeight": "700",
+   "lineHeight": "30px",
+   "color": "rgb(24, 24, 27)",
+   "margin": "0px 0px 16px",
+   "width": "1200px",
+   "height": "30px",
+   "_r": "1200x30",
+   "_c": "filter-required__title"
+  }
+ ],
+ "filterBtn": [
+  {
+   "fontSize": "14px",
+   "fontWeight": "400",
+   "color": "rgb(215, 0, 24)",
+   "backgroundColor": "rgb(255, 255, 255)",
+   "padding": "8px 16px",
+   "width": "101.281px",
+   "height": "40px",
+   "display": "flex",
+   "justifyContent": "center",
+   "alignItems": "center",
+   "gap": "4px",
+   "borderRadius": "8px",
+   "boxShadow": "rgb(215, 0, 24) 0px 0px 0px 1px",
+   "_r": "101x40",
+   "_c": "btn-filter button__filter-parent filter-button"
+  },
+  {
+   "fontSize": "16px",
+   "fontWeight": "400",
+   "lineHeight": "24px",
+   "color": "rgb(74, 74, 74)",
+   "width": "101.281px",
+   "height": "40px",
+   "position": "relative",
+   "_r": "101x40",
+   "_c": "filter-wrapper"
+  }
+ ],
+ "filterChip": [
+  {
+   "fontSize": "14px",
+   "fontWeight": "400",
+   "color": "rgb(29, 29, 32)",
+   "backgroundColor": "rgb(242, 242, 243)",
+   "padding": "8px 16px",
+   "width": "122.055px",
+   "height": "40px",
+   "display": "flex",
+   "justifyContent": "center",
+   "alignItems": "center",
+   "gap": "4px",
+   "borderRadius": "8px",
+   "_r": "122x40",
+   "_c": "btn-filter button__filter-parent"
+  },
+  {
+   "fontSize": "16px",
+   "fontWeight": "400",
+   "lineHeight": "24px",
+   "color": "rgb(74, 74, 74)",
+   "padding": "1px",
+   "margin": "0px 107px",
+   "width": "1200px",
+   "height": "42px",
+   "display": "flex",
+   "gap": "8px",
+   "_r": "1200x42",
+   "_c": "filter-sort__list-filter"
+  }
+ ],
+ "dropdownChip": [
+  {
+   "fontSize": "14px",
+   "fontWeight": "700",
+   "lineHeight": "21px",
+   "color": "rgb(74, 74, 74)",
+   "_r": "0x0",
+   "_c": ""
+  },
+  {
+   "fontSize": "16px",
+   "fontWeight": "400",
+   "lineHeight": "24px",
+   "color": "rgb(74, 74, 74)",
+   "margin": "0px 0px 8px",
+   "display": "flex",
+   "_r": "0x0",
+   "_c": "is-flex title-filter"
+  }
+ ],
+ "sortActive": [
+  {
+   "fontSize": "14px",
+   "fontWeight": "400",
+   "lineHeight": "21px",
+   "color": "rgb(59, 130, 246)",
+   "backgroundColor": "rgb(239, 245, 255)",
+   "padding": "8px 12px",
+   "width": "105.953px",
+   "height": "40px",
+   "display": "flex",
+   "alignItems": "center",
+   "borderRadius": "50px",
+   "boxShadow": "rgb(59, 130, 246) 0px 0px 0px 1px",
+   "_r": "106x40",
+   "_c": "button__sort active"
+  },
+  {
+   "fontSize": "16px",
+   "fontWeight": "400",
+   "lineHeight": "24px",
+   "color": "rgb(74, 74, 74)",
+   "width": "609.445px",
+   "height": "40px",
+   "display": "flex",
+   "gap": "16px",
+   "_r": "609x40",
+   "_c": "filter-sort__list"
+  }
+ ],
+ "sortBtn": [
+  {
+   "fontSize": "14px",
+   "fontWeight": "400",
+   "lineHeight": "21px",
+   "color": "rgb(29, 29, 32)",
+   "backgroundColor": "rgb(247, 247, 248)",
+   "padding": "8px 12px",
+   "width": "159.117px",
+   "height": "40px",
+   "display": "flex",
+   "alignItems": "center",
+   "borderRadius": "50px",
+   "boxShadow": "rgb(228, 228, 231) 0px 0px 0px 1px",
+   "_r": "159x40",
+   "_c": "button__sort"
+  },
+  {
+   "fontSize": "16px",
+   "fontWeight": "400",
+   "lineHeight": "24px",
+   "color": "rgb(74, 74, 74)",
+   "width": "609.445px",
+   "height": "40px",
+   "display": "flex",
+   "gap": "16px",
+   "_r": "609x40",
+   "_c": "filter-sort__list"
+  }
+ ],
+ "giam": [
+  {
+   "fontSize": "10px",
+   "fontWeight": "500",
+   "lineHeight": "15px",
+   "color": "rgb(255, 255, 255)",
+   "width": "78px",
+   "height": "22px",
+   "display": "flex",
+   "justifyContent": "center",
+   "alignItems": "center",
+   "_r": "78x22",
+   "_c": "product__price--percent-detail"
+  },
+  {
+   "fontSize": "16px",
+   "fontWeight": "700",
+   "lineHeight": "24px",
+   "color": "rgb(68, 68, 68)",
+   "backgroundImage": "url(\"https://cdn2.cellphones.com.vn/x/media/wysiwyg/discount-badge-ui-2025.png\")",
+   "width": "78px",
+   "height": "22px",
+   "borderRadius": "3px",
+   "position": "absolute",
+   "top": "-6px",
+   "left": "10px",
+   "_r": "78x22",
+   "_c": "product__price--percent"
+  },
+  {
+   "fontSize": "16px",
+   "fontWeight": "700",
+   "lineHeight": "24px",
+   "color": "rgb(68, 68, 68)",
+   "margin": "0px 0px 4px",
+   "width": "207.195px",
+   "height": "24px",
+   "display": "flex",
+   "alignItems": "center",
+   "gap": "5px",
+   "_r": "207x24",
+   "_c": "box-info__box-price"
+  }
+ ],
+ "specTag": [
+  {
+   "fontSize": "11px",
+   "fontWeight": "400",
+   "lineHeight": "16.5px",
+   "color": "rgb(58, 58, 58)",
+   "padding": "1px 5px",
+   "margin": "0px 10px 0px 0px",
+   "width": "65.3906px",
+   "height": "20.5px",
+   "borderRadius": "5px",
+   "border": "1px solid rgb(209, 213, 219)",
+   "_r": "65x21",
+   "_c": "product__more-info__item"
+  },
+  {
+   "fontSize": "16px",
+   "fontWeight": "400",
+   "lineHeight": "24px",
+   "color": "rgb(24, 24, 24)",
+   "margin": "0px 0px 10px",
+   "width": "207.195px",
+   "height": "20.5px",
+   "display": "flex",
+   "_r": "207x21",
+   "_c": "product__badge"
+  }
+ ],
+ "brands": [],
+ "needs": [],
+ "banners": [],
+ "products": [
+  {
+   "name": "iPhone 18 Pro 256GB",
+   "href": "https://cellphones.com.vn/iphone-18-pro.html",
+   "img": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/i/p/iphone-18-pro-01.jpg",
+   "price": 38690000,
+   "old": 38990000,
+   "tags": [],
+   "promo": "Ưu đãi 500K cho Apple Watch Series 12, Ultra 4 khi mua kèm Iphone 18 Pro/Pro Max và 1 km khác"
+  },
+  {
+   "name": "iPhone 18 Pro Max 256GB",
+   "href": "https://cellphones.com.vn/iphone-18-pro-max.html",
+   "img": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/i/p/iphone-18-pro-max-01.jpg",
+   "price": 41990000,
+   "old": 420000,
+   "tags": [],
+   "promo": "Ưu đãi 500K cho Apple Watch Series 12, Ultra 4 khi mua kèm Iphone 18 Pro/Pro Max và 1 km khác"
+  },
+  {
+   "name": "iPhone 17 Pro 256GB | Chính hãng",
+   "href": "https://cellphones.com.vn/iphone-17-pro.html",
+   "img": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/i/p/iphone-17-pro-256-gb.png",
+   "price": 31990000,
+   "old": 34990000,
+   "tags": [],
+   "promo": "Chi thêm 30K - nhận Sim/Esim 5G VNSKY, có ngay 3GB data/ngày+500 phút gọi Mobifone & VNSKY, miễn phí 30 ngày đầu - chỉ á"
+  },
+  {
+   "name": "iPhone 17 Pro Max 256GB | Chính hãng",
+   "href": "https://cellphones.com.vn/iphone-17-pro-max.html",
+   "img": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/i/p/iphone-17-pro-max_3.jpg",
+   "price": 34990000,
+   "old": 37990000,
+   "tags": [],
+   "promo": "Ưu đãi mua kèm Gói cam kết giá thu S-Buy Back vơi giá chỉ từ 1TR (giá gốc chỉ từ 1.4TR) và 2 km khác"
+  },
+  {
+   "name": "iPhone 18 Pro Max 512GB",
+   "href": "https://cellphones.com.vn/iphone-18-pro-max-512gb.html",
+   "img": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/i/p/iphone-18-pro-max-01_1.jpg",
+   "price": 48490000,
+   "old": 485000,
+   "tags": [],
+   "promo": "Chi thêm 30K - nhận Sim/Esim 5G VNSKY, có ngay 3GB data/ngày+500 phút gọi Mobifone & VNSKY, miễn phí 30 ngày đầu - chỉ á"
+  },
+  {
+   "name": "iPhone 17 256GB | Chính hãng",
+   "href": "https://cellphones.com.vn/iphone-17-256gb.html",
+   "img": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/i/p/iphone_17_256gb-3_2.jpg",
+   "price": 26990000,
+   "old": 28990000,
+   "tags": [],
+   "promo": "trả góp 0% lãi suất, tối đa 12 tháng, trả trước từ 10% qua CTTC hoặc 0đ qua thẻ tín dụng và 1 km khác"
+  },
+  {
+   "name": "Samsung Galaxy S26 Ultra 5G 12GB 256GB",
+   "href": "https://cellphones.com.vn/dien-thoai-samsung-galaxy-s26-ultra.html",
+   "img": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/s/a/samsung-galaxy-s26-ultra-1.jpg",
+   "price": 31990000,
+   "old": 40990000,
+   "tags": [],
+   "promo": "PMH700,000 ₫"
+  },
+  {
+   "name": "Samsung Galaxy Z Fold8 Ultra 5G 12GB 256GB",
+   "href": "https://cellphones.com.vn/dien-thoai-samsung-galaxy-z-fold-8-ultra.html",
+   "img": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/s/a/samsung-galaxy-z-fold-8-violet-01.jpg",
+   "price": 48990000,
+   "old": 52990000,
+   "tags": [],
+   "promo": "Ưu đãi dịch vụ hậu mãi độc quyền Galaxy Z Care và 2 km khác"
+  },
+  {
+   "name": "Samsung Galaxy A37 5G 8GB 128GB",
+   "href": "https://cellphones.com.vn/dien-thoai-samsung-galaxy-a37.html",
+   "img": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/d/i/dien-thoai-samsung-galaxy-a37-2_2.jpg",
+   "price": 10490000,
+   "old": 11790000,
+   "tags": [],
+   "promo": "PMH200,000 ₫Mua kèm sạc chính hãng 45W giảm giá lên đến 50%"
+  },
+  {
+   "name": "Samsung Galaxy A57 5G 8GB 128GB",
+   "href": "https://cellphones.com.vn/dien-thoai-samsung-galaxy-a57.html",
+   "img": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/d/i/dien-thoai-samsung-galaxy-a57-2.jpg",
+   "price": 11890000,
+   "old": 13490000,
+   "tags": [],
+   "promo": "PMH300,000 ₫Mua kèm sạc chính hãng 45W giảm giá lên đến 50%"
+  },
+  {
+   "name": "iPhone 18 Pro 512GB",
+   "href": "https://cellphones.com.vn/iphone-18-pro-512gb.html",
+   "img": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/i/p/iphone-18-pro-01_1.jpg",
+   "price": 45490000,
+   "old": 455000,
+   "tags": [],
+   "promo": "Chi thêm 30K - nhận Sim/Esim 5G VNSKY, có ngay 3GB data/ngày+500 phút gọi Mobifone & VNSKY, miễn phí 30 ngày đầu - chỉ á"
+  },
+  {
+   "name": "iPhone 17 Pro Max 512GB | Chính hãng",
+   "href": "https://cellphones.com.vn/iphone-17-pro-max-512gb.html",
+   "img": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/i/p/iphone-17-pro-cam_3.jpg",
+   "price": 41390000,
+   "old": 44490000,
+   "tags": [],
+   "promo": "Ưu đãi mua kèm Gói cam kết giá thu S-Buy Back vơi giá chỉ từ 1TR (giá gốc chỉ từ 1.4TR) và 2 km khác"
+  },
+  {
+   "name": "iPhone 18 Pro Max 2TB",
+   "href": "https://cellphones.com.vn/iphone-18-pro-max-2tb.html",
+   "img": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/i/p/iphone-18-pro-max-01_3.jpg",
+   "price": 80990000,
+   "old": 810000,
+   "tags": [],
+   "promo": "Chi thêm 30K - nhận Sim/Esim 5G VNSKY, có ngay 3GB data/ngày+500 phút gọi Mobifone & VNSKY, miễn phí 30 ngày đầu - chỉ á"
+  },
+  {
+   "name": "iPhone 18 Pro Max 1TB",
+   "href": "https://cellphones.com.vn/iphone-18-pro-max-1tb.html",
+   "img": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/i/p/iphone-18-pro-max-01_2.jpg",
+   "price": 61490000,
+   "old": 615000,
+   "tags": [],
+   "promo": "Ưu đãi 500K cho Apple Watch Series 12, Ultra 4 khi mua kèm Iphone 18 Pro/Pro Max và 1 km khác"
+  },
+  {
+   "name": "Samsung Galaxy S25 Ultra 12GB 256GB",
+   "href": "https://cellphones.com.vn/dien-thoai-samsung-galaxy-s25-ultra.html",
+   "img": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/d/i/dien-thoai-samsung-galaxy-s25-ultra_3__3.png",
+   "price": 27990000,
+   "old": 33380000,
+   "tags": [],
+   "promo": "PMH1,000,000 ₫"
+  },
+  {
+   "name": "OPPO Reno16 F 5G 8GB 256GB",
+   "href": "https://cellphones.com.vn/dien-thoai-oppo-reno16-f.html",
+   "img": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/o/p/oppo-reno16-f-02_5.jpg",
+   "price": 14990000,
+   "old": 15990000,
+   "tags": [],
+   "promo": "Trả góp 0% - 0đ phụ phí - 0đ trả trước - kỳ hạn đến 12 tháng"
+  },
+  {
+   "name": "Xiaomi POCO F9 Ultra 5G 12GB 256GB",
+   "href": "https://cellphones.com.vn/dien-thoai-xiaomi-poco-f9-ultra.html",
+   "img": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/x/i/xiaomi-poco-f9-ultra-red.jpg",
+   "price": 23990000,
+   "old": 29990000,
+   "tags": [],
+   "promo": "Trả góp 0% - 0đ phụ phí - 0đ trả trước - kỳ hạn đến 12 tháng"
+  },
+  {
+   "name": "Samsung Galaxy Z Fold8 5G 12GB 256GB",
+   "href": "https://cellphones.com.vn/dien-thoai-samsung-galaxy-z-fold-8.html",
+   "img": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/s/a/samsung-galaxy-z-fold-8-lavender-01.jpg",
+   "price": 40490000,
+   "old": 46990000,
+   "tags": [],
+   "promo": "Ưu đãi dịch vụ hậu mãi độc quyền Galaxy Z Care và 2 km khác"
+  },
+  {
+   "name": "Điện thoại iPhone 16 Pro Max 256GB",
+   "href": "https://cellphones.com.vn/iphone-16-pro-max.html",
+   "img": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/i/p/iphone-16-pro-max.png",
+   "price": 30990000,
+   "old": 34990000,
+   "tags": [],
+   "promo": "Đặc quyền trợ giá lên đến 3 triệu khi thu cũ lên đời iPhone và 2 km khác"
+  },
+  {
+   "name": "iPhone Air 256GB | Chính hãng",
+   "href": "https://cellphones.com.vn/iphone-air-256gb.html",
+   "img": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/i/p/iphone_air-3_2.jpg",
+   "price": 23390000,
+   "old": 31990000,
+   "tags": [],
+   "promo": "Chi thêm 30K - nhận Sim/Esim 5G VNSKY, có ngay 3GB data/ngày+500 phút gọi Mobifone & VNSKY, miễn phí 30 ngày đầu - chỉ á"
+  }
+ ]
+}

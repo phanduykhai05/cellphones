@@ -1,0 +1,16 @@
+# ProductPage `/san-pham/<slug>`
+- Screenshot: `pdp-1440-0..3.png`, `pdp-390-0.png`
+- layout: 2 cột 592 | 592, gap 16px
+- title h1: 20px/30px 700 #18181B; rating: sao vàng + "5" 16px + "(38 đánh giá)" #71717A
+- link hành động: 14px/21px 500 #3B82F6, icon 24px, ngăn cách `|`, gap 16px ("Yêu thích · Hỏi đáp · Thông số · So sánh")
+- gallery: khung 590×323 radius 16px; thumbnail 64×64 radius 8px border 1px #E4E4E7, active border #D70018
+- "Cam kết sản phẩm" 16px 700; thẻ cam kết bg #F7F7F8 radius 12px padding 12px; icon vuông đỏ 24px; chữ 12px/18px #4A4A4A
+- hộp giá: border 1px #609AFA radius 16px bg gradient `linear-gradient(249.83deg, #EFF5FF 3.89%, rgba(244,251,255,.25) 65.75%)`; giá 20px 600 #1D1D20, giá gốc gạch ngang 14px #71717A; "Hoặc" 12px #71717A; trả góp tháng 16px 600; dòng Smember 12px
+- "Phiên bản" / "Màu sắc" 16px 700 mb 10px; option: grid 3 cột gap 12px; ô 50px radius 8px border 2px trong suốt + shadow `0 0 0 1px #E4E4E7`; selected border #D70018 + tick ở góc trên phải (ô đỏ 16px có dấu check)
+  - option màu: ảnh 40×40 + tên 14px 700 + giá 14px
+- khuyến mãi: cùng nền gradient xanh, viền 1px #609AFA, radius 16px, padding 8px 12px 12px; tiêu đề 16px 600 + icon quà; mục đánh số (tròn xanh 16px chữ trắng), chữ 14px
+- nút: hàng cao 60 gap 6px; "Trả góp 0%" viền 1px #3B82F6 chữ #3B82F6 700 16px radius 8px; "MUA NGAY" flex 1 `linear-gradient(0deg,#D70018,#E45464)` radius 10px chữ trắng 16px 700 + dòng phụ 12px; "Thêm vào giỏ" viền 1px #E04040 chữ #D70018 16px 600 radius 8px
+- thông số: tiêu đề 20px 600 #363636; bảng border 1px #E4E4E7 radius 8px; ô nhãn bg #F2F2F2 padding 8px 16px 14px #4A4A4A width 177; ô giá trị 14px; border-bottom 1px #E4E4E7
+- FAQ: mục bg #F7F7F8 radius 8px padding 10px 16px; câu hỏi 14px 600 #1D1D20 + chevron
+- thanh mua cố định: fixed bottom 10px, giữa màn hình, 880×80, bg #fff radius 12px shadow xl; ảnh 48, tên 14px 600, giá đỏ 18px 700 + giá gốc gạch ngang, nút trả góp / Mua Ngay đỏ / icon giỏ
+- mobile: 1 cột; thanh cố định full width ở đáy
